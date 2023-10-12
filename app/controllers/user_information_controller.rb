@@ -1,16 +1,34 @@
 class UserInformationController < ApplicationController
 
   def new
+    @user_information = current_user.user_information ||= UserInformation.new
   end
-  
+
+  def update
+    user = User.find(current_user.id)
+    @user_information = user.user_information
+    if @user_information.update(user_information_params)
+      flash[:success] = "Personal information updated!"
+      redirect_to landing_path
+    else
+      flash[:error] = "Something went wrong."
+      render 'edit'
+    end
+  end
+
   def create
     user = User.find(current_user.id)
-    user_information = user.build_user_information(user_information_params)
-    if user_information.save
-      flash[:success] = "Details saved!"
-      #redirect_to @object
+    if user.user_information.exists?
+      flash[:error] = "You already added the personal information."
+      update
+      return
+    end
+    @user_information = user.build_user_information(user_information_params)
+    if @user_information.save
+      flash[:success] = "Personal information saved!"
+      redirect_to landing_path
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = "Something went wrong."
       #render 'new'
     end
   end
@@ -33,7 +51,7 @@ class UserInformationController < ApplicationController
 private
 
   def user_information_params
-    params.permit(:first_name, :last_name, :address, :birthdate, :sex, :phone_number)
+    params.require(:user_information).permit(:first_name, :last_name, :address, :birthdate, :sex, :phone_number, :country, :county, :city)
   end
 
 

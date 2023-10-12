@@ -3,6 +3,9 @@ class CreateUserInformations < ActiveRecord::Migration[7.0]
     create_table :user_informations do |t|
       t.string :first_name
       t.string :last_name
+      t.string :country
+      t.string :county
+      t.string :city
       t.string :address
       t.date :birthdate
       t.string :sex

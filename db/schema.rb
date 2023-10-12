@@ -17,6 +17,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_122720) do
   create_table "user_informations", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "country"
+    t.string "county"
+    t.string "city"
     t.string "address"
     t.date "birthdate"
     t.string "sex"
