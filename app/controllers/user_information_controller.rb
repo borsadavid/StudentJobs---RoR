@@ -22,7 +22,7 @@ class UserInformationController < ApplicationController
 
   def create
     user = User.find(current_user.id)
-    if user.user_information.exists?
+    if user.user_information.present?
       flash[:error] = "You already added the personal information."
       update
       return
