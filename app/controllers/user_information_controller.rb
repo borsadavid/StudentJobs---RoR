@@ -1,7 +1,11 @@
 class UserInformationController < ApplicationController
 
   def new
-    @user_information = current_user.user_information ||= UserInformation.new
+    if current_user && current_user.user_information.present?
+      @user_information = current_user.user_information
+    else
+      @user_information = UserInformation.new
+    end
   end
 
   def update
@@ -34,8 +38,7 @@ class UserInformationController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    account_information = user.user_information
+    account_information = current_user.user_information
   
     if account_information
       account_information.destroy

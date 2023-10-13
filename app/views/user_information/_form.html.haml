@@ -1,4 +1,4 @@
-= form_for @user_information do |f|
+= form_for @user_information, url: user_information_index_path do |f|
   .form-group
     = f.label :first_name
     = f.text_field :first_name, required: true, class: 'form-control', value: @user_information.first_name

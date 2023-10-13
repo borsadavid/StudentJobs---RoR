@@ -14,7 +14,7 @@ class UserInformationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user_information" do
     assert_difference('UserInformation.count') do
-      post user_informations_url, params: { user_information: { user_id: @user.id, first_name: "John", last_name: "Doe", address: "123 Main St", birthdate: "2023-10-12", sex: "Male", phone_number: "07777777777" } }
+      post user_information_url, params: { user_information: { user_id: @user.id, first_name: "John", last_name: "Doe", address: "123 Main St", birthdate: "2023-10-12", sex: "Male", phone_number: "07777777777" } }
     end
 
     assert_equal 'Details saved!', flash[:success]
@@ -22,7 +22,7 @@ class UserInformationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should handle unsuccessful creation" do
     assert_no_difference('UserInformation.count') do
-      post user_informations_url, params: { user_information: { first_name: "" } }
+      post user_information_url, params: { user_information: { first_name: "" } }
     end
 
     assert_template 'new'

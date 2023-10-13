@@ -7,7 +7,6 @@ one:
   birthdate: 2023-10-12
   sex: MyString
   phone_number: MyString
-  user_id: 1
 
 two:
   first_name: MyString
@@ -16,4 +15,3 @@ two:
   birthdate: 2023-10-12
   sex: MyString
   phone_number: MyString
-  user_id: 2
