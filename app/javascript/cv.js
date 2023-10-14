@@ -1,15 +1,15 @@
-function handleOngoingCheckbox(checkboxNumber) {
-  toggleFinishedAtField();
+function countAndDisable() {
+  var ongoingCheckboxes = document.querySelectorAll('#ongoing_checkbox');
+  var count = ongoingCheckboxes.length;
 
-  $(`#ongoing_checkbox_${checkboxNumber}`).change(function() {
-    toggleFinishedAtField();
-  });
+  for (var i = 0; i < ongoingCheckboxes.length; i++) {
+    var triggerCheckbox = ongoingCheckboxes[i];
 
-  function toggleFinishedAtField() {
-    if ($(`#ongoing_checkbox_${checkboxNumber}`).is(':checked')) {
-      $(`#finished_at_field_${checkboxNumber}`).attr('disabled', 'disabled');
-    } else {
-      $(`#finished_at_field_${checkboxNumber}`).removeAttr('disabled');
-    }
+    triggerCheckbox.addEventListener('click', function() {
+      var finishedAtField = this.parentNode.querySelector('.finished_at_field');
+      finishedAtField.disabled = this.checked;
+    });
   }
+
+  return count;
 }

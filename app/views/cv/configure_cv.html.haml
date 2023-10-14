@@ -6,4 +6,9 @@
 = render 'experience_form'
 = render 'skills_form'
 
+= javascript_include_tag 'cv'
+:javascript
+  document.addEventListener('DOMContentLoaded', countAndDisable);
+
+
 

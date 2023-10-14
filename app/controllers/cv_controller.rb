@@ -23,6 +23,7 @@ class CvController < ApplicationController
   end
 
   def configure_cv
+    @index = 0
     @available_skills = Skill.all
     @cv = Cv.find(params[:id])
     @education = Education.new
