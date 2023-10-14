@@ -1,4 +1,6 @@
 %nav.menu
   %ul.buttons
+    %li= link_to "My CVs", cv_index_path, class: "button"
+    %li= link_to "Available Skills", skill_index_path, class: "button"
     %li= button_to "Log Out", destroy_user_session_path, class: "log_out_Button", method: :delete 
     %li= button_to "Log In", new_user_session_path, class: "log_out_Button"

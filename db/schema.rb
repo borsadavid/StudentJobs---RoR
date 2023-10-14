@@ -10,9 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_12_122720) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_14_175712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cv_skills", force: :cascade do |t|
+    t.bigint "cv_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cv_id"], name: "index_cv_skills_on_cv_id"
+    t.index ["skill_id"], name: "index_cv_skills_on_skill_id"
+  end
+
+  create_table "cvs", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cvs_on_user_id"
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string "institution"
+    t.string "specialization"
+    t.string "degree"
+    t.date "started_at"
+    t.date "finished_at"
+    t.boolean "ongoing"
+    t.bigint "cv_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cv_id"], name: "index_educations_on_cv_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "title"
+    t.string "employer"
+    t.string "description"
+    t.date "started_at"
+    t.date "finished_at"
+    t.boolean "ongoing"
+    t.bigint "cv_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cv_id"], name: "index_experiences_on_cv_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_informations", force: :cascade do |t|
     t.string "first_name"
@@ -51,5 +100,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_12_122720) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "cv_skills", "cvs"
+  add_foreign_key "cv_skills", "skills"
+  add_foreign_key "cvs", "users"
+  add_foreign_key "educations", "cvs"
+  add_foreign_key "experiences", "cvs"
   add_foreign_key "user_informations", "users"
 end

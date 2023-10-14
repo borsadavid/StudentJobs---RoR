@@ -1,0 +1,37 @@
+%h1 
+  Add Experience:
+= form_for @experience, url: create_experience_cv_path(cv_id: @cv.id) do |f|
+
+  .form-group
+    = f.label :title, "Title"
+    = f.text_field :title, required: true, class: 'form-control'
+  
+  .form-group
+    = f.label :employer, "Employer"
+    = f.text_field :employer, required: true, class: 'form-control'
+
+  .form-group
+    = f.label :description, "Description"
+    = f.text_field :description, required: true, class: 'form-control'
+
+  .form-group
+    = f.label :started_at, "Started at"
+    = f.date_field :started_at, required: true, class: 'form-control'
+
+  .form-group
+    = f.label :finished_at, "Finished at"
+    = f.date_field :finished_at, class: 'form-control', id: 'finished_at_field_2'
+
+  .form-group
+    = f.label :ongoing, "Ongoing"
+    = f.check_box :ongoing, class: 'form-control', id: 'ongoing_checkbox_2'
+
+  .modal-buttons
+    = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round"
+
+
+= javascript_include_tag 'cv'
+:javascript
+  $(document).ready(function() {
+    handleOngoingCheckbox(2);
+  })

@@ -1,0 +1,5 @@
+%h1
+  Available CVs
+- @cv.each do |cv|
+  = cv.title
+  = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "button"

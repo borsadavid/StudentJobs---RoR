@@ -1,0 +1,16 @@
+%h1
+  Add Skills:
+
+= form_for @cv, url: add_skills_cv_path(cv_id: @cv.id), remote: true do |f|
+  .form-group
+    = f.label :title, "Pick skills"
+    = f.collection_select :skill_ids, @available_skills, :id, :title, {}, { multiple: true, class: 'form-control' }
+
+  = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round"
+
+:javascript
+  // Listen for a successful AJAX form submission
+  $('form#new_skill').on('ajax:success', function(event, data, status, xhr) {
+    // Update the skills list with the response data
+    $('#skills-list').html(data);
+  });

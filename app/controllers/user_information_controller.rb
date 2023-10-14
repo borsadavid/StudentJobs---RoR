@@ -1,4 +1,5 @@
 class UserInformationController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     if current_user && current_user.user_information.present?
