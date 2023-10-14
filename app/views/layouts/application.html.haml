@@ -12,4 +12,6 @@
     - flash.each do |key, value|  #flash-alert, flash-success
       .flash{class: "flash-#{key}"}
         = value
+    - unless devise_controller?
+      = render "layouts/menu"
     = yield

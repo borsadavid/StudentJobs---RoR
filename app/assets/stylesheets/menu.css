@@ -1,0 +1,23 @@
+.body{
+    margin: 0;
+    padding: 0;
+ }
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    background-color: aquamarine;
+    padding: 0 10%;
+  }
+
+.menu ul {
+    list-style-type: none;
+  }
+  
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+  }
+  
