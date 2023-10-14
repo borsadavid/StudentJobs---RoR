@@ -4,10 +4,11 @@ class CvController < ApplicationController
 
   def index
     @cv = current_user.cvs.all
+    @new_cv = Cv.new
   end
 
   def new
-    @cv = Cv.new
+    @new_cv = Cv.new
   end
 
   def create
@@ -40,6 +41,19 @@ class CvController < ApplicationController
     end
   end
 
+  def update_education
+    @cv = Cv.find(params[:cv_id])
+    education = @cv.educations.find(params[:id])
+  
+    if education.update(education_params)
+      flash[:success] = "Education updated."
+      return
+    else
+      flash[:error] = "Failed to update education."
+      return
+    end
+  end
+
   def create_experience
     @experience = @cv.experiences.create(experience_params)
     if !@experience.save
@@ -47,6 +61,19 @@ class CvController < ApplicationController
       return
     else
       flash[:success] = "Experience added."
+      return
+    end
+  end
+
+  def update_experience
+    @cv = Cv.find(params[:cv_id])
+    experience = @cv.experiences.find(params[:id])
+  
+    if experience.update(experience_params)
+      flash[:success] = "Experience updated."
+      return
+    else
+      flash[:error] = "Failed to update experience."
       return
     end
   end

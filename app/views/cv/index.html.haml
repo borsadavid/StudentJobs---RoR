@@ -3,3 +3,6 @@
 - @cv.each do |cv|
   = cv.title
   = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "button"
+
+= render "create_cv"
+

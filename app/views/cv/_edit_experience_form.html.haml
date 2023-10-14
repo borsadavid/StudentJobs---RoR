@@ -1,0 +1,31 @@
+- if @cv.experiences.any?
+  - @cv.experiences.each_with_index do |experience, index|
+    %h1 
+      Edit Experience:
+    = form_for experience, url: update_experience_cv_path(cv_id: @cv.id, id: experience.id) do |f|
+      .form-group
+        = f.label :title, "Title"
+        = f.text_field :title, required: true, class: 'form-control', value: experience.title
+
+      .form-group
+        = f.label :employer, "Employer"
+        = f.text_field :employer, required: true, class: 'form-control', value: experience.employer
+
+      .form-group
+        = f.label :description, "Description"
+        = f.text_field :description, required: true, class: 'form-control', value: experience.description
+
+      .form-group
+        = f.label :started_at, "Started at"
+        = f.date_field :started_at, required: true, class: 'form-control', value: experience.started_at
+
+      .form-group
+        = f.label :finished_at, "Finished at"
+        = f.date_field :finished_at, class: 'form-control', id: "finished_at_field_#{index}", value: experience.finished_at
+
+      .form-group
+        = f.label :ongoing, "Ongoing"
+        = f.check_box :ongoing, class: 'form-control', id: "ongoing_checkbox_#{index}", checked: experience.ongoing
+
+      .modal-buttons
+        = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round"

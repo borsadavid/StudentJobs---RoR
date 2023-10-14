@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       post 'create_education'
       post 'create_experience'
       patch 'add_skills'
+      patch 'update_experience'
+      patch 'update_education'
     end
   end
   resources :skill, except: [:update]

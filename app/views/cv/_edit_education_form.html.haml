@@ -1,0 +1,31 @@
+- if @cv.educations.any?
+  - @cv.educations.each_with_index do |education, index|
+    %h1 
+      Edit Education:
+    = form_for education, url: update_education_cv_path(cv_id: @cv.id, id: education.id) do |f|
+      .form-group
+        = f.label :institution, "Institution"
+        = f.text_field :institution, required: true, class: 'form-control', value: education.institution
+
+      .form-group
+        = f.label :specialization, "Specialization"
+        = f.text_field :specialization, required: true, class: 'form-control', value: education.specialization
+
+      .form-group
+        = f.label :degreen, "Degree"
+        = f.text_field :degree, required: true, class: 'form-control', value: education.degree
+
+      .form-group
+        = f.label :started_at, "Started at"
+        = f.date_field :started_at, required: true, class: 'form-control', value: education.started_at
+
+      .form-group
+        = f.label :finished_at, "Finished at"
+        = f.date_field :finished_at, class: 'form-control', id: "finished_at_field_#{index}", value: education.finished_at
+
+      .form-group
+        = f.label :ongoing, "Ongoing"
+        = f.check_box :ongoing, class: 'form-control', id: "ongoing_checkbox_#{index}", checked: education.ongoing
+
+      .modal-buttons
+        = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round"
