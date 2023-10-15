@@ -34,11 +34,11 @@ class CvController < ApplicationController
   def create_education
     @education = @cv.educations.create(education_params)
     if !@education.save
-      render json: { message: "Something went wrong!" }
-      return
+      flash[:error] = "Something went wrong!"
+      redirect_to configure_cv_cv_path(@cv)
     else
-      render json: { message: "Education added." }
-      return
+      flash[:success] = "Added succesfully!"
+      redirect_to configure_cv_cv_path(@cv)
     end
   end
 
@@ -47,21 +47,19 @@ class CvController < ApplicationController
   
     if education.update(education_params)
       render json: { message: "Education updated." }
-      return
     else
       render json: { message: "Failed to update education." }
-      return
     end
   end
 
   def create_experience
     @experience = @cv.experiences.create(experience_params)
     if !@experience.save
-      render json: { message: "Something went wrong!" }
-      return
+      flash[:error] = "Something went wrong!"
+      redirect_to configure_cv_cv_path(@cv.id)
     else
-      render json: { message: "Experience added." }
-      return
+      flash[:success] = "Added succesfully!"
+      redirect_to configure_cv_cv_path(@cv.id)
     end
   end
 

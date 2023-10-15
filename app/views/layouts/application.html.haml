@@ -9,9 +9,9 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
+    - unless devise_controller?
+      = render "layouts/menu"
     - flash.each do |key, value|  #flash-alert, flash-success
       .flash{class: "flash-#{key}"}
         = value
-    - unless devise_controller?
-      = render "layouts/menu"
     = yield

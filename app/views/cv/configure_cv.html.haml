@@ -1,17 +1,28 @@
 %h1
   Configure your CV
-= render 'edit_education_form'
-- if !@cv.educations.any?
-  = render 'education_form'
-- else
-  - # before this container new education forms can be generated
+- if @cv.educations.any?
+  %h1#education-title Edit education:
+  = render 'edit_education_form'
+
+  -# before this container new education forms can be generated
   %div#education-container
-  = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true
-= render 'edit_experience_form'
-- if !@cv.experiences.any?
-  = render 'experience_form'
-- else 
+  = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button"
+- else
+  = render 'education_form'
+
+
+- if @cv.experiences.any?
+  %h1#experience-title Edit experience:
+  = render 'edit_experience_form'
+
   -# before this container new forms are generated
   %div#experience-container 
-  = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true
+  = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button"
+- else
+  = render 'experience_form'
+
+
 = render 'skills_form'
+
+
+= javascript_include_tag 'cv'

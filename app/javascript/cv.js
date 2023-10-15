@@ -13,9 +13,6 @@ function handleFormSubmission(form) {
       var message = response.message;
       messageContainer.text(message);
       messageContainer.addClass('success-message');
-      if (message === "Delete successful.") {
-        $(form).closest('.form-container').hide(); 
-      }
     } else {
       var errorMessage = response.message || 'Something went wrong!';
       messageContainer.text(errorMessage);
@@ -37,4 +34,6 @@ function hideFormClass(button) {
 
   formClass.parentNode.insertBefore(messageContainer, formClass);
 }
+
+
 
