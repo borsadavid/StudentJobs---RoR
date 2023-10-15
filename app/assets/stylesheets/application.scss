@@ -14,19 +14,17 @@
  *= require_self
  */
 
- body {
+ body{
     margin: 0;
-  }
+    padding: 0;
+ }
 
-.success-message{
-  color: green;
-}
+ @font-face {
+   font-family: 'GothamPro-Medium';
+   src: font-url("GothamPro-Medium.woff");
+ }
 
-.error-message{
-  color: red;
-}
-
-.message-container {
-  border: 1px solid;
-  border-radius: 5px; /* Adjust the value as needed */
+ @font-face {
+  font-family: 'GothamPro';
+  src: font-url("GothamPro.woff");
 }
