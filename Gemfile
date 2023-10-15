@@ -45,6 +45,12 @@ gem 'haml'
 
 gem 'devise'
 
+gem 'bootstrap'
+
+gem 'jquery-ui-rails'
+
+gem 'jquery-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

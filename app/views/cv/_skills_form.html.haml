@@ -1,0 +1,14 @@
+%h1
+  Add Skills:
+
+= form_for @cv, url: add_skills_cv_path(cv_id: @cv.id), remote: true do |f|
+  .form-group
+    = f.label :title, "Pick skills"
+    %select.select{"data-mdb-filter": "true", multiple: true, class: 'form-control'}
+      - @available_skills.each do |skill|
+        %option{value: skill.id}
+          = skill.title
+
+  = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form);"
+
+= javascript_include_tag 'cv'
