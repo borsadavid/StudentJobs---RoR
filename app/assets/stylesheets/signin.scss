@@ -131,6 +131,12 @@
     justify-content: space-between;
   }
 
+  .remember {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
   .custom-checkbox:checked {
     background-color: #900C3F!important;
 }
@@ -141,6 +147,15 @@
     justify-content: flex-start;
     font-family: 'GothamPro-Medium',Arial;
     color: #88908e;
+  }
+
+  .checkbox p{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'GothamPro-Medium',Arial;
+    color: #88908e;
+    margin: 0;
   }
 
   .remember-me a{
@@ -210,6 +225,7 @@
     font-family: 'GothamPro-Medium';
     font-size: 3.25rem;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .container-wrapper p {
