@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       patch 'add_skills'
       patch 'update_experience'
       patch 'update_education'
+      delete 'delete_experience'
+      delete 'delete_education'
+      get 'render_form'
     end
   end
   resources :skill, except: [:update]

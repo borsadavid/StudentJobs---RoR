@@ -1,6 +1,6 @@
 class CvController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cv, only: [:create_education, :create_experience, :add_skills]
+  before_action :set_cv, except: [:index, :new, :create, :configure_cv]
 
   def index
     @cv = current_user.cvs.all
@@ -34,23 +34,22 @@ class CvController < ApplicationController
   def create_education
     @education = @cv.educations.create(education_params)
     if !@education.save
-      flash[:error] = "Something went wrong! Education"
+      render json: { message: "Something went wrong!" }
       return
     else
-      flash[:success] = "Education added."
+      render json: { message: "Education added." }
       return
     end
   end
 
   def update_education
-    @cv = Cv.find(params[:cv_id])
     education = @cv.educations.find(params[:id])
   
     if education.update(education_params)
-      flash[:success] = "Education updated."
+      render json: { message: "Education updated." }
       return
     else
-      flash[:error] = "Failed to update education."
+      render json: { message: "Failed to update education." }
       return
     end
   end
@@ -58,23 +57,22 @@ class CvController < ApplicationController
   def create_experience
     @experience = @cv.experiences.create(experience_params)
     if !@experience.save
-      flash[:error] = "Something went wrong! Experience"
+      render json: { message: "Something went wrong!" }
       return
     else
-      flash[:success] = "Experience added."
+      render json: { message: "Experience added." }
       return
     end
   end
 
   def update_experience
-    @cv = Cv.find(params[:cv_id])
     experience = @cv.experiences.find(params[:id])
   
     if experience.update(experience_params)
-      flash[:success] = "Experience updated."
+      render json: { message: "Experience updated." }
       return
     else
-      flash[:error] = "Failed to update experience."
+      render json: { message: "Failed to update experience." }
       return
     end
   end
@@ -87,15 +85,53 @@ class CvController < ApplicationController
       @cv.skills << selected_skills
   
       if @cv.save
-        flash[:success] = "Skills added."
+        render json: { message: "Skills added." }
+        return
       else
-        flash[:error] = "Failed to add skills."
+        render json: { message:  "Failed to add skills." }
+        return
       end
     else
-      flash[:error] = "No skills selected."
+      render json: { message: "No skills selected." }
+      return
     end
-  
-    redirect_to landing_path
+  end
+
+  def delete_experience
+    @experience = @cv.experiences.find(params[:id])
+    if @experience.destroy
+      render json: { message: "Delete successful." }
+      return
+    else
+      render json: { message: "Failed to delete experience." }
+      return
+    end
+  end
+
+  def delete_education
+    @education = @cv.educations.find(params[:id])
+    if @education.destroy
+      render json: { message: "Delete successful." }
+      return
+    else
+      render json: { message: "Failed to delete education." }
+      return
+    end
+  end
+
+  def render_form
+    @cv = Cv.find(params[:id])
+    @education = Education.new
+    @experience = Experience.new
+    @name = ""
+    if params[:education].present?
+      @name = "education"
+    elsif params[:experience].present?
+      @name = "experience"
+    end
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
 private

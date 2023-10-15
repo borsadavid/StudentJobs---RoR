@@ -1,0 +1,26 @@
+<% if @name == "education" %>
+  var renderedPartial = "<%= j render 'education_form' %>";
+<% elsif @name == "experience" %>
+  var renderedPartial = "<%= j render 'experience_form' %>";
+<% end %>
+
+// Render a new form container div
+var newFormContainer = $('<div id="form-container"></div>');
+newFormContainer.html(renderedPartial);
+
+// Create the "x" button
+var closeButton = $('<button class="close-button" onclick="hideFormContainer(this)">x</button>');
+
+// Append the "x" button to the form container
+newFormContainer.append(closeButton);
+
+<% if @name == "education" %>
+  newFormContainer.insertAfter("#education-container");
+<% elsif @name == "experience" %>
+  newFormContainer.insertAfter("#experience-container");
+<% end %>
+
+// Function to hide the form container
+function hideFormContainer(button) {
+  $(button).closest("#form-container").hide();
+}

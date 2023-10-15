@@ -17,3 +17,16 @@
  body {
     margin: 0;
   }
+
+.success-message{
+  color: green;
+}
+
+.error-message{
+  color: red;
+}
+
+.message-container {
+  border: 1px solid;
+  border-radius: 5px; /* Adjust the value as needed */
+}

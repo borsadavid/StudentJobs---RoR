@@ -1,14 +1,17 @@
 %h1
   Configure your CV
 = render 'edit_education_form'
-= render 'education_form'
+- if !@cv.educations.any?
+  = render 'education_form'
+- else
+  - # before this container new education forms can be generated
+  %div#education-container
+  = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true
 = render 'edit_experience_form'
-= render 'experience_form'
+- if !@cv.experiences.any?
+  = render 'experience_form'
+- else 
+  -# before this container new forms are generated
+  %div#experience-container 
+  = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true
 = render 'skills_form'
-
-= javascript_include_tag 'cv'
-:javascript
-  document.addEventListener('DOMContentLoaded', countAndDisable);
-
-
-
