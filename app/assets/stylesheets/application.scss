@@ -14,6 +14,17 @@
  *= require_self
  */
 
- body {
+ body{
     margin: 0;
-  }
+    padding: 0;
+ }
+
+ @font-face {
+   font-family: 'GothamPro-Medium';
+   src: font-url("GothamPro-Medium.woff");
+ }
+
+ @font-face {
+  font-family: 'GothamPro';
+  src: font-url("GothamPro.woff");
+}
