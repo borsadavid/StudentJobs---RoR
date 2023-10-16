@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       delete 'delete_education'
       get 'render_form'
       patch 'pdf_upload'
+      patch 'upload_picture'
       delete 'delete_pdf'
+      delete 'delete_picture'
     end
   end
   resources :skill, except: [:update]

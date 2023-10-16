@@ -36,5 +36,7 @@ function hideFormClass(button) {
   formClass.parentNode.insertBefore(messageContainer, formClass);
 }
 
-
-
+function displaySaveButton(button) {
+  var saveButton = document.querySelector('.picture-submit-button');
+  saveButton.style.display = "block";
+}

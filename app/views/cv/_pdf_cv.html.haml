@@ -13,7 +13,7 @@
 
   %h4
     Upload CV
-= form_for @cv, url: pdf_upload_cv_path(cv_id: @cv.id), id: 'edit-experience' do |f|
+= form_for @cv, url: pdf_upload_cv_path(cv_id: @cv.id) do |f|
   
   .form-group
     = f.label :title, "PDF"

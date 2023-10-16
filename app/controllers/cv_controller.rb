@@ -158,6 +158,27 @@ class CvController < ApplicationController
     end
   end
 
+  def upload_picture
+    if params[:cv][:picture].present?
+      @cv.picture.destroy_all
+      @cv.picture.attach(params[:cv][:picture])
+      flash[:success] = "Picture uploaded."
+      redirect_to configure_cv_cv_path(@cv.id)
+    else
+      flash[:success] = "Upload failed."
+      redirect_to configure_cv_cv_path(@cv.id)
+    end
+  end
+
+  def delete_picture
+    if @cv.picture
+      @cv.picture.destroy
+      render json: { message: "Image deleted." }
+    else
+      render json: { message: "Something went wrong." }
+    end
+  end
+
   private
 
   def set_cv

@@ -1,5 +1,8 @@
 %h1
   Configure your CV
+
+= render 'add_picture_cv'
+
 - if @cv.educations.any?
   %h1#education-title Edit education:
   = render 'edit_education_form'
