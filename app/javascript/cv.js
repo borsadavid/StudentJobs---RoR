@@ -18,6 +18,7 @@ function handleFormSubmission(form) {
       messageContainer.text(errorMessage);
       messageContainer.addClass('error-message');
     }
+    $('.message-container').remove();
 
     $(form).after(messageContainer);
   });

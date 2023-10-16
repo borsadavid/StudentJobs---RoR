@@ -51,6 +51,7 @@ gem 'jquery-ui-rails'
 
 gem 'jquery-rails'
 
+gem 'chosen-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

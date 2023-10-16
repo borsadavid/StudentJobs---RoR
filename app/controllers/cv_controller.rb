@@ -76,17 +76,20 @@ class CvController < ApplicationController
   end
 
   def add_skills
+    
+    @cv.skills.destroy_all
     selected_skill_ids = skills_params[:skill_ids]
   
     if selected_skill_ids.present?
       selected_skills = Skill.where(id: selected_skill_ids)
+  
       @cv.skills << selected_skills
   
       if @cv.save
-        render json: { message: "Skills added." }
+        render json: { message: "Skills saved." }
         return
       else
-        render json: { message:  "Failed to add skills." }
+        render json: { message: "Failed to save skills." }
         return
       end
     else
@@ -94,6 +97,7 @@ class CvController < ApplicationController
       return
     end
   end
+  
 
   def delete_experience
     @experience = @cv.experiences.find(params[:id])
