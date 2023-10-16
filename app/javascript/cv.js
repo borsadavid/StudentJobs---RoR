@@ -1,6 +1,6 @@
 function disableFinishDate(checkbox) {
   const form = checkbox.closest('form');
-  const finishDateField = form.querySelector('[name="experience[finished_at]"]');
+  const finishDateField = form.querySelector('input[name$="[finished_at]"]');
   finishDateField.disabled = checkbox.checked;
 }
 
@@ -8,11 +8,16 @@ function handleFormSubmission(form) {
   $(form).on('ajax:complete', function(event, xhr, status, error) {
     var response = xhr.responseJSON;
     var messageContainer = $('<div>').addClass('message-container');
-
+    
     if (xhr.status === 200) {
       var message = response.message;
       messageContainer.text(message);
       messageContainer.addClass('success-message');
+
+      if (response.redirect_to) {
+        // Redirect to the specified path
+        window.location.href = response.redirect_to;
+      }
     } else {
       var errorMessage = response.message || 'Something went wrong!';
       messageContainer.text(errorMessage);
@@ -40,3 +45,20 @@ function displaySaveButton(button) {
   var saveButton = document.querySelector('.picture-submit-button');
   saveButton.style.display = "block";
 }
+
+function hideImageClass(button) {
+  var imageClass = button.closest('.image-class');
+  imageClass.style.display = 'none';
+
+  var image = document.createElement('img');
+  image.src = "https://www.computerhope.com/jargon/g/guest-user.png";
+  
+  var messageContainer = document.createElement('div');
+  messageContainer.classList.add('message-container');
+  messageContainer.classList.add('success-message');
+  messageContainer.textContent = 'Deleted successfully';
+
+  imageClass.parentNode.insertBefore(image, imageClass);
+  imageClass.parentNode.insertBefore(messageContainer, imageClass);
+}
+
