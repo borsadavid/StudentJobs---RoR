@@ -78,7 +78,7 @@ class CvController < ApplicationController
   def add_skills
     
     @cv.skills.destroy_all
-    selected_skill_ids = skills_params[:skill_ids]
+    selected_skill_ids = cv_params[:skill_ids]
   
     if selected_skill_ids.present?
       selected_skills = Skill.where(id: selected_skill_ids)
@@ -136,26 +136,49 @@ class CvController < ApplicationController
     end
   end
 
-private
+  def pdf_upload
+    if params[:cv][:pdfs].present?
+      params[:cv][:pdfs].each do |pdf|
+        @cv.pdfs.attach(pdf)
+      end
+      flash[:success] = "PDFs uploaded successfully."
+      redirect_to configure_cv_cv_path(@cv.id)
+    else
+      flash[:error] = "No PDFs selected for upload."
+      redirect_to configure_cv_cv_path(@cv.id)
+    end
+  end  
+
+  def delete_pdf
+    if params[:id].present?
+      @cv.pdfs.find(params[:id]).destroy
+      render json: { message: "PDF deleted." }
+    else
+      render json: { message: "Something went wrong." }
+    end
+  end
+
+  private
 
   def set_cv
-    @cv = Cv.find(params[:cv_id])
+    if current_user.cvs.find(params[:cv_id]).present?
+      @cv = current_user.cvs.find(params[:cv_id])
+    else
+      redirect_to cv_index_path
+    end
   end
-
+  
   def cv_params
-    params.require(:cv).permit(:title)
-  end
-
+    params.require(:cv).permit(:title, { skill_ids: [] })
+  end  
+  
   def education_params
     params.require(:education).permit(:institution, :specialization, :degree, :started_at, :finished_at, :ongoing)
   end
-
+  
   def experience_params
     params.require(:experience).permit(:title, :employer, :description, :started_at, :finished_at, :ongoing)
   end
-
-  def skills_params
-    params.require(:cv).permit(skill_ids: [])
+  
   end
-
-end
+  

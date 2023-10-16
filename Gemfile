@@ -53,6 +53,8 @@ gem 'jquery-rails'
 
 gem 'chosen-rails'
 
+gem 'activestorage'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
