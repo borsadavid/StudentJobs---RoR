@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    animate.css-rails (3.2.0)
     autoprefixer-rails (10.4.15.0)
       execjs (~> 2)
     babel-source (5.8.35)
@@ -288,6 +289,7 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage
+  animate.css-rails
   bcrypt (~> 3.1.7)
   bootsnap
   bootstrap
