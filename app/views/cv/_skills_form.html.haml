@@ -4,10 +4,7 @@
 = form_for @cv, url: add_skills_cv_path(cv_id: @cv.id), remote: true do |f|
   .form-group
     = f.label :title, "Pick skills"
-    %select.select{"data-mdb-filter": "true", multiple: true, class: 'form-control'}
-      - @available_skills.each do |skill|
-        %option{value: skill.id}
-          = skill.title
+    = f.select :skill_ids, options_for_select(@available_skills.all.map { |skill| [skill.title, skill.id] }, [], multiple: true), {}, { class: "form-control", multiple: true }
 
   = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form);"
 

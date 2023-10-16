@@ -11,7 +11,7 @@
   %body
     - unless devise_controller?
       = render "layouts/menu"
-    - flash.each do |key, value|  #flash-alert, flash-success
-      .flash{class: "flash-#{key}"}
+    - flash.each do |key, value|  #flash-alert, flash-success, place below.flash in whatever div/container
+      .flash{class: "flash-#{key}"} 
         = value
     = yield
