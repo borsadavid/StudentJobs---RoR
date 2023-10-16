@@ -22,7 +22,7 @@
     .form-group
       = f.label :finished_at, "Finished at"
       = f.date_field :finished_at, class: 'form-control', id: "experience-finished-at"
-
+    -# keep the id for started at and finished at, used at comparing dates (finished_at > started_at)
     .form-group
       = f.label :ongoing, "Ongoing"
       = f.check_box :ongoing, class: 'form-control', onchange: "disableFinishDate(this)"

@@ -3,23 +3,27 @@
 
 = render 'add_picture_cv'
 
+-# edit forms (edit education, edit exprience have the div id edit-education, edit-experience)
+
 - if @cv.educations.any?
   %h1#education-title Edit education:
   = render 'edit_education_form'
 
-  -# before this container new education forms can be generated
-  %div#education-container
+  -#in create-education-container i render the add new education form with the link_to add education button
+  -# the form created has the div id =education
+  %div#create-education-container
   = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button"
 - else
   = render 'education_form'
-
+  
 
 - if @cv.experiences.any?
   %h1#experience-title Edit experience:
   = render 'edit_experience_form'
 
-  -# before this container new forms are generated
-  %div#experience-container 
+  -#in create-experience-container i render the add new experience form with the link_to add experience button
+  -# the form created has the div id =experience
+  %div#create-experience-container 
   = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button"
 - else
   = render 'experience_form'

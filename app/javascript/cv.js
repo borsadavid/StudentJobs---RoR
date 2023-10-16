@@ -31,6 +31,9 @@ function handleFormSubmission(form) {
 
 function hideFormClass(button) {
   var formClass = button.closest('.form-class');
+  if (formClass.style.display == 'none')
+    formClass.style.display = 'block';
+  else{
   formClass.style.display = 'none';
 
   var messageContainer = document.createElement('div');
@@ -39,13 +42,16 @@ function hideFormClass(button) {
   messageContainer.textContent = 'Deleted successfully';
 
   formClass.parentNode.insertBefore(messageContainer, formClass);
+  }
 }
 
+//used to display save button only after uploading picture
 function displaySaveButton(button) {
   var saveButton = document.querySelector('.picture-submit-button');
   saveButton.style.display = "block";
 }
 
+//used to refresh the image to default on picture deletion
 function hideImageClass(button) {
   var imageClass = button.closest('.image-class');
   imageClass.style.display = 'none';

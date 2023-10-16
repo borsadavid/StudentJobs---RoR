@@ -1,33 +1,25 @@
-<% if @name == "education" %>
-  var renderedPartial = "<%= j render 'education_form' %>";
-  $("#add-education-button").hide(); // Hide the "Add education" button
-<% elsif @name == "experience" %>
-  var renderedPartial = "<%= j render 'experience_form' %>";
-  $("#add-experience-button").hide(); // Hide the "Add experience" button
-<% end %>
-
-// Render a new form container div
-var newFormContainer = $('<div id="form-container"></div>');
-newFormContainer.html(renderedPartial);
-
 // Create the "x" button
 var closeButton = $('<button class="close-button" onclick="hideFormContainer(this)">Cancel</button>');
 
-// Append the "x" button to the form container
-newFormContainer.append(closeButton);
-
 <% if @name == "education" %>
-  newFormContainer.insertAfter("#education-container");
+  var renderedEducationPartial = "<%= j render 'education_form' %>";
+  $("#create-education-container").html(renderedEducationPartial).append(closeButton);
+  $("#add-education-button").hide(); // Hide the "Add education" button
 <% elsif @name == "experience" %>
-  newFormContainer.insertAfter("#experience-container");
+  var renderedExperiencePartial = "<%= j render 'experience_form' %>";
+  $("#create-experience-container").html(renderedExperiencePartial).append(closeButton); //add to matching divs (create-experience-container) the forms and close button
+  $("#add-experience-button").hide(); // Hide the "Add experience" button
 <% end %>
 
 // Function to hide the form container
 function hideFormContainer(button) {
-  $(button).closest("#form-container").hide();
   <% if @name == "education" %>
+    $("#education").hide();
+    $(button).hide();
     $("#add-education-button").show(); // Show the "Add education" button
   <% elsif @name == "experience" %>
+    $("#experience").hide();
+    $(button).hide();
     $("#add-experience-button").show(); // Show the "Add experience" button
   <% end %>
 }
