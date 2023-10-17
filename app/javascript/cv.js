@@ -9,25 +9,31 @@ function handleFormSubmission(form) {
     var response = xhr.responseJSON;
     var messageContainer = $('<div>').addClass('message-container');
     
-    if (xhr.status === 200) {
-      var message = response.message;
-      messageContainer.text(message);
-      messageContainer.addClass('success-message');
+    if (response) {
+      if (xhr.status === 200) {
+        var message = response.message;
+        messageContainer.text(message);
+        messageContainer.addClass('success-message');
 
-      if (response.redirect_to) {
-        // Redirect to the specified path
-        window.location.href = response.redirect_to;
+        if (response.redirect_to) {
+          // Redirect to the specified path
+          window.location.href = response.redirect_to;
+        }
+      } else {
+        var errorMessage = response.message || 'Something went wrong!';
+        messageContainer.text(errorMessage);
+        messageContainer.addClass('error-message');
       }
     } else {
-      var errorMessage = response.message || 'Something went wrong!';
-      messageContainer.text(errorMessage);
+      messageContainer.text('Something went wrong!'); // Handle non-JSON responses
       messageContainer.addClass('error-message');
     }
-    $('.message-container').remove();
 
+    $('.message-container').remove();
     $(form).after(messageContainer);
   });
 }
+
 
 function hideFormClass(button) {
   var formClass = button.closest('.form-class');

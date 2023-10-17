@@ -16,10 +16,11 @@
 - else
   = render 'education_form'
   
-
+#experience-title
 - if @cv.experiences.any?
-  %h1#experience-title Edit experience:
+  %h1 Edit experience:
   = render 'edit_experience_form'
+
 
   -#in create-experience-container i render the add new experience form with the link_to add experience button
   -# the form created has the div id =experience

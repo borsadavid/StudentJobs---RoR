@@ -40,11 +40,14 @@ include CvHelper
     end
 
     @education = @cv.educations.create(education_params)
-    if !@education.save
-      render json: { message: "Something went wrong!" }
-    else
-      flash[:success] = "Added succesfully!"
-      render json: { redirect_to: request.referrer }
+
+    respond_to do |format|
+      if @education.save
+        format.json { render json: { message: "Added successfully!" } }
+        format.js
+      else
+        format.json { render json: { message: "Something went wrong!" }, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -59,20 +62,24 @@ include CvHelper
   end
 
   def create_experience
-    
-    unless check_date_validation(params[:experience][:started_at],params[:experience][:finished_at])
+    unless check_date_validation(params[:experience][:started_at], params[:experience][:finished_at])
       render json: { message: "Finish date cannot be earlier than start date" }, status: :unprocessable_entity
       return
     end
-
+  
     @experience = @cv.experiences.create(experience_params)
-    if !@experience.save
-      render json: { message: "Something went wrong!" }
-    else
-      flash[:success] = "Added succesfully!"
-      render json: { redirect_to: request.referrer }
+  
+    respond_to do |format|
+      if @experience.save
+        format.json { render json: { message: "Added successfully!" } }
+        format.js
+      else
+        format.json { render json: { message: "Something went wrong!" }, status: :unprocessable_entity }
+      end
     end
   end
+  
+  
 
   def update_experience
     experience = @cv.experiences.find(params[:id])

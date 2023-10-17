@@ -1,0 +1,21 @@
+if ($("#edit-education").length) {
+  // #edit-education exists, replace it
+  var reRenderEducationPartial = "<%= j render 'edit_education_form' %>";
+  $("#edit-education").replaceWith(reRenderEducationPartial);
+  
+} else {
+  // #edit-education doesn't exist, create it
+  var h1Element = $("<h1>").text("Edit Education");
+  var reRenderPartial = "<%= j render 'edit_education_form' %>";
+  $("#education-title").html(h1Element);
+  $("#education-title").append(reRenderPartial);
+}
+
+// re render the create form and hide it until button to create a new one is pressed
+var reRenderEducationPartial = "<%= j render 'education_form' %>";
+$("#education").replaceWith(reRenderEducationPartial);
+$("#education").fadeOut('fast');
+$(".close-button").fadeOut('fast');
+$("#add-education-button").fadeIn('slow');
+$("#education").attr("id", "education-removed");
+
