@@ -12,10 +12,6 @@ if ($("#edit-experience").length) {
 }
 
 // re render the create form and hide it until button to create a new one is pressed
-var reRenderExperiencePartial = "<%= j render 'experience_form' %>";
-$("#experience").replaceWith(reRenderExperiencePartial);
+$(".close-button-experience").hide();
 $("#experience").hide();
-$(".close-button").hide();
 $("#add-experience-button").show();
-$("#experience").attr("id", "experience-removed");
-

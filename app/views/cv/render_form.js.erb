@@ -1,25 +1,25 @@
-// Create the "x" button
-var closeButton = $('<button class="close-button" onclick="hideFormContainer(this)">Cancel</button>');
-
 <% if @name == "education" %>
   var renderedEducationPartial = "<%= j render 'education_form' %>";
-  $("#create-education-container").html(renderedEducationPartial).append(closeButton);
+  var closeButton = $('<button class="close-button-education" onclick="hideEducationForm(this)">Cancel</button>');
+  $("#create-education-container").html(renderedEducationPartial).append(closeButton).show();
   $("#add-education-button").hide(); // Hide the "Add education" button
 <% elsif @name == "experience" %>
   var renderedExperiencePartial = "<%= j render 'experience_form' %>";
-  $("#create-experience-container").html(renderedExperiencePartial).append(closeButton); //add to matching divs (create-experience-container) the forms and close button
+  var closeButton = $('<button class="close-button-exerience" onclick="hideExperienceForm(this)">Cancel</button>');
+  $("#create-experience-container").html(renderedExperiencePartial).append(closeButton).show();
   $("#add-experience-button").hide(); // Hide the "Add experience" button
 <% end %>
 
-// Function to hide the form container
-function hideFormContainer(button) {
-  <% if @name == "education" %>
-    $("#education").hide();
-    $(button).hide();
-    $("#add-education-button").show(); // Show the "Add education" button
-  <% elsif @name == "experience" %>
-    $("#experience").hide();
-    $(button).hide();
-    $("#add-experience-button").show(); // Show the "Add experience" button
-  <% end %>
+// Function to hide the education form container
+function hideEducationForm(button) {
+  $("#create-education-container").hide();
+  $(button).hide();
+  $("#add-education-button").show(); // Show the "Add education" button
+}
+
+// Function to hide the experience form container
+function hideExperienceForm(button) {
+  $("#create-experience-container").hide();
+  $(button).hide();
+  $("#add-experience-button").show(); // Show the "Add experience" button
 }

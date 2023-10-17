@@ -64,6 +64,8 @@ function hideImageClass(button) {
 
   var image = document.createElement('img');
   image.src = "https://www.computerhope.com/jargon/g/guest-user.png";
+  image.width = 150;
+  image.height = 150;
   
   var messageContainer = document.createElement('div');
   messageContainer.classList.add('message-container');
