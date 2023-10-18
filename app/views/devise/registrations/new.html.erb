@@ -5,7 +5,7 @@
         <div class="login-container">
           <h1>Create Your Free Account</h1>
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="form-field">
@@ -20,6 +20,10 @@
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field",placeholder:"Confirm Password" %>
             </div>
             
+            <div class="form-field">
+              Are you an employer?
+              <%= f.check_box :company %>
+            </div>
 
             <div class="form-actions">
               <%= f.submit "Sign up",class: "login-button" %>

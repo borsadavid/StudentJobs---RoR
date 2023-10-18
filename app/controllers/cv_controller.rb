@@ -1,4 +1,5 @@
 class CvController < ApplicationController
+include CvHelper
   before_action :authenticate_user!
   before_action :set_cv, except: [:index, :new, :create, :configure_cv]
 
@@ -32,13 +33,21 @@ class CvController < ApplicationController
   end
 
   def create_education
+
+    unless check_date_validation(params[:education][:started_at],params[:education][:finished_at])
+      render json: { message: "Finish date cannot be earlier than start date" }, status: :unprocessable_entity
+      return
+    end
+
     @education = @cv.educations.create(education_params)
-    if !@education.save
-      flash[:error] = "Something went wrong!"
-      redirect_to configure_cv_cv_path(@cv)
-    else
-      flash[:success] = "Added succesfully!"
-      redirect_to configure_cv_cv_path(@cv)
+
+    respond_to do |format|
+      if @education.save
+        format.json { render json: { message: "Added successfully!" } }
+        format.js
+      else
+        format.json { render json: { message: "Something went wrong!" }, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -53,15 +62,24 @@ class CvController < ApplicationController
   end
 
   def create_experience
+    unless check_date_validation(params[:experience][:started_at], params[:experience][:finished_at])
+      render json: { message: "Finish date cannot be earlier than start date" }, status: :unprocessable_entity
+      return
+    end
+  
     @experience = @cv.experiences.create(experience_params)
-    if !@experience.save
-      flash[:error] = "Something went wrong!"
-      redirect_to configure_cv_cv_path(@cv.id)
-    else
-      flash[:success] = "Added succesfully!"
-      redirect_to configure_cv_cv_path(@cv.id)
+  
+    respond_to do |format|
+      if @experience.save
+        format.json { render json: { message: "Added successfully!" } }
+        format.js
+      else
+        format.json { render json: { message: "Something went wrong!" }, status: :unprocessable_entity }
+      end
     end
   end
+  
+  
 
   def update_experience
     experience = @cv.experiences.find(params[:id])

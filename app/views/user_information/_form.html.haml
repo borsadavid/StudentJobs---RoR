@@ -1,4 +1,7 @@
-= form_for @user_information, url: user_information_index_path do |f|
+%h1
+  Add personal information
+
+= form_for @user_information, url: user_information_index_path, remote: true do |f|
   .form-group
     = f.label :first_name
     = f.text_field :first_name, required: true, class: 'form-control', value: @user_information.first_name
@@ -36,7 +39,4 @@
     = f.date_field :birthdate, required: true, class: 'form-control'
 
   .modal-buttons
-    - if current_user.user_information.present?
-      = f.submit "Update Information", class: "btn btn-primary btn-wd btn-lg btn-round"
-    - else
-      = f.submit "Add Information", class: "btn btn-primary btn-wd btn-lg btn-round"
+    = f.submit "Add Information", class: "btn btn-primary btn-wd btn-lg btn-round"

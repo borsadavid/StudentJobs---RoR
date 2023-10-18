@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :user_information, only: [:new, :update, :create, :destroy]
+  resources :user_information, only: [:update, :create, :destroy]
   resources :cv, only: [:new, :create, :destroy, :index] do
     member do
       get 'configure_cv'
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
   resources :skill, except: [:update]
+  resources :company_information, only: [:destroy, :create, :update]
+  resources :profile, only: [:index]
 
   get '/landing', to: 'home#landing'
   root to: "home#landing"

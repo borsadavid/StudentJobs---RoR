@@ -1,0 +1,26 @@
+%div.left
+  Available CVs
+  - @cv.each do |cv|
+    = cv.title
+    = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "button"
+
+  = render "cv/create_cv"
+
+
+
+%div.right
+  - if is_company?(current_user.id)
+    - if current_user.company_information.present?
+      = render 'company_information/edit_form'
+    - else
+      = render 'company_information/form'
+  - else 
+    - if current_user.user_information.present?
+      = render 'user_information/edit_form'
+    - else 
+      = render 'user_information/form'
+
+
+
+= javascript_include_tag 'cv'
+  

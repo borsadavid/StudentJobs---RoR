@@ -1,11 +1,11 @@
 -# display
-%h1
-  - if @cv.picture.present?
-    .form-class
-      = image_tag @cv.picture, size: "150x150"
-      = link_to "X", delete_picture_cv_path(cv_id: @cv.id), class: "button", method: :delete, remote: true, onclick: "hideFormClass(this)"
-  - else
-    = image_tag "https://www.computerhope.com/jargon/g/guest-user.png"
+
+- if @cv.picture.present?
+  .image-class
+    = image_tag @cv.picture, size: "150x150"
+    = link_to "X", delete_picture_cv_path(cv_id: @cv.id), class: "button", method: :delete, remote: true, onclick: "hideImageClass(this)"
+- else
+  = image_tag "https://www.computerhope.com/jargon/g/guest-user.png", size: "150x150"
 
 -# add button 
 = form_for @cv, url: upload_picture_cv_path(cv_id: @cv.id) do |f|

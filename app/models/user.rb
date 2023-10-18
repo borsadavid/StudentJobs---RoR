@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :lockable
 
   has_one :user_information
+  has_one :company_information
   has_many :cvs
 end
