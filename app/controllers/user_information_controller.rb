@@ -1,40 +1,28 @@
 class UserInformationController < ApplicationController
   before_action :authenticate_user!
-
-  def new
-    if current_user && current_user.user_information.present?
-      @user_information = current_user.user_information
-    else
-      @user_information = UserInformation.new
-    end
-  end
+  before_action :check_user
 
   def update
-    user = User.find(current_user.id)
-    @user_information = user.user_information
-    if @user_information.update(user_information_params)
-      flash[:success] = "Personal information updated!"
-      redirect_to landing_path
-    else
-      flash[:error] = "Something went wrong."
-      render 'edit'
+    @user_information = current_user.user_information
+    respond_to do |f|
+      if @user_information.update(user_information_params)
+        f.json { render json: {message: "Saved."}}
+      else
+        f.json { render json: {message: "Something went wrong!"}}
+      end
     end
   end
 
   def create
     user = User.find(current_user.id)
-    if user.user_information.present?
-      flash[:error] = "You already added the personal information."
-      update
-      return
-    end
     @user_information = user.build_user_information(user_information_params)
-    if @user_information.save
-      flash[:success] = "Personal information saved!"
-      redirect_to landing_path
-    else
-      flash[:error] = "Something went wrong."
-      #render 'new'
+    respond_to do |f|
+      if @user_information.save
+        f.js
+        f.json { render json: {message: "Saved."}}
+      else
+        f.json { render json: {message: "Something went wrong!"}}
+      end
     end
   end
 
@@ -43,9 +31,9 @@ class UserInformationController < ApplicationController
   
     if account_information
       account_information.destroy
-      flash[:notice] = 'Your details have been successfully deleted.'
+      return
     else
-      flash[:alert] = 'You do not have associated account information.'
+      return
     end
   
     #redirect_to users_path

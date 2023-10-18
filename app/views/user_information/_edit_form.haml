@@ -1,7 +1,7 @@
 %h1
-  Add personal information
+  Edit personal information
 
-= form_for @user_information, url: user_information_index_path, remote: true do |f|
+= form_for @user_information, url: user_information_path(@user_information), remote: true do |f|
   .form-group
     = f.label :first_name
     = f.text_field :first_name, required: true, class: 'form-control', value: @user_information.first_name
@@ -39,4 +39,5 @@
     = f.date_field :birthdate, required: true, class: 'form-control'
 
   .modal-buttons
-    = f.submit "Add Information", class: "btn btn-primary btn-wd btn-lg btn-round"
+    = f.submit "Update Information", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form)"
+
