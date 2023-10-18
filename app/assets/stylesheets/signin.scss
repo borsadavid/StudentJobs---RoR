@@ -96,6 +96,11 @@
     margin-bottom: 15px;
     
   }
+
+  .form-field2 {
+    margin-bottom: 5px;
+    
+  }
   .new_user{
     width: 100%;
     padding: 10px;
@@ -123,6 +128,14 @@
   .input-field:focus{
     background: #fff !important;
     border: 1px solid #e1eae7 !important;
+  }
+
+  .flash-alert{
+    font-family: 'GothamPro-Medium',Arial;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 5px;
+    
   }
 
   .remember-me {
@@ -161,6 +174,7 @@
   .remember-me a{
     font-family: 'GothamPro-Medium',Arial;
     display: flex;
+    align-items: center;
     text-decoration: none;
     color: #88908e;
     justify-self: flex-end;
@@ -285,10 +299,50 @@
 
     .wrapper{
       flex-direction: column;
+      height: auto;
     }
 
     .login-wrapper {
       width: 100%;
+      height: auto;
+      padding: 80px 0;
+      
     }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .container-wrapper  h2 {
+      font-size: 2.5rem;
+    }
+
+    .content-wrapper{
+      width: 85%;
+    }
+
+    .login-container h1{
+      font-size: 2rem;
+    }
+
+    .label{
+      font-size: 13px;
+    }
+
+    .remember-me a{
+      font-size: 13px;
+    }
+
+    .form-field2{
+      margin-bottom: 10px;
+    }
+
+   .image-wrapper{
+    width: 100%;
+    padding: 20px 0;
+    height: fit-content;
+    position: relative; /* Adjust the position to relative */
+    top: 0;
+   }
 
   }
