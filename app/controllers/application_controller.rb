@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   
-  include VerificationHelper
   include CompanyHelper
+  include CvHelper
   
   before_action :configure_permitted_parameters, if: :devise_controller?
 

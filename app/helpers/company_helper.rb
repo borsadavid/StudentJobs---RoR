@@ -1,14 +1,15 @@
 module CompanyHelper
 
   def check_company
-    unless user_signed_in? && current_user.company
+    if !(user_signed_in? && current_user.company)
       redirect_back(fallback_location: root_path)
       return
     end
   end
 
   def check_company_permission
-    unless check_company && current_user.enabled
+    check_company
+    if !current_user.enabled 
       flash[:error] = "Account is disabled until document verification!"
       redirect_back(fallback_location: root_path)
       return
