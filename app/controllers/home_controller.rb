@@ -1,16 +1,23 @@
 class HomeController < ApplicationController
-  #before_action :check_user_information
+  #before_action :check admin!!!!!!
 
   def feed
     if user_signed_in?
-      user_skills = current_user.cvs.map { |cv| cv.skills.pluck(:id) }.flatten.uniq
-      @jobs = Job.all.includes(:skills).sort_by do |job|
-        job_skills = job.skills.pluck(:id)
-        matching_skills_count = (user_skills & job_skills).count
-        -matching_skills_count 
-      end
+      user_skills = return_user_skills
+  
+      @jobs = if params[:title].present?
+        Job.where("title LIKE ?", "%#{params[:title]}%")
+      else
+        Job.all
+      end.includes(:skills).sort_by do |job|
+        matching_percentage(job)
+      end.reverse
     else
-      @jobs = Job.all.order(created_at: :desc)
+      @jobs = if params[:title].present?
+        Job.where("title LIKE ?", "%#{params[:title]}%").order(created_at: :desc)
+      else
+        Job.all.order(created_at: :desc)
+      end
     end
   end
 

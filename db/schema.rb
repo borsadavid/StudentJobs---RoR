@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_095346) do
   end
 
   create_table "company_informations", force: :cascade do |t|
+    t.string "name"
     t.string "country"
     t.string "address"
     t.string "phone_number"

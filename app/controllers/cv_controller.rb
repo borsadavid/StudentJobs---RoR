@@ -1,5 +1,4 @@
 class CvController < ApplicationController
-
   before_action :check_user
   before_action :set_cv, except: [:index, :new, :create, :configure_cv]
 

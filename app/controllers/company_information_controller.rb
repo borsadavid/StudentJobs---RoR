@@ -43,7 +43,7 @@ class CompanyInformationController < ApplicationController
 private
 
   def company_information_params
-    params.require(:company_information).permit(:address,:phone_number,:country)
+    params.require(:company_information).permit(:address,:phone_number,:country, :name)
   end
 
 

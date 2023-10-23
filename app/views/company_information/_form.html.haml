@@ -4,16 +4,20 @@
 = form_for @company_information, url: company_information_index_path, remote: true do |f|
 
   .form-group
+    = f.label :name
+    = f.text_field :name, required: true, class: 'form-control'
+
+  .form-group
     = f.label :country
-    = f.text_field :country, required: true, class: 'form-control', value: @company_information.country
+    = f.text_field :country, required: true, class: 'form-control'
 
   .form-group
     = f.label :address
-    = f.text_field :address, required: true, class: 'form-control', value: @company_information.address
+    = f.text_field :address, required: true, class: 'form-control'
 
   .form-group
     = f.label :phone_number
-    = f.text_field :phone_number, required: true, pattern: "\\d{10}", title: "Please enter a 10-digit phone number", class: 'form-control', value: @company_information.phone_number
+    = f.text_field :phone_number, required: true, pattern: "\\d{10}", title: "Please enter a 10-digit phone number", class: 'form-control'
 
   .modal-buttons
     = f.submit "Add Information", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form)"
