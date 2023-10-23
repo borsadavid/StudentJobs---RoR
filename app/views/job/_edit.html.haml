@@ -1,4 +1,6 @@
 = form_for @job, url: job_path(id: @job.id), remote: true, class: "edit-job-#{@job.id}" do |f|
+  %h1 Edit Job
+
   .form-group
     = f.label :title, "Title"
     = f.text_field :title, required: true, class: 'form-control', value: @job.title

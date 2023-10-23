@@ -26,7 +26,8 @@ Rails.application.routes.draw do
       get 'render_create'
     end
   end
-  get '/landing', to: 'home#landing'
-  root to: "home#landing"
+  get '/feed', to: 'home#feed'
+  get '/view_job/:id', to: 'home#view_job', as: 'view_job'
+  root to: "home#feed"
   
 end

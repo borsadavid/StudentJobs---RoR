@@ -1,0 +1,13 @@
+%div.container
+  %div.job-feed
+    %h1
+      Jobs Feed
+
+    %ul
+      %h3
+      - @jobs.each do |job|
+        %h3
+          %li= link_to job.title, view_job_path(job), remote: true, class: "button"
+
+
+  %div.job-info

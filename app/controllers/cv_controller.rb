@@ -4,7 +4,7 @@ class CvController < ApplicationController
   before_action :set_cv, except: [:index, :new, :create, :configure_cv]
 
   def index
-    @cv = current_user.cvs.all
+    @cv = current_user.cvs.all.includes(:skills, :education, :experience)
     @new_cv = Cv.new
   end
 
@@ -26,7 +26,7 @@ class CvController < ApplicationController
   def configure_cv
     @index = 0
     @available_skills = Skill.all
-    @cv = Cv.find(params[:id])
+    @cv = Cv.includes(:skills).find(params[:id])
     @education = Education.new
     @experience = Experience.new
     @skill = Skill.new

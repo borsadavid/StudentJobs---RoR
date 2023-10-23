@@ -1,0 +1,13 @@
+%h2
+  Title: 
+  = job.title
+
+%h3
+  Description
+  = job.description
+
+%ul
+  Skills required:
+  - job.skills.each do |skill|
+    %li= skill.title
+
