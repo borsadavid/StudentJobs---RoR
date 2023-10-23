@@ -13,7 +13,6 @@ class JobController < ApplicationController
   
   def index 
     @available_skills = Skill.all
-    @jobs = current_user.jobs.all
     @new_job = Job.new
   end
 
@@ -83,6 +82,6 @@ private
   end
 
   def set_jobs
-    @jobs = current_user.jobs.all
+    @jobs = current_user.jobs.all.order(created_at: :desc)
   end
 end

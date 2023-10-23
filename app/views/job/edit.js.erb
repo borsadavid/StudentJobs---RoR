@@ -1,1 +1,2 @@
-$(".job-<%= @job.id %>").html("<%= j render 'edit' %>");
+$(".job-<%= @job.id %>").replaceWith("<%= j render 'edit' %>");
+

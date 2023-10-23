@@ -1,6 +1,6 @@
 class CvController < ApplicationController
-include CvHelper
-  before_action :authenticate_user!
+
+  before_action :check_user
   before_action :set_cv, except: [:index, :new, :create, :configure_cv]
 
   def index
