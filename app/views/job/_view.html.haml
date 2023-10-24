@@ -1,0 +1,19 @@
+- company_name = CompanyInformation.find_by(user_id: job.user_id).name
+
+%h2
+  Job Title: 
+  = job.title
+
+%h4
+  By: 
+  = company_name
+
+%h4
+  Description:
+= job.description
+
+%h4
+  Skills required:
+  - job.skills.each do |skill|
+    %li= skill.title
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_121451) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_19_095346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_121451) do
   end
 
   create_table "company_informations", force: :cascade do |t|
+    t.string "name"
     t.string "country"
     t.string "address"
     t.string "phone_number"
@@ -97,6 +98,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_121451) do
     t.index ["cv_id"], name: "index_experiences_on_cv_id"
   end
 
+  create_table "job_skills", force: :cascade do |t|
+    t.bigint "job_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_skills_on_job_id"
+    t.index ["skill_id"], name: "index_job_skills_on_skill_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -149,5 +168,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_121451) do
   add_foreign_key "cvs", "users"
   add_foreign_key "educations", "cvs"
   add_foreign_key "experiences", "cvs"
+  add_foreign_key "job_skills", "jobs"
+  add_foreign_key "job_skills", "skills"
+  add_foreign_key "jobs", "users"
   add_foreign_key "user_informations", "users"
 end

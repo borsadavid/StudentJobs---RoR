@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one :user_information
   has_one :company_information
   has_many :cvs
+  has_many :jobs, dependent: :destroy
 end

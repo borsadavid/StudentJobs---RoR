@@ -1,11 +1,12 @@
-%div.left
-  Available CVs
-  - @cv.each do |cv|
-    = cv.title
-    = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "button"
 
-  = render "cv/create_cv"
+- if is_user?(current_user.id)
+  %div.left
+    Available CVs
+    - @cv.each do |cv|
+      = cv.title
+      = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "button"
 
+    = render "cv/create_cv"
 
 
 %div.right

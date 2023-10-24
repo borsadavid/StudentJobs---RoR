@@ -18,11 +18,16 @@ Rails.application.routes.draw do
       delete 'delete_picture'
     end
   end
-  resources :skill, except: [:update]
+  resources :skill, except: [:update, :edit]
   resources :company_information, only: [:destroy, :create, :update]
   resources :profile, only: [:index]
-
-  get '/landing', to: 'home#landing'
-  root to: "home#landing"
+  resources :job, except: [:new] do
+    member do
+      get 'render_create'
+    end
+  end
+  get '/feed', to: 'home#feed'
+  get '/view_job/:id', to: 'home#view_job', as: 'view_job'
+  root to: "home#feed"
   
 end
