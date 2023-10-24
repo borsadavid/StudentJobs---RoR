@@ -6,7 +6,7 @@
           <h1>Create Your Free Account</h1>
 
           <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
+            
 
             <div class="form-field">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-field",placeholder:"Email" %>
@@ -19,11 +19,18 @@
             <div class="form-field">
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-field",placeholder:"Confirm Password" %>
             </div>
+
+            <%= render "devise/shared/error_messages", resource: resource %>
             
             <div class="form-field">
-              Are you an employer?
+            <div class="form-field remember-me">
+              <div class="checkbox"?
               <%= f.check_box :company %>
-            </div>
+                <p>Are you an employer?</p>
+                </div>
+                </div>
+            </div>  
+            
 
             <div class="form-actions">
               <%= f.submit "Sign up",class: "login-button" %>
