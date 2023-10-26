@@ -11,8 +11,6 @@
     = javascript_importmap_tags
   %body
     - unless devise_controller?
+      %div#flash-messages
       = render "layouts/menu"
-      - flash.each do |key, value|  #flash-alert, flash-success, place below.flash in whatever div/container
-        .flash{class: "flash-#{key}"} 
-          = value
     = yield
