@@ -29,7 +29,7 @@
   %div#create-experience-container 
   = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button"
 - else
-  %div#create-education-container
+  %div#create-experience-container
   = render 'experience_form'
   = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button", style: "display: none;"
 

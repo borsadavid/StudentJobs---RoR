@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   resources :job, except: [:new] do
     member do
       get 'render_create'
+      get 'view_applications'
+      get 'view_application_details'
     end
   end
   get '/feed', to: 'home#feed'

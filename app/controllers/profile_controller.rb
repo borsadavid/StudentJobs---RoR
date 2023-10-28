@@ -44,6 +44,9 @@ class ProfileController < ApplicationController
       return
     end
     @app = Application.find(params[:id])
+    if @app.viewed
+      return
+    end
     if @app.destroy
       @message = "Application cancelled"
     else

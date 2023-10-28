@@ -13,8 +13,8 @@
             = f.text_field :specialization, required: true, class: 'form-control', value: education.specialization
 
           .form-group
-            = f.label :degreen, "Degree"
-            = f.text_field :degree, required: true, class: 'form-control', value: education.degree
+            = f.label :degree, "Degree"
+            = f.select :degree, ["Bachelor", "Master", "Doctoral"], { include_blank: "Select a degree" }, required: true, class: 'form-control', value: education.degree
 
           .form-group
             = f.label :started_at, "Started at"

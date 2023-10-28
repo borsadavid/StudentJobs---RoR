@@ -13,13 +13,12 @@
       = app.cv.title
       %br
       Status:
-      - if app.viewed.nil?
+      - if !app.viewed
         Pending evaluation
+        = link_to "Cancel Application", cancel_application_profile_path(app.id), method: :delete, remote: true, class: "button cancel-application-button", data: { app_id: app.id }
       - else
         Viewed
-      %br
-      = link_to "Cancel Application", cancel_application_profile_path(app.id), method: :delete, remote: true, class: "button cancel-application-button", data: { app_id: app.id }
-
+      
 :javascript
   $(document).on('click', '.cancel-application-button', function(e) {
     e.preventDefault();

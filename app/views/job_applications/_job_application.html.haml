@@ -1,0 +1,8 @@
+- if job.applications.any?
+  - count = 0
+  - job.applications.each do |app|
+    - count += 1
+    = link_to "Application #{count}", view_application_details_job_path(app.id), remote: true
+   
+-else
+  No applications yet.
