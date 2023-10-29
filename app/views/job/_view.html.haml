@@ -17,3 +17,26 @@
   - job.skills.each do |skill|
     %li= skill.title
 
+- if user_signed_in? && is_user?(current_user.id)
+  %button.apply-button Apply
+  %div.choose-cv{style: 'display: none;'}
+    Choose CV
+    - current_user.cvs.each do |cv|
+      = button_to cv.title, apply_to_job_profile_path(job_id: job.id, cv_id: cv.id), class: 'cv-select', remote: true
+- elsif !user_signed_in?
+  = button_to "Register to Apply", new_user_session_path, class: "log_out_Button"
+  
+
+
+:javascript
+  $(document).ready(function() {
+    $('.apply-button').click(function(e) {
+      e.preventDefault();
+      $('.choose-cv').slideToggle();
+    });
+  });
+
+  
+
+
+

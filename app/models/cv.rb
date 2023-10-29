@@ -6,4 +6,6 @@ class Cv < ApplicationRecord
   has_many :skills, through: :cv_skills
   has_many_attached :pdfs
   has_one_attached :picture
+  has_many :applications
+  has_many :jobs, through: :applications
 end

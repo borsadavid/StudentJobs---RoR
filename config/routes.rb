@@ -20,10 +20,17 @@ Rails.application.routes.draw do
   end
   resources :skill, except: [:update, :edit]
   resources :company_information, only: [:destroy, :create, :update]
-  resources :profile, only: [:index]
+  resources :profile, only: [:index] do
+    member do
+      post 'apply_to_job'
+      delete 'cancel_application'
+    end
+  end
   resources :job, except: [:new] do
     member do
       get 'render_create'
+      get 'view_applications'
+      get 'view_application_details'
     end
   end
   get '/feed', to: 'home#feed'

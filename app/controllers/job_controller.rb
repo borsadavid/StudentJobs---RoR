@@ -74,6 +74,20 @@ class JobController < ApplicationController
     end
   end
 
+  def view_applications
+    @job = Job.find(params[:id])
+    respond_to do |f|
+      f.js
+    end
+  end
+
+  def view_application_details
+    @app = Application.find(params[:id])
+    @app.update(viewed: true)
+    respond_to do |f|
+      f.js
+    end
+  end
 
 private
 
