@@ -18,6 +18,10 @@
  body{
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
  }
 
  @font-face {
@@ -50,6 +54,8 @@
 
 .container {
   display: flex;
+  align-self: center;
+  width: 70%;
 }
 
 .job-feed {

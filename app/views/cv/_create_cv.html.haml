@@ -2,7 +2,6 @@
   Create a CV?
 = form_for @new_cv, url: cv_index_path do |f|
   .form-group
-    = f.label :title, "Add a title to CV"
-    = f.text_field :title, required: true, class: 'form-control'
+    = f.text_field :title, required: true, class: 'form-control', placeholder: 'Add a title to your CV'
   .modal-buttons
-    = f.submit "Create Cv", class: "btn btn-primary btn-wd btn-lg btn-round"
+    = f.submit "Create CV", class: "login-button"

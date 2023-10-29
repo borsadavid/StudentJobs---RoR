@@ -1,15 +1,16 @@
 %nav.menu
-  %ul.buttons
+  %div.search 
     = form_tag feed_path, method: :get, class: "search-form" do
-      = text_field_tag :title, params[:title], placeholder: "Search jobs"
+      = text_field_tag :title, params[:title], placeholder: "Search jobs", class: "inputfield"
       = submit_tag "🔍", class: "search-button"
+  %ul.buttons
     - if user_signed_in?
       = link_to "Feed", feed_path, class: "button"
       - if is_company?(current_user.id)
         = link_to "Jobs", job_index_path, class: "button"
       = link_to "Profile", profile_index_path, class: "button"
       = link_to "Available Skills", skill_index_path, class: "button"
-      = button_to "Log Out", destroy_user_session_path, class: "log_out_Button", method: :delete 
+      = link_to "Log Out", destroy_user_session_path, class: "signinbutton", method: :delete 
     - else
-      = button_to "Log In", new_user_session_path, class: "log_out_Button"
+      = link_to "Log in", new_user_session_path, class: "signinbutton"
       
