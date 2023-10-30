@@ -37,7 +37,7 @@ module CompanyHelper
   end
 
   def is_company_information_verified?(id)
-    verified = User.find(id).company_information.verified
+    verified = User.find(id)&.company_information&.verified
     return is_company?(id) && verified
   end
 

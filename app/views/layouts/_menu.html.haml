@@ -6,7 +6,7 @@
   %ul.buttons
     - if user_signed_in?
       = link_to "Feed", feed_path, class: "button"
-      - if is_company?(current_user.id)
+      - if is_company_information_verified?(current_user.id)
         = link_to "Jobs", job_index_path, class: "button"
       = link_to "Profile", profile_index_path, class: "button"
       = link_to "Available Skills", skill_index_path, class: "button"

@@ -1,5 +1,5 @@
 class UserInformation < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
