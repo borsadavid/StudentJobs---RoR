@@ -1,5 +1,5 @@
 class Application < ApplicationRecord
-  belongs_to :cv, dependent: :destroy
-  belongs_to :job, dependent: :destroy
+  belongs_to :cv
+  belongs_to :job
   attribute :viewed, :boolean, default: false
 end

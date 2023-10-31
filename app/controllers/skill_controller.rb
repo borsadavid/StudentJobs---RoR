@@ -1,4 +1,5 @@
 class SkillController < ApplicationController
+  before_action :check_admin
 
   def index
     @skill = Skill.all

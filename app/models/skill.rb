@@ -7,6 +7,7 @@ class Skill < ApplicationRecord
 
   def clear_associated_jobs_and_cvs
     Job.joins(:skills).where('skills.id = ?', self.id).delete_all
+    Cv.joins(:skills).where('skills.id = ?', self.id).delete_all
     CvSkill.where(skill_id: self.id).delete_all
     JobSkill.where(skill_id: self.id).delete_all
   end
