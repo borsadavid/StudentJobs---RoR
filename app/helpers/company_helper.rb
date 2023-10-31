@@ -20,7 +20,7 @@ module CompanyHelper
     User.find(id).company
   end
 
-  def is_enabled_company?(id)
+  def is_company_enabled?(id)
     enabled = User.find(id).enabled
     return is_company?(id) && enabled
   end
@@ -36,16 +36,8 @@ module CompanyHelper
     !User.find(id).company
   end
 
-  def is_company_information_verified?(id)
-    verified = User.find(id)&.company_information&.verified
-    return is_company?(id) && verified
-  end
-
   def display_verified_status(id)
-    @status = User.find(id).company_information.status
-    if !@status.nil?
-      @status
-    end
+    User.find(id)&.company_information&.status
   end
 
 end

@@ -7,9 +7,8 @@ class CreateCompanyInformations < ActiveRecord::Migration[7.0]
       t.string :phone_number
 
 
-      t.boolean :verified, default: false
-      t.string :status
-      t.references :user
+      t.string :status, default: "Pending verification"
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

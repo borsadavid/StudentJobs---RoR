@@ -37,4 +37,11 @@ Rails.application.routes.draw do
   get '/view_job/:id', to: 'home#view_job', as: 'view_job'
   root to: "home#feed"
   
+  get '/index', to: 'admin#index', as: 'admin_index'
+  patch '/update_admin/:id', to: 'admin#update_admin', as: 'update_admin'
+  patch '/block_user/:id', to: 'admin#block_user', as: 'block_user'
+  patch '/enable_company/:id', to: 'admin#enable_company', as: 'enable_company'
+  patch '/add_verification_status/:id', to: 'admin#add_verification_status', as: 'add_verification_status'
+  get 'show_company_information/:id', to: 'admin#show_company_information', as: 'show_company_information'
+
 end

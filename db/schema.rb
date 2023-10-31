@@ -57,9 +57,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_153728) do
     t.string "country"
     t.string "address"
     t.string "phone_number"
-    t.boolean "verified", default: false
-    t.string "status"
-    t.bigint "user_id"
+    t.string "status", default: "Pending verification"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_company_informations_on_user_id"
@@ -177,6 +176,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_153728) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applications", "cvs"
   add_foreign_key "applications", "jobs"
+  add_foreign_key "company_informations", "users"
   add_foreign_key "cv_skills", "cvs"
   add_foreign_key "cv_skills", "skills"
   add_foreign_key "cvs", "users"
