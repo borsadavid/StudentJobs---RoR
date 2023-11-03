@@ -20,6 +20,6 @@
     = f.file_field :pdfs, class:"form-control", multiple: true
 
   .modal-buttons
-    = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form);"
+    = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form);"
 
 = javascript_include_tag 'cv'

@@ -1,11 +1,12 @@
-%h1
-  Add Skills:
+%div.skill
+  %h1
+    Add Skills:
 
-= form_for @cv, url: add_skills_cv_path(cv_id: @cv.id), remote: true do |f|
-  .form-group
-    = f.label :title, "Pick skills"
-    = f.select :skill_ids, options_for_select(@available_skills.all.map { |skill| [skill.title, skill.id] }, @cv.skills.pluck(:id)), { include_blank: true }, { class: 'chosen-select', multiple: true }
+  = form_for @cv, url: add_skills_cv_path(cv_id: @cv.id), remote: true do |f|
+    .pickskills
+      = f.label :title, "Pick skills", class: 'form-label', style: "margin-bottom: 0px; margin-right: 10px; font-size: 1.25rem"  
+      = f.select :skill_ids, options_for_select(@available_skills.all.map { |skill| [skill.title, skill.id] }, @cv.skills.pluck(:id)), { include_blank: true }, { class: 'chosen-select', multiple: true }
 
-  = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form);"
+    = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form);"
 
-= javascript_include_tag 'cv'
+  = javascript_include_tag 'cv'

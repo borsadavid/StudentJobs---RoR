@@ -4,31 +4,31 @@
   = form_for @education, url: create_education_cv_path(cv_id: @cv.id), id: 'edit-education', remote: true do |f|
 
     .form-group
-      = f.label :institution, "Institution name"
+      = f.label :institution, "Institution name", class: 'form-label'
       = f.text_field :institution, required: true, class: 'form-control'
     
     .form-group
-      = f.label :specialization, "Specialization name"
+      = f.label :specialization, "Specialization name", class: 'form-label'
       = f.text_field :specialization, required: true, class: 'form-control'
 
     .form-group
-      = f.label :degree, "Degree"
+      = f.label :degree, "Degree", class: 'form-label'
       = f.select :degree, ["Bachelor", "Master", "Doctoral"], { include_blank: "Select a degree" }, required: true, class: 'form-control'
 
     .form-group
-      = f.label :started_at, "Started at"
+      = f.label :started_at, "Started at", class: 'form-label'
       = f.date_field :started_at, required: true, class: 'form-control', id: "education-started-at"
 
     .form-group
-      = f.label :finished_at, "Finished at"
+      = f.label :finished_at, "Finished at", class: 'form-label'
       = f.date_field :finished_at, class: 'form-control', id: "education-finished-at"
     -# keep the id for started at and finished at, used at comparing dates (finished_at > started_at)
     .form-group
-      = f.label :ongoing, "Ongoing"
+      = f.label :ongoing, "Ongoing", class: 'form-label'
       = f.check_box :ongoing, class: 'form-control', onchange: "disableFinishDate(this)"
 
     .modal-buttons
-      = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form)"
+      = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form)"
 
 = javascript_include_tag 'cv'
 
