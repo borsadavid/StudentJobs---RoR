@@ -5,6 +5,15 @@
     flex-direction: column;
     margin: 40px 15%;
 }
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 15%;
+}
+
 .Availablecv {
     margin-bottom: 20px;
     display: flex;
@@ -17,6 +26,10 @@
 }
 .left h1{
     font-family: "GothamPro-Medium";
+}
+
+.right h1{
+  font-family: "GothamPro-Medium";
 }
 
 .CVs{
@@ -47,6 +60,10 @@
 .form-control:focus{
     background: #fff !important;
     border: 1px solid #e1eae7 !important;
+}
+
+.company{
+  width: 60%;
 }
 
 .new_user_information{
@@ -126,17 +143,65 @@
     background-color: #6327A0;
   }
   
+  #education {
+    width: 100%;
+  }
+
+  #experience {
+    width: 100%;
+  }
+
+  .configureCV {
+    width: 60%;
+  }
+
+  .skills {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .edit_cv {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pickskills{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: max-content;
+  }
 
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 842px){
     
-    .left{
+    .left {
         margin: 20px 5%;
     }
 
     .left h1{
         font-size: 2rem;
         text-align: center;
+    }
+
+    .right {
+        margin: 20px 5%;
+    }
+
+    .right h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .company{
+      width: 95%;
     }
 
     .new_cv{
@@ -154,5 +219,9 @@
     .Availablecv{
         width: 95%;
     }
+
+    .configureCV {
+        width: 95%;
+      }
     
 }

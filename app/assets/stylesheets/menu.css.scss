@@ -3,8 +3,8 @@
     justify-content: space-between;
     background-color: #9754cb;
     align-content: center;
-    padding: 20px 80px;
-    
+    width: 94%;
+    padding: 20px 3%;
   }
 
 .menu ul {
@@ -17,8 +17,10 @@
   }
   .search {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
   }
+
+
   .search-form {
     display: flex;
     justify-content: center;
@@ -37,13 +39,14 @@
   }
 
   .button {
-    padding: 0% 10px;
+    padding: 0 10px;
     font-family: "GothamPro-Medium";
     color: #fff;
-   
-    
+    text-decoration: none;
+    align-self: center;
     
   }
+
   
   .menu ul a{
     display: flex;
@@ -71,10 +74,11 @@
     justify-content: center;
     color: #9754cb;
     font-family: 'GothamPro-Medium',Arial;
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: 16px;
     text-align: center;
-    margin: 0px 10px;
+    margin: 0;
+    padding: 0;
     -webkit-transition: .3s;
     transition: .3s;
     text-decoration: none;
@@ -114,4 +118,27 @@
     padding: 0 10px;
     height: 30px;
     border-radius: 0 20px 20px 0;
+  }
+
+  @media screen and (max-width: 842px){
+    .buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .menu{
+      padding: 10px 3%;
+      flex-direction: column;
+    }
+
+    .search-form {
+      max-width: 800px;
+    }
+
+    .search-form{
+      padding-top: 10px;
+    }
   }

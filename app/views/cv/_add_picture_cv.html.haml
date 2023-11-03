@@ -14,6 +14,6 @@
   = f.file_field :picture, class: "form-control", accept: "image/*", style: "display: none;", onclick: "displaySaveButton(this)"
 
   .modal-buttons
-    = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round picture-submit-button", onclick: "handleFormSubmission(this.form);", style: "display: none;"
+    = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form);", style: "display: none;"
 
 = javascript_include_tag 'cv'
