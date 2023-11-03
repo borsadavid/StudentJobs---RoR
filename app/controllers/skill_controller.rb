@@ -2,7 +2,7 @@ class SkillController < ApplicationController
   before_action :check_admin
 
   def index
-    @skill = Skill.all
+    @skill = Kaminari.paginate_array(Skill.all).page(params[:page]).per(10)
   end
 
   def new

@@ -1,9 +1,31 @@
 class AdminController < ApplicationController
   before_action :check_admin
 
+  def search
+    search_term = params[:search]
+    @users = User.joins("LEFT JOIN user_informations ON users.id = user_informations.user_id")
+            .joins("LEFT JOIN company_informations ON users.id = company_informations.user_id")
+            .where("user_informations.first_name ILIKE :search_term OR user_informations.last_name ILIKE :search_term OR company_informations.name ILIKE :search_term", search_term: "%#{search_term}%")
+            .page(params[:page])
+            .per(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def index
     @users = User.where.not(id: current_user.id).order(:email)
+    @users = @users.where("company = ? OR enabled = ?", false, true)
+    @users = Kaminari.paginate_array(@users).page(params[:page]).per(10)
     @companies = User.where(company: true, enabled: false)
+    @companies = Kaminari.paginate_array(@companies).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html 
+      format.js  
+    end
   end
 
   def enable_company

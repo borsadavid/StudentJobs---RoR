@@ -1,28 +1,32 @@
+= form_tag search_users_admin_path, method: :get, remote: true do
+  = text_field_tag :search, params[:search], placeholder: "Search by name"
+  = submit_tag "Search", class: "button"
+
 - if @users.any?
   - @users.each do |user|
-    - if !user.company || user.enabled
-      - if user&.user_information&.first_name.present?
-        = user&.user_information&.first_name
-      - elsif user&.company_information&.name.present?
-        = user&.company_information&.name
-      - else
-        Name Missing
-      = user.email
-      
-      - if user.company
-        = " - Company"
-        = link_to "View", show_company_information_path(id: user.id), remote: true
-      - else
-        = " - User"
+    - if user&.user_information&.first_name.present?
+      = user&.user_information&.first_name
+    - elsif user&.company_information&.name.present?
+      = user&.company_information&.name
+    - else
+      Name Missing
+    = user.email
+    
+    - if user.company
+      = " - Company"
+      = link_to "View", show_company_information_path(id: user.id), remote: true
+    - else
+      = " - User"
 
-      - if user.admin
-        = button_to "Take Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
-      - else
-        = button_to "Give Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
-      - if user.blocked
-        = button_to "Unblock User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
-      - else
-        = button_to "Block User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
+    - if user.admin
+      = button_to "Take Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
+    - else
+      = button_to "Give Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
+    - if user.blocked
+      = button_to "Unblock User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
+    - else
+      = button_to "Block User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
 
+= paginate @users, remote: true
 
 = javascript_include_tag 'admin'

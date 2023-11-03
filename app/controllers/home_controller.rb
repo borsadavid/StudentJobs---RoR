@@ -14,11 +14,19 @@ class HomeController < ApplicationController
       end.reverse
     else
       @jobs = if params[:title].present?
-        Job.where("lower(title) LIKE ?", "%#{params[:title].downcase}%").order(created_at: :desc)
+        Job.where("lower(title) LIKE ?", "%#{params[:title].downcase}%").order(created_at: :desc).includes(:skills)
       else
-        Job.all.order(created_at: :desc)
+        Job.all.order(created_at: :desc).includes(:skills)
       end
     end
+    
+    @jobs = Kaminari.paginate_array(@jobs).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    
   end
   
 

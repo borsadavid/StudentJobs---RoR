@@ -43,5 +43,6 @@ Rails.application.routes.draw do
   patch '/enable_company/:id', to: 'admin#enable_company', as: 'enable_company'
   patch '/add_verification_status/:id', to: 'admin#add_verification_status', as: 'add_verification_status'
   get 'show_company_information/:id', to: 'admin#show_company_information', as: 'show_company_information'
+  get 'search', to: 'admin#search', as: 'search_users_admin'
 
 end
