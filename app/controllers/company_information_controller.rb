@@ -6,6 +6,7 @@ class CompanyInformationController < ApplicationController
     @company_information = current_user.company_information
     respond_to do |f|
       if @company_information.update(company_information_params)
+        @company_information.update(status: "Pending verification")
         f.json { render json: {message: "Saved."}}
       else
         f.json { render json: {message: "Something went wrong!"}}

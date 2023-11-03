@@ -5,14 +5,15 @@
 
     %ul
       %h3
-      - @jobs.each do |job|
-        %h3
-          %li= link_to job.title, view_job_path(job), remote: true, class: "button"
-          - if user_signed_in? && is_user?(current_user.id)
-            = "Matching by: #{matching_percentage(job)}%"
+        =render 'jobs'
 
+  
 
   %div.job-info
+
+//baiatu cu butoanele pt alta pagina de joburi
+
+
 
 
 = render "profile/user_applications"

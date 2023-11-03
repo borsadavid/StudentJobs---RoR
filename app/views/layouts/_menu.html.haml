@@ -5,11 +5,13 @@
       = submit_tag "🔍", class: "search-button"
   %div.buttons
     - if user_signed_in?
-      = link_to "Feed", feed_path, class: "button"
-      - if is_company?(current_user.id)
-        = link_to "Jobs", job_index_path, class: "button"
-      = link_to "Profile", profile_index_path, class: "button"
-      = link_to "Skills", skill_index_path, class: "button"
+      = link_to "Feed", feed_path, class: "button#{" active" if controller_name == 'home'}"
+      - if is_company_enabled?(current_user.id)
+        = link_to "Jobs", job_index_path, class: "button#{" active" if controller_name == 'job'}"
+      = link_to "Profile", profile_index_path, class: "button#{" active" if controller_name == 'profile'}"
+      - if is_admin?(current_user.id)
+        = link_to "Available Skills", skill_index_path, class: "button#{" active" if controller_name == 'skill'}"
+        = link_to "Admin", admin_index_path, class: "button#{" active" if controller_name == 'admin'}"
       = link_to "Log Out", destroy_user_session_path, class: "signinbutton", method: :delete 
     - else
       = link_to "Log in", new_user_session_path, class: "signinbutton"

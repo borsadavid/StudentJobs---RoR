@@ -1,8 +1,11 @@
 %h1
   All available skills
+
+= link_to "Create new skill", new_skill_path, class: "button"
+
 - @skill.each do |skill|
   = skill.title
   = button_to "Delete skill", skill_path(skill.id), method: :delete, class: "button"
   %br
 
-= link_to "Create new skill", new_skill_path, class: "button"
+= paginate @skill
