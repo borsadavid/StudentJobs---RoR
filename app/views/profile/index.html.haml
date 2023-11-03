@@ -2,17 +2,7 @@
 - if is_user?(current_user.id)
   %div.left
     %div.Availablecv
-      %h1 Available CVs
-      - @cv.each_with_index do |cv, index|
-        - if index.even? # Apply class for even indices
-          %div.edit-cv.same-line
-            %span.CVs= cv.title
-            = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "edit-button"
-        - else # Apply class for odd indices
-          %div.edit-cv.new-line
-            %span.CVs= cv.title
-            = link_to "Edit CV", configure_cv_cv_path(cv.id), class: "edit-button"
-
+      = render "cvs"
 
     = render "cv/create_cv"
 

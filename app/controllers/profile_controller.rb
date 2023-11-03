@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   before_action :check_user, only: [:apply_to_job]
 
   def index
-    @cv = current_user.cvs.all
+    @cvs = current_user.cvs.all
     @new_cv = Cv.new
     if is_company?(current_user.id)
       if current_user.company_information.present?

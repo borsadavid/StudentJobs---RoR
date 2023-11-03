@@ -1,6 +1,6 @@
 class CvController < ApplicationController
   before_action :check_user
-  before_action :set_cv, except: [:index, :new, :create, :configure_cv]
+  before_action :set_cv, except: [:index, :new, :create, :configure_cv, :destroy]
 
   def index
     @cv = current_user.cvs.all.includes(:skills, :education, :experience)
@@ -196,6 +196,19 @@ class CvController < ApplicationController
     end
   end
 
+  def destroy
+    cv = current_user.cvs.find(params[:id])
+    respond_to do |format|
+      if cv.destroy
+        @cvs = current_user.cvs.all
+        format.js
+        format.html { redirect_to profile_index_path }
+      else
+        format.html { redirect_to profile_index_path, alert: "Failed to delete the CV." }
+      end
+    end
+  end
+  
   private
 
   def set_cv
