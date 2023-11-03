@@ -35,10 +35,10 @@
       = render 'user_information/form'
     
 
+%div.left
+  %h3 Not satisfied with our services?
 
-%h3 Cancel
-
-= button_to "Cancel my account", registration_path(current_user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete 
+  = button_to "Delete my account", registration_path(current_user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"login-button" 
 
 = javascript_include_tag 'cv'
 
