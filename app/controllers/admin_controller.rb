@@ -6,7 +6,7 @@ class AdminController < ApplicationController
     @users = User.joins("LEFT JOIN user_informations ON users.id = user_informations.user_id")
             .joins("LEFT JOIN company_informations ON users.id = company_informations.user_id")
             .where("user_informations.first_name ILIKE :search_term OR user_informations.last_name ILIKE :search_term OR company_informations.name ILIKE :search_term", search_term: "%#{search_term}%")
-            .includes(:company_information, :user_infomation)
+            .includes(:company_information, :user_information)
             .page(params[:page])
             .per(10)
 
