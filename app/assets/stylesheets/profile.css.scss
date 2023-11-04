@@ -111,6 +111,16 @@
     margin-bottom: 10px;
   }
 
+  .delete-button{
+    color:#9754cb;
+    font-family: 'GothamPro-Medium';
+    border: none;
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
   .edit-button {
     display: flex;
     width: 100px;
@@ -178,6 +188,14 @@
     align-items: center;
     width: max-content;
   }
+
+  .custom-checkbox {
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    
+  }
+  
 
 
 @media screen and (max-width: 842px){

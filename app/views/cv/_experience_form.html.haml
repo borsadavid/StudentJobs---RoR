@@ -23,9 +23,9 @@
       = f.label :finished_at, "Finished at", class: 'form-label'
       = f.date_field :finished_at, class: 'form-control', id: "experience-finished-at"
     -# keep the id for started at and finished at, used at comparing dates (finished_at > started_at)
-    .form-group
-      = f.label :ongoing, "Ongoing", class: 'form-label'
-      = f.check_box :ongoing, class: 'form-control', onchange: "disableFinishDate(this)"
+    .checkbox
+      = f.check_box :ongoing, class: 'custom-checkbox', onchange: "disableFinishDate(this)"
+      = f.label :ongoing, "Ongoing"
 
     .modal-buttons
       = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form)"

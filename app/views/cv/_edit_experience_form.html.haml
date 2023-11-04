@@ -2,7 +2,7 @@
   - if @cv.experiences.any?
     - @cv.experiences.each_with_index do |experience, index|
       .form-class 
-        = button_to "X", delete_experience_cv_path(cv_id: @cv.id, id: experience.id), method: :delete, class: "delete", remote: true, onclick: "hideFormClass(this)"
+        = button_to "Delete Experience", delete_experience_cv_path(cv_id: @cv.id, id: experience.id), method: :delete,  class: 'delete-button', remote: true, onclick: "hideFormClass(this)"
         = form_for experience, url: update_experience_cv_path(cv_id: @cv.id, id: experience.id), remote: true do |f|
           .form-group
             = f.label :title, "Title", class: 'form-label'
@@ -24,10 +24,10 @@
             = f.label :finished_at, "Finished at", class: 'form-label'
             = f.date_field :finished_at, class: 'form-control', value: experience.finished_at, disabled: experience.ongoing
 
-          .form-group
-            = f.label :ongoing, "Ongoing", class: 'form-label'
+          .checkbox
             = f.check_box :ongoing, class: 'custom-checkbox', onchange: "disableFinishDate(this)", checked: experience.ongoing
-
+            = f.label :ongoing, "Ongoing"
+            
           .modal-buttons
             = f.submit "Save", class: "login-button", onclick: "handleFormSubmission(this.form)"
 
