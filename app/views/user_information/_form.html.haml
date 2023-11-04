@@ -34,7 +34,7 @@
     = f.label :birthdate, class: 'form-label'
     = f.date_field :birthdate, required: true, class: 'form-control'
 
-  .form-groupa
+  .form-group
     = f.label :sex, class: 'form-label'
     = f.select :sex, ['male', 'female', 'other'], required: true, class: 'form-control', value: @user_information.sex
     
