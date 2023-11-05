@@ -1,3 +1,7 @@
+  #undernav{
+    padding-top: 70px;
+  }
+  
   .left {
       display: flex;
       justify-content: center;
@@ -203,7 +207,11 @@
   }
 
 @media screen and (max-width: 842px){
-    
+
+    #undernav{
+      padding-top: 100px;
+    }
+
     .left {
         margin: 20px 5%;
     }

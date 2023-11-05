@@ -1,4 +1,4 @@
-%nav.menu
+%nav.menu#menu
   %div.search 
     = form_tag feed_path, method: :get, class: "search-form" do
       = text_field_tag :title, params[:title], placeholder: "Search jobs", class: "inputfield"
@@ -16,7 +16,8 @@
     - else
       = link_to "Log in", new_user_session_path, class: "signinbutton"
 
-  
+
+
 
 
   
