@@ -2,24 +2,17 @@ class HomeController < ApplicationController
   #before_action :check admin!!!!!!
 
   def feed
+    @locations = Location.all.order(city: :asc)
+    
+    @jobs = Job.includes(:skills).order(created_at: :desc)
+    @jobs = @jobs.where("lower(title) LIKE ?", "%#{params[:title].downcase}%") if params[:title].present?
+
+    if params[:filter_city].present?
+      @jobs = @jobs.joins(:locations).where(locations: { city: params[:filter_city] })
+    end
+
     if user_signed_in?
-  
-      @jobs = if params[:title].present?
-        Job.where("lower(title) LIKE ?", "%#{params[:title].downcase}%")
-      else
-        Job.all
-      end.includes(:skills).sort_by do |job|
-        matching_percentage(job)
-      end.reverse
-
-    else
-
-      @jobs = if params[:title].present?
-        Job.where("lower(title) LIKE ?", "%#{params[:title].downcase}%").order(created_at: :desc).includes(:skills)
-      else
-        Job.all.order(created_at: :desc).includes(:skills)
-      end
-      
+      @jobs = @jobs.sort_by { |job| -matching_percentage(job) }
     end
     
     @jobs = Kaminari.paginate_array(@jobs).page(params[:page]).per(10)

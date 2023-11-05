@@ -31,7 +31,7 @@ class ProfileController < ApplicationController
       @message = "Failed to send application."
     end
     respond_to do |f|
-      f.html {redirect_back}
+      f.html {redirect_back(fallback_location: root_path)}
       f.js {
         render  :template => "layouts/notice",
                 :layout => false
@@ -53,7 +53,7 @@ class ProfileController < ApplicationController
       @message = "Something went wrong."
     end
     respond_to do |f|
-      f.html {redirect_back}
+      f.html {redirect_back(fallback_location: root_path)}
       f.js {
         render  :template => "layouts/notice",
                 :layout => false

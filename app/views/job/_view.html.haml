@@ -14,8 +14,16 @@
 
 %h4
   Skills required:
+  - if job.skills.empty?
+    No skills required
   - job.skills.each do |skill|
     %li= skill.title
+
+%h4
+  - if !job.locations.empty?
+    Location:
+    - job.locations.each do |loc|
+      %li= loc.city
 
 - if user_signed_in? && is_user?(current_user.id)
   %button.apply-button Apply
