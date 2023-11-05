@@ -1,0 +1,1586 @@
+[
+ {
+  "city": "Bucharest"
+ },
+ {
+  "city": "Cluj-Napoca"
+ },
+ {
+  "city": "TimiÅŸoara"
+ },
+ {
+  "city": "BraÅŸov"
+ },
+ {
+  "city": "IaÅŸi"
+ },
+ {
+  "city": "ConstanÅ£a"
+ },
+ {
+  "city": "Craiova"
+ },
+ {
+  "city": "GalaÅ£i"
+ },
+ {
+  "city": "PloieÅŸti"
+ },
+ {
+  "city": "Oradea"
+ },
+ {
+  "city": "BrÄƒila"
+ },
+ {
+  "city": "Arad"
+ },
+ {
+  "city": "PiteÅŸti"
+ },
+ {
+  "city": "Sibiu"
+ },
+ {
+  "city": "BacÄƒu"
+ },
+ {
+  "city": "TÃ¢rgu-MureÅŸ"
+ },
+ {
+  "city": "Baia Mare"
+ },
+ {
+  "city": "BuzÄƒu"
+ },
+ {
+  "city": "BotoÅŸani"
+ },
+ {
+  "city": "Satu Mare"
+ },
+ {
+  "city": "RÃ¢mnicu VÃ¢lcea"
+ },
+ {
+  "city": "Drobeta-Turnu Severin"
+ },
+ {
+  "city": "Suceava"
+ },
+ {
+  "city": "Piatra NeamÅ£"
+ },
+ {
+  "city": "ReÅŸiÅ£a"
+ },
+ {
+  "city": "TÃ¢rgu Jiu"
+ },
+ {
+  "city": "TÃ¢rgoviÅŸte"
+ },
+ {
+  "city": "FocÅŸani"
+ },
+ {
+  "city": "BistriÅ£a"
+ },
+ {
+  "city": "Tulcea"
+ },
+ {
+  "city": "Slatina"
+ },
+ {
+  "city": "CÄƒlÄƒraÅŸi"
+ },
+ {
+  "city": "Alba Iulia"
+ },
+ {
+  "city": "Vaslui"
+ },
+ {
+  "city": "Giurgiu"
+ },
+ {
+  "city": "Deva"
+ },
+ {
+  "city": "Hunedoara"
+ },
+ {
+  "city": "ZalÄƒu"
+ },
+ {
+  "city": "SfÃ¢ntu-Gheorghe"
+ },
+ {
+  "city": "BÃ¢rlad"
+ },
+ {
+  "city": "PopeÅŸti-Leordeni"
+ },
+ {
+  "city": "Roman"
+ },
+ {
+  "city": "Turda"
+ },
+ {
+  "city": "Voluntari"
+ },
+ {
+  "city": "Media"
+ },
+ {
+  "city": "Slobozia"
+ },
+ {
+  "city": "Alexandria"
+ },
+ {
+  "city": "Miercurea-Ciuc"
+ },
+ {
+  "city": "Lugoj"
+ },
+ {
+  "city": "Bragadiru"
+ },
+ {
+  "city": "Medgidia"
+ },
+ {
+  "city": "OneÅŸti"
+ },
+ {
+  "city": "Sighetu MarmaÅ£iei"
+ },
+ {
+  "city": "PetroÅŸani"
+ },
+ {
+  "city": "Mangalia"
+ },
+ {
+  "city": "Tecuci"
+ },
+ {
+  "city": "NÄƒvodari"
+ },
+ {
+  "city": "Odorheiu Secuiesc"
+ },
+ {
+  "city": "RÃ¢mnicu SÄƒrat"
+ },
+ {
+  "city": "PaÅŸcani"
+ },
+ {
+  "city": "Dej"
+ },
+ {
+  "city": "Reghin"
+ },
+ {
+  "city": "CÃ¢mpina"
+ },
+ {
+  "city": "Pantelimon"
+ },
+ {
+  "city": "Mioveni"
+ },
+ {
+  "city": "CÃ¢mpulung"
+ },
+ {
+  "city": "Caracal"
+ },
+ {
+  "city": "SÄƒcele"
+ },
+ {
+  "city": "FÄƒgÄƒraÅŸ"
+ },
+ {
+  "city": "FeteÅŸti"
+ },
+ {
+  "city": "SighiÅŸoara"
+ },
+ {
+  "city": "BorÅŸa"
+ },
+ {
+  "city": "RoÅŸiori de Vede"
+ },
+ {
+  "city": "Curtea de ArgeÅŸ"
+ },
+ {
+  "city": "SebeÅŸ"
+ },
+ {
+  "city": "HuÅŸi"
+ },
+ {
+  "city": "FÄƒlticeni"
+ },
+ {
+  "city": "OlteniÅ£a"
+ },
+ {
+  "city": "Turnu MÄƒgurele"
+ },
+ {
+  "city": "CaransebeÅŸ"
+ },
+ {
+  "city": "Dorohoi"
+ },
+ {
+  "city": "RÄƒdÄƒuÅ£i"
+ },
+ {
+  "city": "Vulcan"
+ },
+ {
+  "city": "ZÄƒrneÅŸti"
+ },
+ {
+  "city": "Lupeni"
+ },
+ {
+  "city": "Aiud"
+ },
+ {
+  "city": "Petrila"
+ },
+ {
+  "city": "CisnÄƒdie"
+ },
+ {
+  "city": "CÃ¢mpia Turzii"
+ },
+ {
+  "city": "Buftea"
+ },
+ {
+  "city": "TÃ¢rnÄƒveni"
+ },
+ {
+  "city": "MoineÅŸti"
+ },
+ {
+  "city": "Otopeni"
+ },
+ {
+  "city": "Codlea"
+ },
+ {
+  "city": "Cugir"
+ },
+ {
+  "city": "Carei"
+ },
+ {
+  "city": "Gherla"
+ },
+ {
+  "city": "ScobinÅ£i"
+ },
+ {
+  "city": "Blaj"
+ },
+ {
+  "city": "FloreÅŸti"
+ },
+ {
+  "city": "ComÄƒneÅŸti"
+ },
+ {
+  "city": "Motru"
+ },
+ {
+  "city": "TÃ¢rgu NeamÅ£"
+ },
+ {
+  "city": "Moreni"
+ },
+ {
+  "city": "Toflea"
+ },
+ {
+  "city": "TÃ¢rgu Secuiesc"
+ },
+ {
+  "city": "Gheorgheni"
+ },
+ {
+  "city": "OrÄƒÅŸtie"
+ },
+ {
+  "city": "BalÅŸ"
+ },
+ {
+  "city": "BÄƒicoi"
+ },
+ {
+  "city": "DrÄƒgÄƒÅŸani"
+ },
+ {
+  "city": "Salonta"
+ },
+ {
+  "city": "BÄƒileÅŸti"
+ },
+ {
+  "city": "Calafat"
+ },
+ {
+  "city": "FiliaÅŸi"
+ },
+ {
+  "city": "CÃ¢mpulung Moldovenesc"
+ },
+ {
+  "city": "Corabia"
+ },
+ {
+  "city": "Adjud"
+ },
+ {
+  "city": "Breaza"
+ },
+ {
+  "city": "RÃ¢ÅŸnov"
+ },
+ {
+  "city": "BocÅŸa"
+ },
+ {
+  "city": "Marghita"
+ },
+ {
+  "city": "Baia-Sprie"
+ },
+ {
+  "city": "ViÅŸeu de Sus"
+ },
+ {
+  "city": "LuduÅŸ"
+ },
+ {
+  "city": "Urziceni"
+ },
+ {
+  "city": "Vicovu de Sus"
+ },
+ {
+  "city": "Chitila"
+ },
+ {
+  "city": "NegreÅŸti-OaÅŸ"
+ },
+ {
+  "city": "BuhuÅŸi"
+ },
+ {
+  "city": "Brad"
+ },
+ {
+  "city": "Vatra Dornei"
+ },
+ {
+  "city": "MÄƒgurele"
+ },
+ {
+  "city": "Mizil"
+ },
+ {
+  "city": "Pucioasa"
+ },
+ {
+  "city": "Zimnicea"
+ },
+ {
+  "city": "Ovidiu"
+ },
+ {
+  "city": "TopliÅ£a"
+ },
+ {
+  "city": "Gura Humorului"
+ },
+ {
+  "city": "Jimbolia"
+ },
+ {
+  "city": "GÄƒeÅŸti"
+ },
+ {
+  "city": "DÄƒrmÄƒneÅŸti"
+ },
+ {
+  "city": "Ocna MureÅŸ"
+ },
+ {
+  "city": "Bolintin Vale"
+ },
+ {
+  "city": "Avrig"
+ },
+ {
+  "city": "Pecica"
+ },
+ {
+  "city": "Simeria"
+ },
+ {
+  "city": "SÃ¢ntana"
+ },
+ {
+  "city": "Valu lui Traian"
+ },
+ {
+  "city": "Moldova NouÄƒ"
+ },
+ {
+  "city": "CumpÄƒna"
+ },
+ {
+  "city": "SÃ¢nnicolau Mare"
+ },
+ {
+  "city": "Jilava"
+ },
+ {
+  "city": "DÄƒbuleni"
+ },
+ {
+  "city": "VÄƒlenii de Munte"
+ },
+ {
+  "city": "Comarnic"
+ },
+ {
+  "city": "Darabani"
+ },
+ {
+  "city": "Rovinari"
+ },
+ {
+  "city": "ScorniceÅŸti"
+ },
+ {
+  "city": "TÃ¢rgu LÄƒpuÅŸ"
+ },
+ {
+  "city": "Matca"
+ },
+ {
+  "city": "SÄƒcueni"
+ },
+ {
+  "city": "Videle"
+ },
+ {
+  "city": "OraviÅ£a"
+ },
+ {
+  "city": "MÄƒrÄƒÅŸeÅŸti"
+ },
+ {
+  "city": "TÃ¢rgu Ocna"
+ },
+ {
+  "city": "CÄƒlan"
+ },
+ {
+  "city": "Beclean"
+ },
+ {
+  "city": "BoldeÅŸti-ScÄƒeni"
+ },
+ {
+  "city": "Dolhasca"
+ },
+ {
+  "city": "SÃ¢ngeorz-BÄƒi"
+ },
+ {
+  "city": "HÃ¢rlÄƒu"
+ },
+ {
+  "city": "DrÄƒgÄƒneÅŸti-Olt"
+ },
+ {
+  "city": "Cristuru Secuiesc"
+ },
+ {
+  "city": "Poiana Mare"
+ },
+ {
+  "city": "BeiuÅŸ"
+ },
+ {
+  "city": "FlÄƒmÃ¢nzi"
+ },
+ {
+  "city": "UrlaÅ£i"
+ },
+ {
+  "city": "OÅ£elu RoÅŸu"
+ },
+ {
+  "city": "Strehaia"
+ },
+ {
+  "city": "TÃ¢rgu Frumos"
+ },
+ {
+  "city": "OrÅŸova"
+ },
+ {
+  "city": "Sinaia"
+ },
+ {
+  "city": "Jibou"
+ },
+ {
+  "city": "Sovata"
+ },
+ {
+  "city": "CosteÅŸti"
+ },
+ {
+  "city": "Ianca"
+ },
+ {
+  "city": "Lipova"
+ },
+ {
+  "city": "Topoloveni"
+ },
+ {
+  "city": "Murfatlar"
+ },
+ {
+  "city": "NÄƒsÄƒud"
+ },
+ {
+  "city": "Nehoiu"
+ },
+ {
+  "city": "Pechea"
+ },
+ {
+  "city": "Covasna"
+ },
+ {
+  "city": "Poienile de sub Munte"
+ },
+ {
+  "city": "AleÅŸd"
+ },
+ {
+  "city": "Valea lui Mihai"
+ },
+ {
+  "city": "HaÅ£eg"
+ },
+ {
+  "city": "Titu"
+ },
+ {
+  "city": "Liteni"
+ },
+ {
+  "city": "Podu Iloaiei"
+ },
+ {
+  "city": "Salcea"
+ },
+ {
+  "city": "OdobeÅŸti"
+ },
+ {
+  "city": "Huedin"
+ },
+ {
+  "city": "Ineu"
+ },
+ {
+  "city": "Babadag"
+ },
+ {
+  "city": "Cajvana"
+ },
+ {
+  "city": "Seini"
+ },
+ {
+  "city": "BumbeÅŸti-Jiu"
+ },
+ {
+  "city": "BuÅŸteni"
+ },
+ {
+  "city": "SÃ¢ngeorgiu de MureÅŸ"
+ },
+ {
+  "city": "Agnita"
+ },
+ {
+  "city": "SÄƒbÄƒoani"
+ },
+ {
+  "city": "Iernut"
+ },
+ {
+  "city": "Baraolt"
+ },
+ {
+  "city": "TÄƒÅŸnad"
+ },
+ {
+  "city": "Bicaz"
+ },
+ {
+  "city": "Roznov"
+ },
+ {
+  "city": "TÄƒuÅ£ii MÄƒgheruÅŸ"
+ },
+ {
+  "city": "BÄƒbeni"
+ },
+ {
+  "city": "NegreÅŸti"
+ },
+ {
+  "city": "RecaÅŸ"
+ },
+ {
+  "city": "ÃŽntorsura BuzÄƒului"
+ },
+ {
+  "city": "MÄƒcin"
+ },
+ {
+  "city": "TomeÅŸti"
+ },
+ {
+  "city": "Techirghiol"
+ },
+ {
+  "city": "TÃ¢rgu CÄƒrbuneÅŸti"
+ },
+ {
+  "city": "RoÅŸu"
+ },
+ {
+  "city": "ChiÅŸineu CriÅŸ"
+ },
+ {
+  "city": "Borcea"
+ },
+ {
+  "city": "Siret"
+ },
+ {
+  "city": "MihÄƒileÅŸti"
+ },
+ {
+  "city": "DomneÅŸti"
+ },
+ {
+  "city": "Prim Decembrie"
+ },
+ {
+  "city": "BudeÅŸti"
+ },
+ {
+  "city": "VlÄƒhiÅ£a"
+ },
+ {
+  "city": "CÃ¢mpeni"
+ },
+ {
+  "city": "MogoÅŸoaia"
+ },
+ {
+  "city": "CÄƒlimÄƒneÅŸti"
+ },
+ {
+  "city": "Fieni"
+ },
+ {
+  "city": "Modelu"
+ },
+ {
+  "city": "DumbrÄƒviÅ£a"
+ },
+ {
+  "city": "Anina"
+ },
+ {
+  "city": "Chirnogi"
+ },
+ {
+  "city": "Curtici"
+ },
+ {
+  "city": "NÄƒdlac"
+ },
+ {
+  "city": "DumbrÄƒveni"
+ },
+ {
+  "city": "Segarcea"
+ },
+ {
+  "city": "Amara"
+ },
+ {
+  "city": "BrÄƒneÅŸti"
+ },
+ {
+  "city": "PÄƒtÃ¢rlagele"
+ },
+ {
+  "city": "Pogoanele"
+ },
+ {
+  "city": "Ulmeni"
+ },
+ {
+  "city": "Turceni"
+ },
+ {
+  "city": "Cehu Silvaniei"
+ },
+ {
+  "city": "Ghimbav"
+ },
+ {
+  "city": "Murgeni"
+ },
+ {
+  "city": "BuziaÅŸ"
+ },
+ {
+  "city": "Ungheni"
+ },
+ {
+  "city": "SÄƒveni"
+ },
+ {
+  "city": "PÃ¢ncota"
+ },
+ {
+  "city": "SÄƒrmaÅŸu"
+ },
+ {
+  "city": "RÄƒcari"
+ },
+ {
+  "city": "Panciu"
+ },
+ {
+  "city": "TÄƒlmaciu"
+ },
+ {
+  "city": "Fundulea"
+ },
+ {
+  "city": "Livada"
+ },
+ {
+  "city": "FÄƒget"
+ },
+ {
+  "city": "TeiuÅŸ"
+ },
+ {
+  "city": "Lehliu-GarÄƒ"
+ },
+ {
+  "city": "Horezu"
+ },
+ {
+  "city": "Dancu"
+ },
+ {
+  "city": "Piatra Olt"
+ },
+ {
+  "city": "Bujor"
+ },
+ {
+  "city": "BaloteÅŸti"
+ },
+ {
+  "city": "Deta"
+ },
+ {
+  "city": "Ardud"
+ },
+ {
+  "city": "Lunca CetÄƒÅ£uii"
+ },
+ {
+  "city": "Dragalina"
+ },
+ {
+  "city": "BÄƒlan"
+ },
+ {
+  "city": "RoseÅ£i"
+ },
+ {
+  "city": "Cornetu"
+ },
+ {
+  "city": "SlÄƒnic"
+ },
+ {
+  "city": "SebiÅŸ"
+ },
+ {
+  "city": "Berceni"
+ },
+ {
+  "city": "SÄƒvineÅŸti"
+ },
+ {
+  "city": "Frasin"
+ },
+ {
+  "city": "GÄƒtaia"
+ },
+ {
+  "city": "Potcoava"
+ },
+ {
+  "city": "Fundeni"
+ },
+ {
+  "city": "Giroc"
+ },
+ {
+  "city": "Curcani"
+ },
+ {
+  "city": "Miercurea Nirajului"
+ },
+ {
+  "city": "Glina"
+ },
+ {
+  "city": "CopÅŸa MicÄƒ"
+ },
+ {
+  "city": "SÃ¢ncraiu de MureÅŸ"
+ },
+ {
+  "city": "Baia de AramÄƒ"
+ },
+ {
+  "city": "VÃ¢nju-Mare"
+ },
+ {
+  "city": "Geoagiu"
+ },
+ {
+  "city": "DobroeÅŸti"
+ },
+ {
+  "city": "Rupea"
+ },
+ {
+  "city": "Abrud"
+ },
+ {
+  "city": "Isaccea"
+ },
+ {
+  "city": "BÄƒile Herculane"
+ },
+ {
+  "city": "Tunari"
+ },
+ {
+  "city": "MiliÅŸÄƒuÅ£i"
+ },
+ {
+  "city": "Valea Lupului"
+ },
+ {
+  "city": "Cavnic"
+ },
+ {
+  "city": "FierbinÅ£i-TÃ¢rg"
+ },
+ {
+  "city": "Ulmeni"
+ },
+ {
+  "city": "VolovÄƒÅ£"
+ },
+ {
+  "city": "SÄƒliÅŸtea de Sus"
+ },
+ {
+  "city": "BÄƒlceÅŸti"
+ },
+ {
+  "city": "Agigea"
+ },
+ {
+  "city": "BerbeÅŸti"
+ },
+ {
+  "city": "Cernele"
+ },
+ {
+  "city": "Bucov"
+ },
+ {
+  "city": "Predeal"
+ },
+ {
+  "city": "CristeÅŸti"
+ },
+ {
+  "city": "Clinceni"
+ },
+ {
+  "city": "BaÅŸcov"
+ },
+ {
+  "city": "Ghiroda"
+ },
+ {
+  "city": "DoiceÅŸti"
+ },
+ {
+  "city": "Chiajna"
+ },
+ {
+  "city": "Azuga"
+ },
+ {
+  "city": "Voitinel"
+ },
+ {
+  "city": "Aninoasa"
+ },
+ {
+  "city": "Bechet"
+ },
+ {
+  "city": "Valea Mare-Podgoria"
+ },
+ {
+  "city": "FloreÅŸti"
+ },
+ {
+  "city": "Victoria"
+ },
+ {
+  "city": "Bucecea"
+ },
+ {
+  "city": "CiocÄƒneÅŸti"
+ },
+ {
+  "city": "Cenad"
+ },
+ {
+  "city": "SlÄƒnic-Moldova"
+ },
+ {
+  "city": "PeriÅŸoru"
+ },
+ {
+  "city": "Ungheni-Prut"
+ },
+ {
+  "city": "PleaÅŸa"
+ },
+ {
+  "city": "Baia de ArieÅŸ"
+ },
+ {
+  "city": "Fundeni"
+ },
+ {
+  "city": "CiorogÃ¢rla"
+ },
+ {
+  "city": "Miercurea Sibiului"
+ },
+ {
+  "city": "Radovanu"
+ },
+ {
+  "city": "SfÃ¢ntu Ilie"
+ },
+ {
+  "city": "GÄƒlbinaÅŸi"
+ },
+ {
+  "city": "IpoteÅŸti"
+ },
+ {
+  "city": "Dor MÄƒrunt"
+ },
+ {
+  "city": "Blejoiu"
+ },
+ {
+  "city": "PÃ¢rcovaci"
+ },
+ {
+  "city": "FÄƒurei"
+ },
+ {
+  "city": "VasilaÅ£i"
+ },
+ {
+  "city": "MÃ¢nÄƒstirea"
+ },
+ {
+  "city": "Ocna Sibiului"
+ },
+ {
+  "city": "Cornu de Jos"
+ },
+ {
+  "city": "MÄƒrgineni"
+ },
+ {
+  "city": "SÃ¢ntana de MureÅŸ"
+ },
+ {
+  "city": "Adjudeni"
+ },
+ {
+  "city": "Chiselet"
+ },
+ {
+  "city": "Ocnele Mari"
+ },
+ {
+  "city": "CÄƒpÄƒÅ£Ã¢neÅŸti"
+ },
+ {
+  "city": "CÄƒzÄƒneÅŸti"
+ },
+ {
+  "city": "MÄƒrÄƒcineni"
+ },
+ {
+  "city": "BÄƒrcÄƒneÅŸti"
+ },
+ {
+  "city": "PloeÅŸtiori"
+ },
+ {
+  "city": "DragomireÅŸti"
+ },
+ {
+  "city": "Malu Spart"
+ },
+ {
+  "city": "BrÄƒneÅŸti"
+ },
+ {
+  "city": "Cernica"
+ },
+ {
+  "city": "CopÄƒcenii de Jos"
+ },
+ {
+  "city": "TÃ¢nganu"
+ },
+ {
+  "city": "BÄƒneÅŸti"
+ },
+ {
+  "city": "TÄƒmÄƒÅŸeni"
+ },
+ {
+  "city": "DÄƒrÄƒÅŸti-Ilfov"
+ },
+ {
+  "city": "Iazu"
+ },
+ {
+  "city": "TÄƒtÄƒrani"
+ },
+ {
+  "city": "Goranu"
+ },
+ {
+  "city": "MÄƒrÄƒcineni"
+ },
+ {
+  "city": "BraniÅŸtea"
+ },
+ {
+  "city": "Buciumeni"
+ },
+ {
+  "city": "FÃ¢ntÃ¢nele"
+ },
+ {
+  "city": "FrumuÅŸani"
+ },
+ {
+  "city": "BereÅŸti-TÃ¢rg"
+ },
+ {
+  "city": "BÄƒlÄƒceanca"
+ },
+ {
+  "city": "DouÄƒ Mai"
+ },
+ {
+  "city": "CÄƒÅ£elu"
+ },
+ {
+  "city": "Palanca"
+ },
+ {
+  "city": "Stancea"
+ },
+ {
+  "city": "Holboca"
+ },
+ {
+  "city": "DragomireÅŸti-Deal"
+ },
+ {
+  "city": "Nana"
+ },
+ {
+  "city": "Rasova"
+ },
+ {
+  "city": "GÃ¢rcina"
+ },
+ {
+  "city": "FilipeÅŸtii de TÃ¢rg"
+ },
+ {
+  "city": "Decindeni"
+ },
+ {
+  "city": "TeiÅŸ"
+ },
+ {
+  "city": "Corbeanca"
+ },
+ {
+  "city": "ViforÃ¢ta"
+ },
+ {
+  "city": "BÄƒile Govora"
+ },
+ {
+  "city": "Bogdan VodÄƒ"
+ },
+ {
+  "city": "Solca"
+ },
+ {
+  "city": "Ciurea"
+ },
+ {
+  "city": "RÄƒzvani"
+ },
+ {
+  "city": "Aninoasa"
+ },
+ {
+  "city": "Cojasca"
+ },
+ {
+  "city": "VaÅŸcÄƒu"
+ },
+ {
+  "city": "Luna de Sus"
+ },
+ {
+  "city": "Maxut"
+ },
+ {
+  "city": "Valea RoÅŸie"
+ },
+ {
+  "city": "DÃ¢rvari"
+ },
+ {
+  "city": "Malu Alb"
+ },
+ {
+  "city": "CrivÄƒÅ£"
+ },
+ {
+  "city": "Miroslava"
+ },
+ {
+  "city": "Tonea"
+ },
+ {
+  "city": "Unirea"
+ },
+ {
+  "city": "Cuza VodÄƒ"
+ },
+ {
+  "city": "Nucet"
+ },
+ {
+  "city": "LipÄƒneÅŸti"
+ },
+ {
+  "city": "Urleta"
+ },
+ {
+  "city": "GrÄƒdiÅŸtea"
+ },
+ {
+  "city": "DragomireÅŸti"
+ },
+ {
+  "city": "IndependenÅ£a"
+ },
+ {
+  "city": "AsÄƒu"
+ },
+ {
+  "city": "StoeneÅŸti"
+ },
+ {
+  "city": "Nazna"
+ },
+ {
+  "city": "Valea RÃ¢mnicului"
+ },
+ {
+  "city": "TamaÅŸi"
+ },
+ {
+  "city": "RemuÅŸ"
+ },
+ {
+  "city": "SÄƒsar"
+ },
+ {
+  "city": "RÃ¢ncÄƒciov"
+ },
+ {
+  "city": "Potoceni"
+ },
+ {
+  "city": "Cornetu"
+ },
+ {
+  "city": "RomÃ¢neÅŸti"
+ },
+ {
+  "city": "Lipia"
+ },
+ {
+  "city": "ArgeÅŸelu"
+ },
+ {
+  "city": "JegÄƒlia"
+ },
+ {
+  "city": "Sohatu"
+ },
+ {
+  "city": "CÄƒscioarele"
+ },
+ {
+  "city": "Mislea"
+ },
+ {
+  "city": "ColibaÅŸi"
+ },
+ {
+  "city": "Olteni"
+ },
+ {
+  "city": "Lehliu"
+ },
+ {
+  "city": "MÄƒneuÅ£i"
+ },
+ {
+  "city": "SÃ¢ntion"
+ },
+ {
+  "city": "DorolÅ£"
+ },
+ {
+  "city": "Dudu"
+ },
+ {
+  "city": "RacoviÅ£a"
+ },
+ {
+  "city": "PlÄƒtÄƒreÅŸti"
+ },
+ {
+  "city": "Bogata"
+ },
+ {
+  "city": "Luica"
+ },
+ {
+  "city": "SÄƒruleÅŸti-GarÄƒ"
+ },
+ {
+  "city": "BÄƒile TuÅŸnad"
+ },
+ {
+  "city": "Ostratu"
+ },
+ {
+  "city": "Lazu"
+ },
+ {
+  "city": "DorobanÅ£u"
+ },
+ {
+  "city": "Islaz"
+ },
+ {
+  "city": "Plopeni"
+ },
+ {
+  "city": "DragomireÅŸti-Vale"
+ },
+ {
+  "city": "Lunga"
+ },
+ {
+  "city": "Vlad Å¢epeÅŸ"
+ },
+ {
+  "city": "SÃ¢nleani"
+ },
+ {
+  "city": "LieÅŸti"
+ },
+ {
+  "city": "SÄƒteni"
+ },
+ {
+  "city": "MoÅ£Äƒeni"
+ },
+ {
+  "city": "SÄƒftica"
+ },
+ {
+  "city": "Valea Argovei"
+ },
+ {
+  "city": "BucovÄƒÅ£"
+ },
+ {
+  "city": "Mitreni"
+ },
+ {
+  "city": "Dedrad"
+ },
+ {
+  "city": "Valea ViÅŸeului"
+ },
+ {
+  "city": "Adjudu Vechi"
+ },
+ {
+  "city": "CorlÄƒteÅŸti"
+ },
+ {
+  "city": "Breazu"
+ },
+ {
+  "city": "Nicolae BÄƒlcescu"
+ },
+ {
+  "city": "AghireÅŸ"
+ },
+ {
+  "city": "Piteasca"
+ },
+ {
+  "city": "GÃ¢ldÄƒu"
+ },
+ {
+  "city": "Radu VodÄƒ"
+ },
+ {
+  "city": "IghiÅŸu Nou"
+ },
+ {
+  "city": "PasÄƒrea"
+ },
+ {
+  "city": "OdÄƒile"
+ },
+ {
+  "city": "Progresu"
+ },
+ {
+  "city": "VÃ¢nÄƒtori"
+ },
+ {
+  "city": "Teliucu Inferior"
+ },
+ {
+  "city": "Cristur"
+ },
+ {
+  "city": "FeteÅŸti"
+ },
+ {
+  "city": "Dumbrava"
+ },
+ {
+  "city": "Drajna NouÄƒ"
+ },
+ {
+  "city": "Goruni"
+ },
+ {
+  "city": "HÄƒghiac"
+ },
+ {
+  "city": "Nicolae BÄƒlcescu"
+ },
+ {
+  "city": "DorobanÅ£u"
+ },
+ {
+  "city": "Ulmi"
+ },
+ {
+  "city": "VÃ¢lcelele"
+ },
+ {
+  "city": "Ceacu"
+ },
+ {
+  "city": "Uiasca"
+ },
+ {
+  "city": "DÃ¢mbovicioara"
+ },
+ {
+  "city": "ChiÅ£orani"
+ },
+ {
+  "city": "SÄƒlcioara"
+ },
+ {
+  "city": "Izvoarele"
+ },
+ {
+  "city": "CÄƒtina"
+ },
+ {
+  "city": "Rasa"
+ },
+ {
+  "city": "Traian"
+ },
+ {
+  "city": "CÄƒldÄƒraru"
+ },
+ {
+  "city": "Budeasa Mare"
+ },
+ {
+  "city": "Aprozi"
+ },
+ {
+  "city": "Straja"
+ },
+ {
+  "city": "PeÅŸtiÅŸu Mare"
+ },
+ {
+  "city": "Valea Mare-PravÄƒÅ£"
+ },
+ {
+  "city": "Ocina de Sus"
+ },
+ {
+  "city": "Valea Mare"
+ },
+ {
+  "city": "Chicerea"
+ },
+ {
+  "city": "NegoeÅŸti"
+ },
+ {
+  "city": "Belciugatele"
+ },
+ {
+  "city": "Bughea de Jos"
+ },
+ {
+  "city": "ScobÃ¢lÅ£eni"
+ },
+ {
+  "city": "TÄƒmÄƒdÄƒu Mare"
+ },
+ {
+  "city": "VÄƒlureni"
+ },
+ {
+  "city": "Alexandru Odobescu"
+ },
+ {
+  "city": "Cornu de Sus"
+ },
+ {
+  "city": "Sultana"
+ },
+ {
+  "city": "GlÃ¢mbocu"
+ },
+ {
+  "city": "Curteni"
+ },
+ {
+  "city": "Bobolia"
+ },
+ {
+  "city": "SÄƒlcuÅ£a"
+ },
+ {
+  "city": "Valea StÃ¢nii"
+ },
+ {
+  "city": "Poiana CopÄƒceni"
+ },
+ {
+  "city": "VÄƒrÄƒÅŸti"
+ },
+ {
+  "city": "Ileana"
+ }
+]
