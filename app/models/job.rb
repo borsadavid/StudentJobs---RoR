@@ -4,5 +4,6 @@ class Job < ApplicationRecord
   has_many :skills, through: :job_skills
   has_many :applications, dependent: :destroy
   has_many :cvs, through: :applications
-  
+  has_many :job_location
+  has_many :locations, through: :job_location
 end

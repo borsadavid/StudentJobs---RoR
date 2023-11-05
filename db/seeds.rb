@@ -79,3 +79,9 @@ end
 end
 
 
+json_data = File.read(Rails.root.join('db/cities', 'cities.json'))
+cities = JSON.parse(json_data)
+
+cities.each do |city_data|
+  Location.find_or_create_by(city: city_data['city'])
+end

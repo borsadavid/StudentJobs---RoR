@@ -5,6 +5,7 @@ class JobController < ApplicationController
 
   def render_create
     @available_skills = Skill.all
+    @available_locations = Location.all
     @new_job = Job.new
     respond_to do |f|
       f.js
@@ -17,13 +18,31 @@ class JobController < ApplicationController
   end
 
   def add_skills(job)
-    current_user.jobs.find(job.id).skills.destroy_all
+    if job.user_id == current_user.id
+      current_user.jobs.find(job.id).skills.destroy_all
 
-    selected_skill_ids = params[:job][:skill_ids]
-    return unless selected_skill_ids.present?
+      selected_skill_ids = params[:job][:skill_ids]
+      return unless selected_skill_ids.present?
 
-    selected_skills = Skill.where(id: selected_skill_ids)
-    job.skills << selected_skills
+      selected_skills = Skill.where(id: selected_skill_ids)
+      job.skills << selected_skills
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
+  def add_locations(job)
+    if job.user_id == current_user.id
+      current_user.jobs.find(job.id).locations.destroy_all
+
+      selected_location_ids = params[:job][:location_ids]
+      return unless selected_location_ids.present?
+
+      selected_locations = Location.where(id: selected_location_ids)
+      job.locations << selected_locations
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def create 
@@ -31,6 +50,7 @@ class JobController < ApplicationController
     respond_to do |format|
       if @job.save
         add_skills(@job)
+        add_locations(@job)
         format.json { render json: { message: "Job Posted!"} }
         format.js 
       else
@@ -52,6 +72,7 @@ class JobController < ApplicationController
     if @job.user_id == current_user.id
       if @job.update(title: params[:job][:title], description: params[:job][:description])
         add_skills(@job)
+        add_locations(@job)
         respond_to do |format|
           format.json { render json: {message: "Job Posted!"} }
           format.js
@@ -96,7 +117,7 @@ class JobController < ApplicationController
 private
 
   def job_params
-    params.require(:job).permit(:title, :description, :skill_ids[])
+    params.require(:job).permit(:title, :description, :skill_ids[], :location_ids[])
   end
 
   def set_jobs
