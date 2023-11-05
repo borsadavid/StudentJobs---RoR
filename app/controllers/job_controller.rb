@@ -5,7 +5,7 @@ class JobController < ApplicationController
 
   def render_create
     @available_skills = Skill.all
-    @available_locations = Location.all
+    @available_locations = Location.all.order(city: :asc)
     @new_job = Job.new
     respond_to do |f|
       f.js
@@ -61,6 +61,7 @@ class JobController < ApplicationController
 
   def edit
     @available_skills = Skill.all
+    @available_locations = Location.all.order(city: :asc)
     @job = current_user.jobs.find(params[:id])
     respond_to do |f|
       f.js

@@ -1,3 +1,11 @@
+- if !@locations.empty?
+  = form_tag feed_path, method: 'get', remote: true, id: 'filter-form' do
+    .form-group
+      = label_tag 'filter_city', 'Filter by City:'
+      = select_tag 'filter_city', options_for_select(@locations.pluck(:city).uniq, params[:filter_city]), prompt: 'All Cities', class: 'form-control'
+    = submit_tag 'Filter', class: 'btn btn-primary'
+
+
 - @jobs.each do |job|
   %h3
     %li= link_to job.title, view_job_path(job), remote: true, class: "button"

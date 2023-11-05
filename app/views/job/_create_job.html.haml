@@ -17,7 +17,7 @@
       
     .form-group
       = f.label :title, "Location/s"
-      = f.select :skill_ids, options_for_select(@available_locations.all.map { |location| [location.city, location.id] }, @new_job.locations.pluck(:id)), { include_blank: true }, { class: 'chosen-select', multiple: true }
+      = f.select :location_ids, options_for_select(@available_locations.all.map { |location| [location.city, location.id] }, @new_job.locations.pluck(:id)), { include_blank: true }, { class: 'chosen-select', multiple: true }
       
     .modal-buttons
       = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round", onclick: "handleFormSubmission(this.form)"

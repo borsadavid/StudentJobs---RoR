@@ -12,3 +12,8 @@
     No skills required.
   - job.skills.each do |skill|
     = skill.title
+  Locations:
+  - if job.locations.empty?
+    Multiple Locations
+  - job.locations.each do |loc|
+    = loc.city
