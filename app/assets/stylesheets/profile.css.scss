@@ -1,20 +1,20 @@
-.left {
+  .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 40px 15%;
+  }
+
+  .right {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 40px 15%;
-}
+  }
 
-.right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 40px 15%;
-}
-
-.Availablecv {
+  .Availablecv {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -23,23 +23,22 @@
     width: 60%;
 
 
-}
-.left h1{
+  }
+  .left h1{
+      font-family: "GothamPro-Medium";
+  }
+
+  .right h1{
     font-family: "GothamPro-Medium";
-}
+  }
 
-.right h1{
-  font-family: "GothamPro-Medium";
-}
-
-.CVs{
+  .CVs{
     font-family: "GothamPro-Medium";
     font-size: 1.5rem;
-    margin-bottom: 10px
-}
+  }
 
 
-.form-control{
+  .form-control{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
@@ -55,45 +54,45 @@
     margin: 5px 0;
     -webkit-transition: background .3s;
     transition: background .3s;
-}
+  }
 
-.form-control:focus{
+  .form-control:focus{
     background: #fff !important;
     border: 1px solid #e1eae7 !important;
-}
+  }
 
-.company{
-  width: 60%;
-}
-
-.new_user_information{
+  .company{
     width: 60%;
-}
+  }
 
-.edit_user_information{
+  .new_user_information{
     width: 60%;
-}
+  }
 
-.form-label{
+  .edit_user_information{
+    width: 60%;
+  }
+
+  .form-label{
     font-family: 'GothamPro';
     margin-bottom: 10px;
-}
+  }
 
-.new_cv{ 
+  .new_cv{ 
     width: 60%;
-}
+  }
 
-.modal-buttons{
+  .modal-buttons{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.form-groupa{
+  .form-groupa{
     margin: 10px 0;
-}
+  }
 
-.same-line {
+  .same-line {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -109,6 +108,16 @@
     align-items: center;
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .delete-button{
+    color:#9754cb;
+    font-family: 'GothamPro-Medium';
+    border: none;
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
   }
 
   .edit-button {
@@ -131,7 +140,7 @@
     font-size: .875rem;
     line-height: 16px;
     text-align: center;
-    margin: 0px 10px;
+    margin: 0px 5px;
     -webkit-transition: .3s;
     transition: .3s;
     text-decoration: none;
@@ -179,6 +188,19 @@
     width: max-content;
   }
 
+  .custom-checkbox {
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    
+  }
+  
+  .action-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
 @media screen and (max-width: 842px){
     

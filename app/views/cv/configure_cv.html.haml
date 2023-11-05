@@ -14,11 +14,11 @@
       -#in create-education-container i render the add new education form with the link_to add education button
       -# the form created has the div id =education
       %div#create-education-container
-      = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button"
+      = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button",  class: 'delete-button'
     - else
       %div#create-education-container
       = render 'education_form'
-      = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button", style: "display: none;"
+      = link_to "Add education", render_form_cv_path(cv_id: @cv.id, education: true), remote: true, id: "add-education-button", style: "display: none;", class: 'delete-button'
 
 
     #experience-title
@@ -29,11 +29,11 @@
       -#in create-experience-container i render the add new experience form with the link_to add experience button
       -# the form created has the div id =experience
       %div#create-experience-container 
-      = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button"
+      = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button",  class: 'delete-button'
     - else
       %div#create-experience-container
       = render 'experience_form'
-      = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button", style: "display: none;"
+      = link_to "Add experience", render_form_cv_path(cv_id: @cv.id, experience: true), remote: true, id: "add-experience-button", style: "display: none;",  class: 'delete-button'
 
     = render 'skills_form'
 
