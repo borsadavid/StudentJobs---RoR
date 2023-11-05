@@ -6,6 +6,11 @@ RSpec.describe "Cv", type: :request do
     @user = FactoryBot.create(:user)
     @user.confirm
 
+    
+
+    @user2 = FactoryBot.create(:user2)
+    @user2.confirm
+
     @skills = FactoryBot.create_list(:skill, 5)
 
     @cv = Cv.create(title: "Example CV", user_id: @user.id)
@@ -27,7 +32,7 @@ RSpec.describe "Cv", type: :request do
                                     ongoing: true,
                                     cv_id: @cv.id
                                   )
-    
+
   end
 
   #check access if not logged in
@@ -132,6 +137,39 @@ RSpec.describe "Cv", type: :request do
     delete delete_education_cv_path(@education.id), params: {cv_id: @cv.id}
 
     expect(Education.exists?(@education.id)).to eq(false)
+  end
+
+  it "doesn't allow other users to edit education/experience" do
+    sign_in @user2
+
+    delete delete_education_cv_path(@education.id), params: {cv_id: @cv.id}
+
+    expect(response).to have_http_status(302)
+    expect(Education.exists?(@education.id)).to eq(true)
+  end
+
+  it "doesn't allow other users to edit skills" do
+    sign_in @user2
+
+    prev_skills = @cv.skills
+
+    skill_ids = { cv: {skill_ids: [@skills[1].id, @skills[4].id, @skills[3].id] },
+                  cv_id: @cv.id 
+                } 
+
+    patch add_skills_cv_path(@cv.id), params: skill_ids, as: :json
+
+    expect(response).to have_http_status(302)
+    expect(@cv.skills).to eq(prev_skills)
+  end
+
+  it "doesn't allow other users to delete cv" do
+    sign_in @user2
+
+    delete cv_path(@cv.id)
+
+    expect(response).to have_http_status(302)
+    expect(Cv.exists?(@cv.id)).to eq(true)
   end
 
 end

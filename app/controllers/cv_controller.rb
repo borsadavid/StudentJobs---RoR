@@ -197,22 +197,27 @@ class CvController < ApplicationController
   end
 
   def destroy
-    cv = current_user.cvs.find(params[:id])
-    respond_to do |format|
-      if cv.destroy
-        @cvs = current_user.cvs.all
-        format.js
-        format.html { redirect_to profile_index_path }
-      else
-        format.html { redirect_to profile_index_path, alert: "Failed to delete the CV." }
+
+    cv = Cv.find(params[:id])
+    if cv.user_id == current_user.id
+      respond_to do |format|
+        if cv.destroy
+          @cvs = current_user.cvs.all
+          format.js
+          format.html { redirect_to profile_index_path }
+        else
+          format.html { redirect_to profile_index_path, alert: "Failed to delete the CV." }
+        end
       end
+    else
+      redirect_back(fallback_location: root_path)
     end
   end
   
   private
 
   def set_cv
-    if current_user.cvs.find(params[:cv_id]).present?
+    if Cv.find(params[:cv_id]).user_id == current_user.id
       @cv = current_user.cvs.find(params[:cv_id])
     else
       redirect_to cv_index_path

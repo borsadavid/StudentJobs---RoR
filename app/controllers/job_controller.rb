@@ -48,28 +48,32 @@ class JobController < ApplicationController
   end
 
   def update
-    @job = current_user.jobs.find(params[:id])
-    if @job.update(title: params[:job][:title], description: params[:job][:description])
-      add_skills(@job)
-      respond_to do |format|
-        format.json { render json: {message: "Job Posted!"} }
-        format.js
-      end
-    else
-      respond_to do |format|
-        format.json { render json: {message: "Something went wrong"} }
+    @job = Job.find(params[:id])
+    if @job.user_id == current_user.id
+      if @job.update(title: params[:job][:title], description: params[:job][:description])
+        add_skills(@job)
+        respond_to do |format|
+          format.json { render json: {message: "Job Posted!"} }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.json { render json: {message: "Something went wrong"} }
+        end
       end
     end
   end
 
   def destroy 
-    @job = current_user.jobs.find_by(id: params[:id])
-    respond_to do |format|
-      if @job.destroy
-        format.json { render json: {message: "Job deleted!"} }
-        format.js
-      else
-        format.json { render json: {message: "Something went wrong"} }
+    @job = Job.find(params[:id])
+    if @job.user_id == current_user.id
+      respond_to do |format|
+        if @job.destroy
+          format.json { render json: {message: "Job deleted!"} }
+          format.js
+        else
+          format.json { render json: {message: "Something went wrong"} }
+        end
       end
     end
   end
