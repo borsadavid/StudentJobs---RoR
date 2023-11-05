@@ -128,7 +128,6 @@
     display: flex;
     width: 100px;
     height: 30px;
-    background-color: #9754cb;
     border-radius: 30px;
     outline: 0;
     border: none;
@@ -145,15 +144,15 @@
     line-height: 16px;
     text-align: center;
     margin: 0px 5px;
-    -webkit-transition: .3s;
-    transition: .3s;
     text-decoration: none;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
   }
   
   .edit-button:hover {
-    -webkit-transition: .3s;
-    transition: .3s;
-    background-color: #6327A0;
+    background-position: right;
   }
   
   #education {

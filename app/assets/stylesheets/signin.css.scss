@@ -190,8 +190,7 @@
   .login-button {
     width: 235px;
     height: 54px;
-    background-color: #9754cb;
-    //background-image: linear-gradient(253deg,#6327A0 0,#9754cb 100%);
+    //background-color: #9754cb;
     border-radius: 30px;
     outline: 0;
     border: none;
@@ -208,15 +207,16 @@
     line-height: 16px;
     text-align: center;
     margin: 32px 0;
-    -webkit-transition: .3s;
-    transition: .3s;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
   }
   
+  
+
   .login-button:hover {
-    -webkit-transition: .3s;
-    transition: .3s;
-    background-color: #6327A0;
-    //background-image: linear-gradient(253deg,#6327A0 0,#6327A0 100%);
+    background-position: right;
   }
 
   .image-wrapper{
