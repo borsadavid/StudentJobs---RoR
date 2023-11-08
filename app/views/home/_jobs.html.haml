@@ -7,10 +7,25 @@
 
 
 - @jobs.each do |job|
-  %h3
-    %li= link_to job.title, view_job_path(job), remote: true, class: "button"
-    - if user_signed_in? && is_user?(current_user.id)
-      = "Matching by: #{matching_percentage(job)}%"
+  %div.job-container
+    %ul
+      %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
+      - if user_signed_in?
+        %p Matching by: #{matching_percentage(job)}%
+    %div.job-info{ style: 'display: none;' }
+      
 
+:javascript
+  $(document).ready(function() {
+    $('.job-link').click(function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      var container = $(this).closest('.job-container');
+      var jobInfo = container.find('.job-info');
 
-= paginate @jobs, remote: true
+      // Close all other job information
+      $('.job-info').not(jobInfo).slideUp();
+
+      // Toggle the visibility of the clicked job information
+      jobInfo.slideToggle();
+    });
+  });
