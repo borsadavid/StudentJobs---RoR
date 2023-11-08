@@ -1,7 +1,7 @@
-$("#flash-messages").append("<%= @message %>")
+$("#flash-messages").append("<%= @message %>").show();
 
 setTimeout(function() {
   $("#flash-messages").fadeOut('slow', function() {
-    $(this).remove();
+    $(this).empty();
   });
 }, 2000);
