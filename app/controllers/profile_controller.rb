@@ -21,9 +21,19 @@ class ProfileController < ApplicationController
   end
   
   def apply_to_job
-    unless Cv.find(params[:cv_id]).user.id == current_user.id
+    cv = Cv.find(params[:cv_id])
+    
+    unless cv.user.id == current_user.id
       return
     end
+
+    user = User.find(cv.user.id) #if any cvs were used to apply to this job, block another application from same user
+    user.cvs.each do |cv|
+      if Application.find_by(cv_id: cv.id, job_id: params[:job_id]).present?
+        return
+      end
+    end
+
     apply = Application.create(apply_params)
     if apply.save
       @message = "Application sent!"
