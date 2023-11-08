@@ -3,7 +3,7 @@
     = job.title
     = link_to "X", job_path(job), method: :delete, remote: true, data: {confirm: 'Are you sure you want to delete this job?'}
     = link_to "Edit", edit_job_path(id: job.id), remote: true
-    = link_to "View Applications", view_applications_job_path(job.id), remote: true
+    = link_to "View Applications  #{job.applications.where(viewed: false).any? ? "❗️" : ''}", view_applications_job_path(job.id), remote: true
   Description
   = job.description
   %br
