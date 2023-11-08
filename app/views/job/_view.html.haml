@@ -9,24 +9,25 @@
       - break
 
 
-%h2
-  Job Title: 
+%h1
   = job.title
 
-%h4
-  By: 
+%h2
+  by: 
   = company_name
 
-%h4
+%p{ style: "font-size:1.325rem;" }
   Description:
-= job.description
+%p{ style: "color: #000" }
+  = job.description
 
-%h4
+%p{ style: "font-size:1.325rem;" }
   Skills required:
   - if job.skills.empty?
     No skills required
   - job.skills.each do |skill|
-    %li= skill.title
+    %li{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
+      = skill.title
 
 %h4
   - if !job.locations.empty?
@@ -36,9 +37,9 @@
 
 - if user_signed_in? && is_user?(current_user.id)
   - if applied == true
-    = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true
+    = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true, class: "edit-button", style: "width: fit-content; padding:0 10px;" 
   - else
-    %button.apply-button Apply
+    %button.apply-button{ style: "width: fit-content; padding: 0 15px;" } Apply
     %div.choose-cv{style: 'display: none;'}
       - if current_user.cvs.any?
         Choose CV
