@@ -1,8 +1,10 @@
 - company_name = CompanyInformation.find_by(user_id: job.user_id).name
 - applied = false
+- @application = nil
 - if user_signed_in? && is_user?(current_user.id)
   - current_user.cvs.each do |cv|
     - if Application.find_by(cv_id: cv.id, job_id: job.id).present?
+      - @application = Application.find_by(cv_id: cv.id, job_id: job.id)
       - applied = true
       - break
 
@@ -33,8 +35,8 @@
       %li= loc.city
 
 - if user_signed_in? && is_user?(current_user.id)
-  - if applied ==  true
-    You applied already
+  - if applied == true
+    = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true
   - else
     %button.apply-button Apply
     %div.choose-cv{style: 'display: none;'}
