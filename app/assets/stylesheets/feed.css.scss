@@ -9,6 +9,7 @@
     flex: 1;
     padding: 10px;
     background-color: #f2f2f2;
+    
   }
   
   .job-feed h1 {
@@ -19,9 +20,14 @@
 
   .job-feed p {
     font-size: 1rem;
-    font-family: 'GothamPro';
+    font-family: 'GothamPro-Medium';
     color: #000;
     padding-left: 0px;
+    color:#9754cb;
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+    text-decoration: none;
   }
 
   .job-link{

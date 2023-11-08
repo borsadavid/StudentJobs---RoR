@@ -11,9 +11,10 @@
     %ul
       %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
       - if user_signed_in?
-        %p Matching by: #{matching_percentage(job)}%
+        %p Matching by: #{matching_percentage(job)}% 
     %div.job-info{ style: 'display: none;' }
       
+= paginate @jobs, remote: true
 
 :javascript
   $(document).ready(function() {

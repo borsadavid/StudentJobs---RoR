@@ -55,4 +55,6 @@
 #flash-messages{
   color: #000;
   padding-top: 110px;
+  position: fixed;
+  z-index: 20;
 }
