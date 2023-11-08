@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  root to: "home#feed"
+
   devise_for :users
   resources :user_information, only: [:update, :create, :destroy]
   resources :cv, only: [:new, :create, :destroy, :index] do
@@ -41,7 +43,6 @@ Rails.application.routes.draw do
   end
   get '/feed', to: 'home#feed'
   get '/view_job/:id', to: 'home#view_job', as: 'view_job'
-  root to: "home#feed"
   
   get '/index', to: 'admin#index', as: 'admin_index'
   patch '/update_admin/:id', to: 'admin#update_admin', as: 'update_admin'
