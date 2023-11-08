@@ -57,6 +57,11 @@ gem 'activestorage'
 
 gem 'kaminari'
 
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+
+gem 'redis'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

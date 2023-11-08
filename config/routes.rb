@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  require 'sidekiq/web'
+  authenticate :user, lambda { |u| u.admin == true } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   devise_for :users
   resources :user_information, only: [:update, :create, :destroy]
   resources :cv, only: [:new, :create, :destroy, :index] do

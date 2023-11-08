@@ -5,15 +5,12 @@ class HomeController < ApplicationController
     @locations = Location.all.order(city: :asc)
     
     @jobs = Job.includes(:skills).order(created_at: :desc)
+
     @jobs = @jobs.where("lower(title) LIKE ?", "%#{params[:title].downcase}%") if params[:title].present?
 
-    if params[:filter_city].present?
-      @jobs = @jobs.joins(:locations).where(locations: { city: params[:filter_city] })
-    end
-
-    if user_signed_in?
-      @jobs = @jobs.sort_by { |job| -matching_percentage(job) }
-    end
+    @jobs = @jobs.joins(:locations).where(locations: { city: params[:filter_city] }) if params[:filter_city].present?
+    
+    @jobs = @jobs.sort_by { |job| - (matching_percentage(job)).to_f } if user_signed_in?
     
     @jobs = Kaminari.paginate_array(@jobs).page(params[:page]).per(10)
 
