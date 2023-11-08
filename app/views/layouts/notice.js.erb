@@ -1,5 +1,10 @@
 $("#flash-messages").append("<%= @message %>").show();
 
+if ($(".job-info#<%= @job.id %>").length > 0) {
+  $(".job-info#<%= @job.id %>").html("<%= j render 'job/view', job: @job %>").show();
+}
+
+
 setTimeout(function() {
   $("#flash-messages").fadeOut('slow', function() {
     $(this).empty();

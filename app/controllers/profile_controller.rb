@@ -35,6 +35,7 @@ class ProfileController < ApplicationController
     end
 
     apply = Application.create(apply_params)
+    @job = apply.job
     if apply.save
       @message = "Application sent!"
     else
@@ -54,6 +55,7 @@ class ProfileController < ApplicationController
       return
     end
     @app = Application.find(params[:id])
+    @job = @app.job
     if @app.viewed
       return
     end
