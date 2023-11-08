@@ -2,6 +2,7 @@
   - if @cv.educations.any?
     - @cv.educations.each_with_index do |education, index|
       .form-class 
+        %h1 Edit Education
         = button_to "Delete Education", delete_education_cv_path(cv_id: @cv.id, id: education.id), method: :delete, class: "delete-button", remote: true, onclick: "hideFormClass(this)"
         = form_for education, url: update_education_cv_path(cv_id: @cv.id, id: education.id), remote: true do |f|
           .form-group

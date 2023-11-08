@@ -4,10 +4,7 @@ if ($("#edit-experience").length) {
   $("#edit-experience").replaceWith(reRenderEditExperiencePartial);
   
 } else {
-  // #edit-experience doesn't exist, create it
-  var h1Element = $("<h1>").text("Edit Experience");
   var reRenderPartial = "<%= j render 'edit_experience_form' %>";
-  $("#experience-title").html(h1Element);
   $("#experience-title").append(reRenderPartial);
 }
 

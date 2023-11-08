@@ -4,10 +4,7 @@ if ($("#edit-education").length) {
   $("#edit-education").replaceWith(reRenderEducationPartial);
   
 } else {
-  // #edit-education doesn't exist, create it
-  var h1Element = $("<h1>").text("Edit Education");
   var reRenderPartial = "<%= j render 'edit_education_form' %>";
-  $("#education-title").html(h1Element);
   $("#education-title").append(reRenderPartial);
 }
 

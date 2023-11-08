@@ -2,6 +2,7 @@
   - if @cv.experiences.any?
     - @cv.experiences.each_with_index do |experience, index|
       .form-class 
+        %h1 Edit Experience
         = button_to "Delete Experience", delete_experience_cv_path(cv_id: @cv.id, id: experience.id), method: :delete,  class: 'delete-button', remote: true, onclick: "hideFormClass(this)"
         = form_for experience, url: update_experience_cv_path(cv_id: @cv.id, id: experience.id), remote: true do |f|
           .form-group

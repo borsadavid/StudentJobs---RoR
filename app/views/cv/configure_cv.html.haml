@@ -8,7 +8,6 @@
     -# edit forms (edit education, edit exprience have the div id edit-education, edit-experience)
     #education-title
     - if @cv.educations.any?
-      %h1 Edit education:
       = render 'edit_education_form'
 
       -#in create-education-container i render the add new education form with the link_to add education button
@@ -23,7 +22,6 @@
 
     #experience-title
     - if @cv.experiences.any?
-      %h1 Edit experience:
       = render 'edit_experience_form'
 
       -#in create-experience-container i render the add new experience form with the link_to add experience button
