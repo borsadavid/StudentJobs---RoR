@@ -10,7 +10,7 @@
         = link_to "Jobs", job_index_path, class: "button#{" signinbutton" if controller_name == 'job'}"
       = link_to "Profile", profile_index_path, class: "button#{" signinbutton" if controller_name == 'profile'}"
       - if is_admin?(current_user.id)
-        = link_to "Available Skills", skill_index_path, class: "button#{" signinbutton" if controller_name == 'skill'}"
+        = link_to "Skills", skill_index_path, class: "button#{" signinbutton" if controller_name == 'skill'}"
         = link_to "Admin", admin_index_path, class: "button#{" signinbutton" if controller_name == 'admin'}"
       = link_to "Log Out", destroy_user_session_path, class: "button#{" signinbutton" if controller_name == 'log_out'}", method: :delete 
     - else

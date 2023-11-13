@@ -1,0 +1,26 @@
+.users {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.users p {
+    font-size: 1.25rem;
+    font-family: 'GothamPro';
+    margin: 0;
+}
+
+@media screen and (max-width: 842px){
+    .users {
+        width:95%;
+    }
+}

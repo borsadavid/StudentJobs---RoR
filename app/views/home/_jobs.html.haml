@@ -3,7 +3,7 @@
     .form-group
       = label_tag 'filter_city', 'Filter by City:'
       = select_tag 'filter_city', options_for_select(@locations.pluck(:city).uniq, params[:filter_city]), prompt: 'All Cities', class: 'form-control'
-    = submit_tag 'Filter', class: 'btn btn-primary'
+    = submit_tag 'Filter', class: 'edit-button'
 
 
 - @jobs.each do |job|

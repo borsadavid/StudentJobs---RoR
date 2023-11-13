@@ -1,12 +1,14 @@
 
-%button.show_users Show All Users
-%div.users{style: "display: none;"}
-  = render "users", remote: true
+%button.show_users{style: "margin-top:110px"} Show All Users
+%div.left
+  %div.users{style: "display: none;"}
+    = render "users", remote: true
 
 
 %button.show_companies Show Companies Pending Approval
-%div.companies_pending{style: "display: none;"}
-  = render "companies_pending"
+%div.left
+  %div.companies_pending{style: "display: none;"}
+    = render "companies_pending"
 
 
 %div.right

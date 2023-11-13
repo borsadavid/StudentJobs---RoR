@@ -65,6 +65,29 @@
     border: 1px solid #e1eae7 !important;
   }
 
+  #user_information_sex {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    background: #eef5f3;
+    outline: 0;
+    border: none;
+    font-family: 'GothamPro-Medium',Arial;
+    font-size: .875rem;
+    border-radius: 20px;
+    color: #88908e;
+    padding: 0 16px;
+    margin: 5px 0;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+  }
+
+  #user_information_sex:focus{
+    background: #fff !important;
+    border: 1px solid #e1eae7 !important;
+  }
+
   .company{
     width: 60%;
   }

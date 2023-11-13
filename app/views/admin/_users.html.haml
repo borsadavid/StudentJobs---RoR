@@ -4,28 +4,29 @@
 
 - if @users.any?
   - @users.each do |user|
-    - if user&.user_information&.first_name.present?
-      = user&.user_information&.first_name
-    - elsif user&.company_information&.name.present?
-      = user&.company_information&.name
-    - else
-      Name Missing
-    = user.email
-    
-    - if user.company
-      = " - Company"
-      = link_to "View", show_company_information_path(id: user.id), remote: true
-    - else
-      = " - User"
+    %div.user-info
+      - if user&.user_information&.first_name.present?
+        %p Name: #{user.user_information.first_name}
+      - elsif user&.company_information&.name.present?
+        %p= user&.company_information&.name
+      - else
+        Name Missing
+      %p Email: #{user.email}
+      
+      - if user.company
+        %p{style: 'margin-bottom: 10px;'} Account type: company
+        = link_to "View", show_company_information_path(id: user.id), remote: true
+      - else
+        %p{style: 'margin-bottom: 10px;'} Account type: user
 
-    - if user.admin
-      = button_to "Take Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
-    - else
-      = button_to "Give Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, onclick: 'updateButtonText(this)'
-    - if user.blocked
-      = button_to "Unblock User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
-    - else
-      = button_to "Block User", block_user_path(id: user.id), method: :patch, remote: true, onclick: 'updateButtonText(this)'
+      - if user.admin
+        = button_to "Take Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, class:'edit-button', onclick: 'updateButtonText(this)', style:'margin-bottom:10px; width: fit-content;'
+      - else
+        = button_to "Give Admin Rights", update_admin_path(id: user.id), remote: true, method: :patch, class:'edit-button', onclick: 'updateButtonText(this)', style:'margin-bottom:10px; width: fit-content;'
+      - if user.blocked
+        = button_to "Unblock User", block_user_path(id: user.id), method: :patch, remote: true, class:'edit-button', onclick: 'updateButtonText(this)', style:'margin-bottom:10px; width: fit-content;'
+      - else
+        = button_to "Block User", block_user_path(id: user.id), method: :patch, remote: true, class:'edit-button', onclick: 'updateButtonText(this)', style:'margin-bottom:10px; width: fit-content;'
 
 = paginate @users, remote: true
 

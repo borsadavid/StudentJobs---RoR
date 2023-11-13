@@ -36,7 +36,8 @@
 
   .form-group
     = f.label :sex, class: 'form-label'
-    = f.select :sex, ['male', 'female', 'other'], required: true, class: 'form-control', value: @user_information.sex, style: 'font-family: GothamPro-Medium, sans-serif;'
+    = f.select :sex, [['Select a gender', nil], 'male', 'female', 'other'], required: true, class: 'form-control', value: @user_information.sex
+
 
   .modal-buttons
     = f.submit "Update Information", class: "login-button", onclick: "handleFormSubmission(this.form)"
