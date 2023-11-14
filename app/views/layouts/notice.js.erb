@@ -1,11 +1,15 @@
-$("#flash-messages").append("<%= @message %>").show();
+$("#flash-messages").append("<%= j @message %>").show();
 
-if @job.present? && ($(".job-info#<%= @job.id %>").length > 0) {
-  $(".job-info#<%= @job.id %>").html("<%= j render 'job/view', job: @job %>").show();
-}
+<% if @job.present? && (@job_info = render('job/view', job: @job)) %>
+  $(".job-info#<%= @job.id %>").html("<%= j @job_info %>").show();
+<% end %>
+
+console.log("ASIJAOSJIAJOSIOASIOJAOSOIJA <%= j @job.title %> <%= j @job.id %> <%= j @message %>");
 
 setTimeout(function() {
   $("#flash-messages").fadeOut('slow', function() {
     $(this).empty();
   });
 }, 2000);
+
+

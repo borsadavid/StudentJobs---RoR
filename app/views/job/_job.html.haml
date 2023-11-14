@@ -18,3 +18,32 @@
     Multiple Locations
   - job.locations.each do |loc|
     = loc.city
+
+
+  - if user_signed_in? && is_user?(current_user.id)
+    - applied = false
+    - current_user.cvs.each do |cv|
+      - if Application.find_by(job_id: job.id, cv_id: cv.id).present?
+        - applied = true
+        - break
+
+    - if applied == true
+      = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true, class: "edit-button", style: "width: fit-content; padding:0 10px;" 
+    - else
+      %button.apply-button{ style: "width: fit-content; padding: 0 15px;", onclick: "toggleChooseCV(this);" } Apply
+      %div.choose-cv{style: 'display: none;'}
+        - if current_user.cvs.any?
+          Choose CV
+          - current_user.cvs.each do |cv|
+            = button_to cv.title, apply_to_job_profile_path(job_id: job.id, cv_id: cv.id), class: 'cv-select', remote: true
+        - else
+          = link_to "Create a CV first", profile_index_path
+
+  - elsif !user_signed_in?
+    = button_to "Register to Apply", new_user_session_path, class: "edit-button", style: "width: fit-content; padding: 0 15px;" 
+    
+:javascript
+  function toggleChooseCV(button) {
+      $(button).next('.choose-cv').slideToggle();
+  }
+
