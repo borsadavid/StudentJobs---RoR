@@ -1,6 +1,7 @@
-= form_tag search_users_admin_path, method: :get, remote: true do
+
+= form_tag search_users_admin_path, method: :get, remote: true ,class: "search-form"do
   = text_field_tag :search, params[:search], placeholder: "Search by name"
-  = submit_tag "Search", class: "button"
+  = submit_tag "Search", class: "button1"
 
 - if @users.any?
   - @users.each do |user|

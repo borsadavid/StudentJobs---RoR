@@ -19,6 +19,37 @@
     margin: 0;
 }
 
+.company-admin p {
+    font-size: 1.25rem;
+    font-family: 'GothamPro';
+    margin: 5px 10px;
+}
+
+.button1 {
+    height: 30px;
+    background-color: #6327A0;
+    font-family: 'GothamPro-Medium';
+    color: #fff;
+    border: 0;
+    border-radius: 30px;
+    padding: 5px 10px; 
+}
+
+.companies_pending{
+    
+    width: 100%;
+}
+
+.company-admin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 1.25rem;
+    
+}
+
 @media screen and (max-width: 842px){
     .users {
         width:95%;
