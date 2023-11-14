@@ -14,7 +14,8 @@ class JobController < ApplicationController
   
   def index 
     @available_skills = Skill.all
-    @jobs = Job.where(user_id: params[:user_id])
+    @user_id = params[:user_id].present? ? params[:user_id].to_i : current_user.id
+    @jobs = Job.where(user_id: @user_id)
     @new_job = Job.new
   end
 

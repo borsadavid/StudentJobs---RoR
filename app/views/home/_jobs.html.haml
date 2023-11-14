@@ -1,16 +1,16 @@
 - if !@locations.empty?
   = form_tag feed_path, method: 'get', remote: true, id: 'filter-form' do
-    .form-group
+    %p.form-group
       = label_tag 'filter_city', 'Filter by City:'
       = select_tag 'filter_city', options_for_select(@locations.pluck(:city).uniq, params[:filter_city]), prompt: 'All Cities', class: 'form-control'
-    = submit_tag 'Filter', class: 'edit-button'
+    = submit_tag 'Filter', class: 'edit-button button-padding'
 
 
 - @jobs.each do |job|
   %div.job-container
     %ul
       %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
-      - if user_signed_in?
+      - if user_signed_in? && is_user?(current_user.id)
         %p Matching by: #{matching_percentage(job)}% 
     %div.job-info{id: job.id , style: 'display: none;' }
       
