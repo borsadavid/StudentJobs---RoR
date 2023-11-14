@@ -36,7 +36,7 @@
   - if applied == true
     = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true, class: "edit-button", style: "width: fit-content; padding:0 10px;" 
   - else
-    %button.apply-button{ style: "width: fit-content; padding: 0 15px;" } Apply
+    %button.apply-button{ style: "width: fit-content; padding: 0 15px;", onclick: "toggleChooseCV(this);" } Apply
     %div.choose-cv{style: 'display: none;'}
       - if current_user.cvs.any?
         Choose CV
@@ -51,12 +51,9 @@
 
 
 :javascript
-  $(document).ready(function() {
-    $('.apply-button').click(function(e) {
-      e.preventDefault();
-      $('.choose-cv').slideToggle();
-    });
-  });
+  function toggleChooseCV(button) {
+      $(button).next('.choose-cv').slideToggle();
+  }
 
   
 
