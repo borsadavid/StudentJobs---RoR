@@ -1,7 +1,7 @@
 class JobController < ApplicationController
-  before_action :check_company
-  before_action :check_company_permission
-  before_action :set_jobs
+  before_action :check_company, except: [:index]
+  before_action :check_company_permission, except: [:index]
+  before_action :set_jobs, except: [:index]
 
   def render_create
     @available_skills = Skill.all
@@ -14,6 +14,7 @@ class JobController < ApplicationController
   
   def index 
     @available_skills = Skill.all
+    @jobs = Job.where(user_id: params[:user_id])
     @new_job = Job.new
   end
 

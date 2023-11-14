@@ -68,7 +68,6 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    animate.css-rails (3.2.0)
     autoprefixer-rails (10.4.15.0)
       execjs (~> 2)
     babel-source (5.8.35)
@@ -127,6 +126,8 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     fugit (1.9.0)
       et-orbi (~> 1, >= 1.2.7)
@@ -349,7 +350,6 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage
-  animate.css-rails
   bcrypt (~> 3.1.7)
   bootsnap
   bootstrap
@@ -358,6 +358,7 @@ DEPENDENCIES
   debug
   devise
   factory_bot_rails
+  faker
   haml
   image_processing (~> 1.2)
   importmap-rails

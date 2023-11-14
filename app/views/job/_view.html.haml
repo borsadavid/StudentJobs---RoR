@@ -8,20 +8,16 @@
       - applied = true
       - break
 
-
-%h1
-  = job.title
-
 %h2
   by: 
-  = company_name
+  = link_to company_name, job_index_path(user_id: job.user_id), class: 'job-link'
 
-%p{ style: "font-size:1.325rem;" }
+%p.job-info
   Description:
-%p{ style: "color: #000" }
+%p{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
   = job.description
 
-%p{ style: "font-size:1.325rem;" }
+%p.job-info
   Skills required:
   - if job.skills.empty?
     No skills required
@@ -29,11 +25,12 @@
     %li{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
       = skill.title
 
-%h4
+%p.job-info
   - if !job.locations.empty?
     Location:
     - job.locations.each do |loc|
-      %li= loc.city
+      %li{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
+        = loc.city
 
 - if user_signed_in? && is_user?(current_user.id)
   - if applied == true

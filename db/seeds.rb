@@ -17,71 +17,73 @@
 20.times do |n|
   @user = User.create(email: "user#{n + 1}@example.com", password: "password#{n + 1}")
   UserInformation.create(
-    first_name: "First#{n + 1}",
-    last_name: "Last#{n + 1}",
-    country: "Country#{n + 1}",
-    county: "County#{n + 1}",
-    city: "City#{n + 1}",
-    address: "#{n + 1} Example St",
-    birthdate: Date.new(1990, 1, 1) + n.days,
-    sex: n.even? ? 'Male' : 'Female',
-    phone_number: "0123456789",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    country: Faker::Address.country,
+    county: Faker::Address.state,
+    city: Faker::Address.city,
+    address: Faker::Address.street_address,
+    birthdate: Faker::Date.birthday(min_age: 18, max_age: 65),
+    sex: Faker::Gender.binary_type,
+    phone_number: Faker::PhoneNumber.phone_number,
     user_id: @user.id
   )
   skill = Skill.create(title: "Skill #{n + 1}")
-  @cv = Cv.create(title: "CV Title #{n + 1}", user_id: @user.id)
+  @cv = Cv.create(title: Faker::Lorem.words(number: 3).join(' '), user_id: @user.id)
 
   Education.create(
-    institution: "University#{n + 1}",
-    specialization: "Specialization#{n + 1}",
-    degree: "Degree#{n + 1}",
-    started_at: Date.new(2000, 1, 1) + n.days,
-    finished_at: Date.new(2004, 1, 1) + n.days,
+    institution: Faker::University.name,
+    specialization: Faker::Educator.subject,
+    degree: Faker::Educator.degree,
+    started_at: Faker::Date.between(from: 10.years.ago, to: Date.today),
+    finished_at: Faker::Date.between(from: 5.years.ago, to: Date.today),
     ongoing: false,
     cv_id: @cv.id
   )
   Experience.create(
-    title: "Job Title#{n + 1}",
-    employer: "Employer#{n + 1}",
-    description: "Description for Experience#{n + 1}",
-    started_at: Date.new(2005, 1, 1) + n.days,
-    finished_at: Date.new(2007, 1, 1) + n.days,
+    title: Faker::Job.title,
+    employer: Faker::Company.name,
+    description: Faker::Lorem.paragraph,
+    started_at: Faker::Date.between(from: 10.years.ago, to: Date.today),
+    finished_at: Faker::Date.between(from: 5.years.ago, to: Date.today),
     ongoing: false,
     cv_id: @cv.id
   )
   @cv.skills << skill
 end
 
-# Second code block: Creating company information, jobs, and job applications
-20.times do |n|
-  @company_user = User.create(email: "company#{n + 1}@example.com", password: "password#{n + 1}", company: true)
-  CompanyInformation.create(
-    name: "Company #{n+1}",
-    country: "Country #{n+1}",
-    address: "Address #{n+1}",
-    phone_number: "0123456789",
-    user_id: @company_user.id
-  )
 
-  10.times do |m|
-    @job = Job.create(
-      title: "Job for #{n+m+1}",
-      description: "Description for Job #{n+m+1}",
-      user_id: @company_user.id
-    )
-
-    @job.skills << Skill.find_by(title: "Skill #{m + 1}")
-
-    Cv.all.sample(4).each do |cv|
-      Application.create(cv_id: cv.id, job_id: @job.id)
-    end
-  end
-end
-
-
+# add all cities
 json_data = File.read(Rails.root.join('db/cities', 'cities.json'))
 cities = JSON.parse(json_data)
 
 cities.each do |city_data|
   Location.find_or_create_by(city: city_data['city'])
+end
+
+# Second code block: Creating company information, jobs, and job applications
+20.times do |n|
+  @company_user = User.create(email: "company#{n + 1}@example.com", password: "password#{n + 1}", company: true)
+  CompanyInformation.create(
+    name: Faker::Company.name,
+    country: Faker::Address.country,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    user_id: @company_user.id
+  )
+
+  5.times do |m|
+    @job = Job.create(
+      title: Faker::Job.title,
+      description: Faker::Lorem.paragraph,
+      user_id: @company_user.id
+    )
+
+    @job.locations << Location.order('RANDOM()').limit(2)
+    @job.skills << Skill.order('RANDOM()').limit(4)
+
+    Cv.all.sample(4).each do |cv|
+      Application.create(cv_id: cv.id, job_id: @job.id)
+    end
+  end
 end

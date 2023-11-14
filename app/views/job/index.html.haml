@@ -1,7 +1,8 @@
-%h1 Your Available Jobs
+%h1 Available Jobs
 
-%div.create-job
-= link_to "Post a new job", render_create_job_path(id: current_user.id), class: "create-job-button", remote: true
+- if user_signed_in? && current_user.id == job.user_id
+  %div.create-job
+  = link_to "Post a new job", render_create_job_path(id: current_user.id), class: "create-job-button", remote: true
 
 
 %div.available-jobs
