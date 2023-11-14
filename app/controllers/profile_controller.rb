@@ -50,6 +50,10 @@ class ProfileController < ApplicationController
     end
   end
 
+  def view_company
+    @company = User.find(params[:user_id])
+  end
+
   def cancel_application
     unless Application.find(params[:id]).cv.user.id == current_user.id
       return

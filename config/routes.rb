@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     member do
       post 'apply_to_job'
       delete 'cancel_application'
+      get 'view_company'
     end
   end
   resources :job, except: [:new] do

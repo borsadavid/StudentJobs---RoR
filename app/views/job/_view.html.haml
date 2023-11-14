@@ -10,11 +10,11 @@
 
 %h2
   by: 
-  = link_to company_name, job_index_path(user_id: job.user_id), class: 'job-link'
+  = link_to company_name, view_company_profile_path(user_id: job.user_id), class: 'job-link'
 
 %p.job-info
   Description:
-%p{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
+%p.text-class
   = job.description
 
 %p.job-info
@@ -22,14 +22,14 @@
   - if job.skills.empty?
     No skills required
   - job.skills.each do |skill|
-    %li{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
+    %li.text-class
       = skill.title
 
 %p.job-info
   - if !job.locations.empty?
     Location:
     - job.locations.each do |loc|
-      %li{ style: "font-family:'GothamPro'; color:#000; font-size:1.25rem" }
+      %li.text-class
         = loc.city
 
 - if user_signed_in? && is_user?(current_user.id)

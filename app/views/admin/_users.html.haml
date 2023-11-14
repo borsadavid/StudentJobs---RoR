@@ -6,10 +6,10 @@
 - if @users.any?
   - @users.each do |user|
     %div.user-info
-      - if user&.user_information&.first_name.present?
+      - if user.user_information.present?
         %p Name: #{user.user_information.first_name}
-      - elsif user&.company_information&.name.present?
-        %p= user&.company_information&.name
+      - elsif user.company_information.present?
+        %p Name: #{user.company_information.name}
       - else
         Name Missing
       %p Email: #{user.email}

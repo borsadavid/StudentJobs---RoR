@@ -1,0 +1,11 @@
+%div.container
+  %div.job-feed
+    %div.text-title= @company.company_information.name
+
+    //jobs of company
+    %div.text-subtitle
+      Available Jobs
+    - @company.jobs.each do |job|
+      %div.job-info{id: job.id}
+        %h1.job-link= job.title
+        = render partial: 'job/view', locals: { job: job } 

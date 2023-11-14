@@ -3,9 +3,11 @@ class AdminController < ApplicationController
 
   def search
     search_term = params[:search]
-    @users = User.joins("LEFT JOIN user_informations ON users.id = user_informations.user_id")
+    @users = User.where.not(id: current_user.id).order(:email).includes(:user_information, :company_information)
+    @users = @users.where.not(company: true, enabled: false)
+    @users = @users.joins("LEFT JOIN user_informations ON users.id = user_informations.user_id")
             .joins("LEFT JOIN company_informations ON users.id = company_informations.user_id")
-            .where("user_informations.first_name ILIKE :search_term OR user_informations.last_name ILIKE :search_term OR company_informations.name ILIKE :search_term", search_term: "%#{search_term}%")
+            .where("user_informations.first_name ILIKE :search_term OR user_informations.last_name ILIKE :search_term OR company_informations.name ILIKE :search_term OR email ILIKE :search_term", search_term: "%#{search_term}%")
             .includes(:company_information, :user_information)
             .page(params[:page])
             .per(10)
@@ -17,11 +19,11 @@ class AdminController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: current_user.id).order(:email).includes(:user_information || :company_information)
+    @users = User.where.not(id: current_user.id).order(:email).includes(:user_information, :company_information)
     @users = @users.where("company = ? OR enabled = ?", false, true)
     @users = Kaminari.paginate_array(@users).page(params[:page]).per(10)
-    @companies = User.where(company: true, enabled: false).includes(:company_information)
-    @companies = Kaminari.paginate_array(@companies).page(params[:page]).per(10)
+
+    @companies = User.where(company: true, enabled: false)
 
     respond_to do |format|
       format.html 
