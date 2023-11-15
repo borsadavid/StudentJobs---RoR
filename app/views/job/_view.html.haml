@@ -33,17 +33,22 @@
         = loc.city
 
 - if user_signed_in? && is_user?(current_user.id)
-  - if applied == true
+  
+  - if applied == true && @application.viewed == false
     = link_to "Cancel Application", cancel_application_profile_path(@application.id), method: :delete, remote: true, class: "edit-button", style: "width: fit-content; padding:0 10px;" 
-  - else
+  
+  - elsif applied == true && @application.viewed == true
+    %p.job-info Application viewed
+
+  - elsif applied == false
     %button.apply-button{ style: "width: fit-content; padding: 0 15px;", onclick: "toggleChooseCV(this);" } Apply
     %div.choose-cv{style: 'display: none;'}
-      - if current_user.cvs.any?
+      - if current_user.cvs.any? && current_user.user_information.present?
         Choose CV
         - current_user.cvs.each do |cv|
           = button_to cv.title, apply_to_job_profile_path(job_id: job.id, cv_id: cv.id), class: 'cv-select', remote: true
       - else
-        = link_to "Create a CV first", profile_index_path
+        = link_to "Add Cv & Contact Info", profile_index_path
         
 - elsif !user_signed_in?
   = button_to "Register to Apply", new_user_session_path, class: "edit-button", style: "width: fit-content; padding: 0 15px;" 

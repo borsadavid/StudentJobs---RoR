@@ -27,6 +27,10 @@ class ProfileController < ApplicationController
       return
     end
 
+    unless current_user.user_information.present?
+      return
+    end
+
     user = User.find(cv.user.id) #if any cvs were used to apply to this job, block another application from same user
     user.cvs.each do |cv|
       if Application.find_by(cv_id: cv.id, job_id: params[:job_id]).present?
