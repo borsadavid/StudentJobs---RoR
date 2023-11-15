@@ -1,4 +1,11 @@
+// user job applications
+- if is_user?(current_user.id) 
+  - if current_user.cvs.map { |cv| cv.applications }.count > 0
+    //applications class e folosit la js
+    %div.container.applications.left
+      = render 'user_applications'
 
+//user cvs and cv creator
 - if is_user?(current_user.id) 
   %div.left#undernav
     %div.Availablecv
@@ -6,7 +13,7 @@
 
     = render "cv/create_cv"
 
-
+// company interface
 %div.right
   - if is_company?(current_user.id)
     - if current_user.company_information.present?
@@ -22,7 +29,7 @@
     - else 
       = render 'user_information/form'
     
-
+// delete account
 %div.left
   %h3 Not satisfied with our services?
 
