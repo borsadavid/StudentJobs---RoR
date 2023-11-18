@@ -32,6 +32,6 @@
       %div.view-company-information{id: "company-#{user.id}"}
 
 
-= paginate @users, remote: true
+  = paginate @users, remote: true, param_name: :user_page, id: "user_pagination"
 
 = javascript_include_tag 'admin'

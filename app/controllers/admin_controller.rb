@@ -21,9 +21,15 @@ class AdminController < ApplicationController
   def index
     @users = User.where.not(id: current_user.id).order(:email).includes(:user_information, :company_information)
     @users = @users.where("company = ? OR enabled = ?", false, true)
-    @users = Kaminari.paginate_array(@users).page(params[:page]).per(10)
+    
+    @user_page = params[:user_page]
+    
+    @users = Kaminari.paginate_array(@users).page(params[:user_page]).per(5)
 
     @companies = User.where(company: true, enabled: false)
+
+    @company_page = params[:company_page]
+    @companies = Kaminari.paginate_array(@companies).page(params[:company_page]).per(5)
 
     respond_to do |format|
       format.html 

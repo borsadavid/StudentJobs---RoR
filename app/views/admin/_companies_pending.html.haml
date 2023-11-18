@@ -9,3 +9,5 @@
         = link_to "View", show_company_information_path(id: company.id), remote: true
 
         %div.view-company-information{id: "company-#{company.id}"}
+
+  = paginate @companies, remote: true, param_name: :company_page, id: "company_pagination"
