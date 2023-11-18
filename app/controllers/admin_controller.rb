@@ -49,6 +49,7 @@ class AdminController < ApplicationController
 
   def show_company_information
     @company_information = User.find(params[:id]).company_information
+    @id = params[:id]
     respond_to do |f|
       f.js 
     end
