@@ -6,4 +6,9 @@ class CompanyMailer < ApplicationMailer
     mail(to: @user.email, subject: 'These jobs are the best matches!')
   end
 
+  def send_status_update(company)
+    @company = company
+    mail(to: company.email, subject: 'Your account has been reviewed')
+  end
+
 end

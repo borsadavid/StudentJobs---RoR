@@ -35,12 +35,16 @@ class AdminController < ApplicationController
     @user = CompanyInformation.find(params[:id]).user
     value = !@user.enabled
     @user.update(enabled: value)
+
+    CompanyMailer.send_status_update(@user).deliver_now
   end
 
   def add_verification_status
     @information = CompanyInformation.find(params[:id])
     @information.update(status: params[:company_information][:status])
     @information.user.update(enabled: false)
+
+    CompanyMailer.send_status_update(@user).deliver_now
   end
 
   def show_company_information

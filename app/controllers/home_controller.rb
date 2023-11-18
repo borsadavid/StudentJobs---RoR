@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     
     @jobs = Job.all.includes(:skills).order(created_at: :desc)
 
-    @jobs = @jobs.where("lower(title) LIKE ?", "%#{params[:title].downcase}%") if params[:title].present?
+    @jobs = @jobs.joins(user: :company_information).where("lower(title) LIKE :search OR lower(company_informations.name) LIKE :search", search: "%#{params[:title].downcase}%") if params[:title].present?
 
     @jobs = @jobs.joins(:locations).where(locations: { city: params[:filter_city] }) if params[:filter_city].present?
     
