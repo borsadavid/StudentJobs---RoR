@@ -1,9 +1,10 @@
-%h1 
-  Add available skills:
-= form_for @skill, url: skill_index_path do |f|
-  .form-group
-    = f.label :title, "Title"
-    = f.text_field :title, required: true, class: 'form-control'
+%div.skill-wrapper#undernav
+  %h1 
+    Add available skills:
+  = form_for @skill, url: skill_index_path do |f|
+    .form-group
+      %p= f.label :title, "Title"
+      = f.text_field :title, required: true, class: 'form-control', placeholder: "Skill Title" 
 
-    .modal-buttons
-    = f.submit "Save", class: "btn btn-primary btn-wd btn-lg btn-round"
+      .modal-buttons
+        = f.submit "Save", class: "login-button"
