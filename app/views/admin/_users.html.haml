@@ -29,6 +29,9 @@
       - else
         = button_to "Block User", block_user_path(id: user.id), method: :patch, remote: true, class:'edit-button', onclick: 'updateButtonText(this)', style:'margin-bottom:10px; width: fit-content;'
 
+      %div.view-company-information{id: "company-#{user.id}"}
+
+
 = paginate @users, remote: true
 
 = javascript_include_tag 'admin'

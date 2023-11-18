@@ -4,8 +4,6 @@ $("#flash-messages").append("<%= j @message %>").show();
   $(".job-info#<%= @job.id %>").html("<%= j @job_info %>").show();
 <% end %>
 
-console.log("ASIJAOSJIAJOSIOASIOJAOSOIJA <%= j @job.title %> <%= j @job.id %> <%= j @message %>");
-
 setTimeout(function() {
   $("#flash-messages").fadeOut('slow', function() {
     $(this).empty();

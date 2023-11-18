@@ -1,6 +1,6 @@
 class JobController < ApplicationController
-  before_action :check_company
-  before_action :check_company_permission
+  before_action :check_company, except: [:destroy]
+  before_action :check_company_permission, except: [:destroy]
   before_action :set_jobs
 
   def render_create
@@ -88,13 +88,15 @@ class JobController < ApplicationController
 
   def destroy 
     @job = Job.find(params[:id])
-    if @job.user_id == current_user.id
+    if @job.user_id == current_user.id || is_admin?(current_user.id)
       respond_to do |format|
         if @job.destroy
           format.json { render json: {message: "Job deleted!"} }
           format.js
+          format.html { redirect_back(fallback_location: root_path) }
         else
           format.json { render json: {message: "Something went wrong"} }
+          format.html { redirect_back(fallback_location: root_path) }
         end
       end
     end
