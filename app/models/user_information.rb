@@ -6,7 +6,7 @@ class UserInformation < ApplicationRecord
   validates :address, presence: true
   validates :birthdate, presence: true
   validates :sex, presence: true
-  validates :phone_number, presence: true, length: { is: 10 }
+  validates :phone_number, presence: true
   validates :birthdate, presence: true
   validate :birthdate_in_the_past
   
