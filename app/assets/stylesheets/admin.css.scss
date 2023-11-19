@@ -1,3 +1,12 @@
+.left1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    width: 40%;
+}
+
 .wrapper-admin {
     display: flex;
     justify-content: center;
@@ -5,8 +14,19 @@
     flex-direction: column;
 }
 
+.button-admin {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#edit_company_information_1 {
+    width: 100%;
+}
+
 .users {
-    //width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,9 +47,9 @@
 }
 
 .company-admin p {
-    font-size: 1.25rem;
-    font-family: 'GothamPro';
-    margin: 5px 10px;
+    font-size: 1.5rem;
+    font-family: 'GothamPro-Medium';
+    margin: 5px 0px;
 }
 
 #search {
@@ -40,7 +60,7 @@
     margin-top: 20px;
 }
 
-#search:focus-visible{
+#search:focus-visible {
     border: 1px solid #e1eae7!important;
     outline: none;
 }
@@ -48,32 +68,53 @@
 .button1 {
     margin-top: 20px;
     height: 30px;
-    background-color: #6327A0;
-    font-family: 'GothamPro-Medium';
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
+    font-family: 'GothamPro';
     color: #fff;
     border: 0;
     border-radius: 0 20px 20px 0;
     padding: 5px 10px; 
+    font-size: 1rem;
 }
 
-.companies_pending{
-    
+.button1:hover {
+    background-position: right;
+}
+
+.companies_pending {
     width: 100%;
 }
 
 .company-admin {
-    width: 100%;
-    //display: flex;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
     font-size: 1.25rem;
+}
 
+.company-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1.25rem;
+}
+
+.view-company-information {
+    width: 100%;
 }
 
 .show_users {
-    width: 312px;
-    background-color: #6327A0;
+    width: 40%;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
     font-family: 'GothamPro-Medium';
     color: #fff;
     border: 0;
@@ -83,9 +124,17 @@
     margin-top: 110px;
 }
 
+.show_users:hover {
+    background-position: right;
+}
+
+
 .show_companies {
-    width: 312px;
-    background-color: #6327A0;
+    width: 40%;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
     font-family: 'GothamPro-Medium';
     color: #fff;
     border: 0;
@@ -94,13 +143,20 @@
     margin-bottom: 10px;
 }
 
-.company-admin a{
+.show_companies:hover {
+    background-position: right;
+}
+
+.company-admin a {
+    font-size: 1.5rem;
     text-decoration: none;
     color: #9754cb;
-    font-family: 'GothamPro-Medium';
+    font-family: 'GothamPro';
+    font-weight: 500;
 }
 
 .company-info {
+    
     font-family: 'GothamPro';
     margin: 0;
     display: flex;
@@ -112,6 +168,7 @@
 .company-info p {
     font-family: 'GothamPro';
     margin: 0;
+    font-size: 1.25rem;
 }
 
 .edit_company_information {
@@ -145,11 +202,21 @@
   }
 
 @media screen and (max-width: 842px){
+    
+    .left1 {
+        width: 85%;
+    }
+
     .users {
         width:95%;
     }
 
     .show_users {
+        width: 90%;
         margin-top: 120px
+    }
+
+    .show_companies {
+        width: 90%;
     }
 }

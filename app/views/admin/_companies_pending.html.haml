@@ -2,10 +2,11 @@
   - @companies.each do |company|
     - if company.company_information.present? && company.company_information.status == "Pending verification"
       %div.company-admin{id: company.id}
-        %p
-          - info = company.company_information
-          = info.name
+        %div.company-view
+          %p
+            - info = company.company_information
+            = info.name
 
-        = link_to "View", show_company_information_path(id: company.id), remote: true
+          = link_to "View", show_company_information_path(id: company.id), remote: true
 
         %div.view-company-information{id: "company-#{company.id}"}
