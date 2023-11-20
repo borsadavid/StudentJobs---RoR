@@ -51,7 +51,7 @@
         = link_to "Add Cv & Contact Info", profile_index_path
 
 - elsif user_signed_in? && is_admin?(current_user.id) #if admin be able to delete post
-  = link_to "X", job_path(job), method: :delete, data: {confirm: 'Are you sure you want to delete this job?'}
+  = link_to "Delete Job", job_path(job), method: :delete, data: {confirm: 'Are you sure you want to delete this job?'}, class:"admin-delete"
 
 - elsif !user_signed_in?
   = button_to "Register to Apply", new_user_session_path, class: "edit-button", style: "width: fit-content; padding: 0 15px;" 
