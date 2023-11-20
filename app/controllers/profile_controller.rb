@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:view_company]
   before_action :check_user, only: [:apply_to_job]
 
   def index
