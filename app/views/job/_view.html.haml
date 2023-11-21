@@ -1,9 +1,5 @@
 - company = CompanyInformation.find_by(user_id: job.user_id)
 - company_name = company.name
-- if company.company_picture.present?
-  - company_picture = image_tag company.company_picture, size: "150x150"
-- else 
-  - company_picture = image_tag "https://img.freepik.com/premium-vector/briefcase-isolated-background-vector-illustration-flat-design-attache-case-diplomat-is-accessory-business-people_153097-721.jpg", size: "150x150"
 
 - applied = false
 - @application = nil
@@ -20,8 +16,6 @@
 
 //date
 = job.created_at.strftime('%d-%b-%y')
-//imagine
-= company_picture
 
 %p.job-info
   Description:

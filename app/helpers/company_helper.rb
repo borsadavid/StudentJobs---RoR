@@ -40,4 +40,12 @@ module CompanyHelper
     User.find(id)&.company_information&.status
   end
 
+  def display_company_picture(company)
+    if company.company_information.present? && company.company_information.company_picture.present?
+      company.company_information.company_picture
+    else
+      "https://img.freepik.com/premium-vector/briefcase-isolated-background-vector-illustration-flat-design-attache-case-diplomat-is-accessory-business-people_153097-721.jpg"
+    end
+  end
+
 end
