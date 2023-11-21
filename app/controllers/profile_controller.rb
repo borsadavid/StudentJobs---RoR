@@ -3,18 +3,21 @@ class ProfileController < ApplicationController
   before_action :check_user, only: [:apply_to_job]
 
   def index
-    @applications = Application.where(cv_id: current_user.cvs.pluck(:id)).includes(:cv, :job).order(created_at: :desc)
-    @applications = Kaminari.paginate_array(@applications).page(params[:page]).per(2)
 
-    @cvs = current_user.cvs.all
-    @new_cv = Cv.new
     if is_company?(current_user.id)
       if current_user.company_information.present?
         @company_information = current_user.company_information
       else
         @company_information = CompanyInformation.new
       end
+      
     else
+      @applications = Application.where(cv_id: current_user.cvs.pluck(:id)).includes(:cv, :job).order(created_at: :desc)
+      @applications = Kaminari.paginate_array(@applications).page(params[:page]).per(2)
+
+      @cvs = current_user.cvs.all
+      @new_cv = Cv.new
+
       if current_user.user_information.present?
         @user_information = current_user.user_information
       else
