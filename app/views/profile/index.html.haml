@@ -17,10 +17,7 @@
 %div.right
   - if is_company?(current_user.id)
     - if current_user.company_information.present?
-
-      // modifica style-ul ala cu ce clasa crezi:
-      %div.replace{style: "margin-top: 50px;"}
-        = render 'company_information/company_picture'
+      = render 'company_information/company_picture'
 
       = render 'company_information/edit_form'
     - else
