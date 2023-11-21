@@ -12,6 +12,9 @@
   by: 
   = link_to company_name, view_company_profile_path(user_id: job.user_id), class: 'job-link'
 
+//date
+= job.created_at.strftime('%d-%b-%y')
+
 %p.job-info
   Description:
 %p.text-class
