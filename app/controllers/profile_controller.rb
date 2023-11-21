@@ -65,6 +65,18 @@ class ProfileController < ApplicationController
 
   def view_company
     @company = User.find(params[:user_id])
+    @jobs = @company.jobs.all
+
+    if params[:search].present?
+      @jobs = @jobs.where("title ILIKE ?", "%#{params[:search]}%")
+    end
+
+    @jobs = Kaminari.paginate_array(@jobs).page(params[:page]).per(3)
+    
+    respond_to do |f|
+      f.html
+      f.js
+    end
   end
 
   def cancel_application
