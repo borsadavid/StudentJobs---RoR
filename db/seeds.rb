@@ -86,4 +86,8 @@ end
       Application.create(cv_id: cv.id, job_id: @job.id)
     end
   end
+
+  User.create(email:"a@a.com", password:"123456", admin: true, confirmed_at: DateTime.now())
+  User.create(email:"aa@aa.com", password:"123456", company: true, confirmed_at: DateTime.now(), enabled:true)
+
 end
