@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def feed
     @locations = Location.all.order(city: :asc)
     
-    @jobs = Job.all.includes(:skills).order(created_at: :desc)
+    @jobs = Job.where(user: {blocked: false}).includes(:skills, user: { company_information: :company_picture_blob }).order(created_at: :desc)
 
     @jobs = @jobs.joins(user: :company_information).where("lower(title) LIKE :search OR lower(company_informations.name) LIKE :search", search: "%#{params[:title].downcase}%") if params[:title].present?
 

@@ -1,41 +1,21 @@
 %div.wrapper-admin
   %button.show_users Show All Users
-  %div.left{style: "margin: 0; width: 312px;"}
+  %div.left1
     %div.users{style: "display: none;"}
       = render "users"
 
 
   %button.show_companies Show Companies Pending Approval
-  %div.left
+  %div.left1
     %div.companies_pending{style: "display: none;"}
       = render "companies_pending"
 
 
-  %div.right
+:javascript
+  $(".show_users").click(function() {
+    $(".users").slideToggle();
+  });
 
-
-
-  :javascript
-    $(".show_users").click(function() {
-      var right = $(".right");
-      $(".users").slideToggle(function() {
-        if ($(".users").css("display") === "none") {
-          right.slideUp();
-        } else {
-          right.slideDown();
-        }
-      });
-    });
-
-    $(".show_companies").click(function() {
-      var company = $(".companies_pending");
-      var right = $(".right");
-      
-      company.slideToggle(function() {
-        if (company.css("display") === "none") {
-          right.slideUp();
-        } else {
-          right.slideDown();
-        }
-      });
-    });
+  $(".show_companies").click(function() {
+    $(".companies_pending").slideToggle()
+  });

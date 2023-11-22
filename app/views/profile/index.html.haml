@@ -17,6 +17,8 @@
 %div.right
   - if is_company?(current_user.id)
     - if current_user.company_information.present?
+      = render 'company_information/company_picture'
+
       = render 'company_information/edit_form'
     - else
       = render 'company_information/form'
