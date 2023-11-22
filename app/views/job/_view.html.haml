@@ -1,5 +1,5 @@
-- company = CompanyInformation.find_by(user_id: job.user_id)
-- company_name = company.name
+- company_information = CompanyInformation.find_by(user_id: job.user_id)
+- company_name = company_information.name
 
 - applied = false
 - @application = nil
@@ -12,7 +12,7 @@
 
 %h2
   by: 
-  = link_to company_name, view_company_profile_path(id: company.id), class: 'job-link'
+  = link_to company_name, view_company_profile_path(id: job.user.id), class: 'job-link'
 
 //date for jobs on company profile
 - if controller_name == 'profile'
