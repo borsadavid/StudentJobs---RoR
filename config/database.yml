@@ -81,5 +81,6 @@ test:
 #
 production:
   <<: *default
-  host: /var/run/postgresql/
+  database: testing1_production
+  username: testing1
   url: <%= ENV['DATABASE_URL'] %>
