@@ -67,9 +67,10 @@ class ProfileController < ApplicationController
   end
 
   def view_company
-    @company = User.find(params[:user_id])
+    @company = User.find(params[:id])
     if @company.blocked
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
+      return
     end
 
     @jobs = @company.jobs.all

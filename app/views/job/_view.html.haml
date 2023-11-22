@@ -12,7 +12,7 @@
 
 %h2
   by: 
-  = link_to company_name, view_company_profile_path(user_id: job.user_id), class: 'job-link'
+  = link_to company_name, view_company_profile_path(id: company.id), class: 'job-link'
 
 //date for jobs on company profile
 - if controller_name == 'profile'
