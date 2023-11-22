@@ -68,6 +68,10 @@ class ProfileController < ApplicationController
 
   def view_company
     @company = User.find(params[:user_id])
+    if @company.blocked
+      redirect_to root_path
+    end
+
     @jobs = @company.jobs.all
 
     if params[:search].present?
