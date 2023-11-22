@@ -1,6 +1,6 @@
 databases:
   - name: postgres
-  ipAllowList: []
+    ipAllowList: []
 
 services:
   - type: web
@@ -20,4 +20,4 @@ services:
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
-    
+
