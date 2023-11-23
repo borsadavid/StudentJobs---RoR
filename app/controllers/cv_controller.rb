@@ -174,7 +174,7 @@ class CvController < ApplicationController
 
   def upload_picture
     if params[:cv].present? && params[:cv][:picture].present?
-      @cv.picture.destroy_all
+      @cv.picture.destroy
       @cv.picture.attach(params[:cv][:picture])
       flash[:success] = "Picture uploaded."
       redirect_to configure_cv_cv_path(@cv.id)
