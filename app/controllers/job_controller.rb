@@ -111,9 +111,11 @@ class JobController < ApplicationController
 
   def view_application_details
     @app = Application.find(params[:id])
-    @app.update(viewed: true)
-
-    UserMailer.send_application_status(@app).deliver_now
+    
+    if @app.viewed == false
+      @app.update(viewed: true)
+      UserMailer.send_application_status(@app).deliver_later
+    end
 
     respond_to do |f|
       f.js
