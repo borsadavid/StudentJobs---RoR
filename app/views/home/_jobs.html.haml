@@ -9,14 +9,15 @@
 - @jobs.each do |job|
   %div.job-container
     %ul.job-ul
-      %div.job-img-container
-        = image_tag display_company_picture(job.user), size: "60x60"
-        %div.job-title-container
-          %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
-          %div.member= "#{job.created_at.strftime('%d-%b-%y')}"
+      = link_to view_job_path(job), remote: true, class: "job-link" do
+        %div.job-img-container
+          = image_tag display_company_picture(job.user), size: "60x60"
+          %div.job-title-container
+            %div.job-button= job.title
+            %div.member= "#{job.created_at.strftime('%d-%b-%y')}"
 
-      - if user_signed_in? && is_user?(current_user.id)
-        %p Matching by: #{matching_percentage(job)}% 
+        - if user_signed_in? && is_user?(current_user.id)
+          %p Matching by: #{matching_percentage(job)}% 
     %div.job-info{id: job.id , style: 'display: none;' }
       
 = paginate @jobs, remote: true

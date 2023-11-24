@@ -10,12 +10,11 @@
       - applied = true
       - break
 
-%h2
-  by: 
-  = link_to company_name, view_company_profile_path(id: job.user.id), class: 'job-link'
-
-//date for jobs on company profile
-- if controller_name == 'profile'
+- if controller_name == 'home'
+  %h2
+    by: 
+    = link_to company_name, view_company_profile_path(id: job.user.id), class: 'job-link underline'
+- else
   %div.member= "#{job.created_at.strftime('%d-%b-%y')}"
 
 %p.job-info
