@@ -27,7 +27,12 @@ Rails.application.routes.draw do
     end
   end
   resources :skill, except: [:update, :edit]
-  resources :company_information, only: [:destroy, :create, :update]
+  resources :company_information, only: [:destroy, :create, :update] do
+    member do
+      patch 'add_picture'
+      delete 'delete_picture'
+    end
+  end
   resources :profile, only: [:index] do
     member do
       post 'apply_to_job'

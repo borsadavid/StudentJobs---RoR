@@ -1,6 +1,8 @@
 %div.container
   %div.job-feed
     %div.text-title= @company.company_information.name
+    
+    = image_tag display_company_picture(@company), size: "150x150"  
 
     = form_tag(view_company_profile_path, method: :get, remote: true, class: 'job-search-form') do
       = text_field_tag :search, params[:search], placeholder: 'Search jobs'

@@ -27,6 +27,29 @@ class CompanyInformationController < ApplicationController
     end
   end
 
+  def add_picture
+    company_information = current_user.company_information
+    if params[:company_information].present? && params[:company_information][:company_picture].present?
+      if company_information && company_information.company_picture.present?
+        company_information.company_picture.delete
+      end
+      company_information.company_picture.attach(params[:company_information][:company_picture])
+      flash[:success] = "Picture uploaded"
+      redirect_to profile_index_path
+    end
+  end
+
+  def delete_picture
+    if current_user.company_information.present? && current_user.company_information.company_picture.present?
+      if current_user.company_information.company_picture.delete
+        flash[:success] = "Succesfully deleted picture."
+      else
+        flash[:error] = "Something went wrong."
+      end
+    end
+    redirect_to profile_index_path
+  end
+
   def destroy
     company_information = current_user.company_information
   

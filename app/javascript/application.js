@@ -2,13 +2,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require react
+//= require react_ujs
 //= require_tree .
+//= require chosen-jquery
+//= require components
 //= require chosen-select
-
-import "@hotwired/turbo-rails"
-import "controllers"
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap';
-import "jquery"
-import "jquery_ujs"
 

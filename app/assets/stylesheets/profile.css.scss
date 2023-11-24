@@ -147,6 +147,14 @@
     text-decoration: none;
   }
 
+  .delete-button-experience{
+    @extend .delete-button;
+  }
+
+  .delete-button-education{
+    @extend .delete-button;
+  }
+
   #add-education-button, #add-experience-button  {
     font-size: 1.5rem;
   }
@@ -225,12 +233,44 @@
     
   }
   
+  .create-job-button{
+    margin-top: 20px;
+    height: 30px;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
+    font-family: 'GothamPro';
+    color: #fff;
+    border: 0;
+    border-radius: 0 20px 20px 0;
+    padding: 5px 10px; 
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .job-button-company{
+    padding-top: 20px;
+    height: 30px;
+    transition: background-position .3s ease-out;
+    background-image: linear-gradient(to right,#9754cb ,#694d86 ,#533e68 ,#c4abde );
+    background-size: 300%;
+    background-position: left;
+    font-family: 'GothamPro';
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px; 
+    text-decoration: none;
+  }
+
   .action-button{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
   }
+
+
 
 @media screen and (max-width: 842px){
 
