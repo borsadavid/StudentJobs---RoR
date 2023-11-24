@@ -16,7 +16,7 @@
 
 //date for jobs on company profile
 - if controller_name == 'profile'
-  = job.created_at.strftime('%d-%b-%y')
+  %div.member= "#{job.created_at.strftime('%d-%b-%y')}"
 
 %p.job-info
   Description:

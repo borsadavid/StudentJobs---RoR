@@ -8,14 +8,12 @@
 
 - @jobs.each do |job|
   %div.job-container
-    %ul
-      %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
-      
-      //image
-      = image_tag display_company_picture(job.user), size: "50x50"
-
-      //date
-      = job.created_at.strftime('%d-%b-%y')
+    %ul.job-ul
+      %div.job-img-container
+        = image_tag display_company_picture(job.user), size: "60x60"
+        %div.job-title-container
+          %li.job-button= link_to job.title, view_job_path(job), remote: true, class: "job-link"
+          %div.member= "#{job.created_at.strftime('%d-%b-%y')}"
 
       - if user_signed_in? && is_user?(current_user.id)
         %p Matching by: #{matching_percentage(job)}% 
