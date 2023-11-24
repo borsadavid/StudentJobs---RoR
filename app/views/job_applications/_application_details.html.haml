@@ -1,10 +1,9 @@
 - user_info = @app.cv.user.user_information
-= user_info.first_name + " " + user_info.last_name
 
 %div.application-details{id: @app.id}
 
   %p.text-class
-    CV details:
+    = user_info.first_name + " " + user_info.last_name
 
   %p.job-info
     Matching by: 
@@ -75,3 +74,15 @@
       %a{href: url_for(pdf), target: "_blank"}= pdf.blob.filename.to_s
   - else
     %p No PDFs attached.
+
+
+  %br
+  %br
+  %p.job-info
+    Contact
+  %p.text-class
+    = "#{user_info.city}, #{user_info.county}"
+  %p.text-class
+    = "#{user_info.sex}, #{time_ago_in_words(user_info.birthdate)}"
+  %p.text-class
+    = "phone: #{user_info.phone_number}"
