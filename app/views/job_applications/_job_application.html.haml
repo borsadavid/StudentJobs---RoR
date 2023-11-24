@@ -7,7 +7,8 @@
       - count = 0
       - applications.each do |app|
         - count += 1
-        = link_to "Application #{count} #{app.viewed ? '(Viewed)' : '❗️'}", view_application_details_job_path(app.id), remote: true, onclick: "changeToViewed(this)", class: "purple-link"
+        = link_to "Application #{count}, #{app.cv.user.user_information.first_name} #{app.cv.user.user_information.last_name} #{app.viewed ? '(Viewed)' : '❗️'}", view_application_details_job_path(app.id), remote: true, onclick: "changeToViewed(this)", class: "purple-link"
+        %br
       
     -else
       %p.text-class
