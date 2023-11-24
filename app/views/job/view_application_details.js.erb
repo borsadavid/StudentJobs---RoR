@@ -1,1 +1,4 @@
-$(".details").html("<%= j render 'job_applications/application_details' %>");
+if ( $('.application-details#<%= @app.id %>').length > 0 )
+  $('.application-details#<%= @app.id %>').slideToggle();
+else 
+  $('.job-application#<%= @app.job.id %>').append("<%= j render 'job_applications/application_details' %>");
