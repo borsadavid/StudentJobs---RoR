@@ -147,6 +147,14 @@
     text-decoration: none;
   }
 
+  .delete-button-experience{
+    @extend .delete-button;
+  }
+
+  .delete-button-education{
+    @extend .delete-button;
+  }
+
   #add-education-button, #add-experience-button  {
     font-size: 1.5rem;
   }
