@@ -73,7 +73,7 @@ class ProfileController < ApplicationController
       return
     end
 
-    @jobs = @company.jobs.all
+    @jobs = @company.jobs.all.order(created_at: :asc)
 
     if params[:search].present?
       @jobs = @jobs.where("title ILIKE ?", "%#{params[:search]}%")
