@@ -25,9 +25,14 @@
     align-items: flex-start;
     flex-direction: column;
     width: 60%;
-
-
   }
+
+  .skill p {
+    font-size: 1.25rem;
+    font-family: "GothamPro-Medium";
+    margin: 10px 0;
+  }
+
   .left h1{
       font-family: "GothamPro-Medium";
   }
@@ -223,7 +228,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width: max-content;
+    width: auto;
+    z-index: 0;
   }
 
   .custom-checkbox {
@@ -270,7 +276,97 @@
     justify-content: flex-end;
   }
 
+  .form-class1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .form-class1 a {
+    font-size: 1.25rem;
+    font-family: "GothamPro-Medium";
+    text-decoration: none;
+    color: #9754cb;
+  }
+
+  #file-upload-button {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'GothamPro-Medium',Arial;
+    font-size: .875rem;
+    line-height: 16px;
+    text-align: center;
+    margin: 0px 5px;
+    text-decoration: none;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
+  }
+
+  #file-upload-button:hover {
+    background-position: right;
+  }
+
+  .ss-list {
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+  }
+
+  .ss-option {
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+    //background-color: #9754cb;
+  }
+
+  .ss-option:hover {
+    background-color: #9754cb!important;
+  }
+
+  .ss-disabled {
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+    background-color: #9754cb;
+  }
+
+  .ss-selected {
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+    background-color: #9754cb!important;
+  }
+
+  .ss-value {
+    background-color: #9754cb!important;
+    border-radius: 20px!important;
+    padding: 0 5px;
+  }  
+
+  .ss-value-text {
+    background-color: #9754cb!important;
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+    border-radius: 20px!important;
+  }
+
+  .ss-value-delete {
+    background-color: #9754cb!important;
+    font-family: 'GothamPro';
+    font-size: 1rem!important;
+    
+  }
 
 @media screen and (max-width: 842px){
 
