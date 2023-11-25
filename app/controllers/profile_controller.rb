@@ -74,9 +74,14 @@ class ProfileController < ApplicationController
     end
 
     @jobs = @company.jobs.all.order(created_at: :asc)
-
-    if params[:search].present?
-      @jobs = @jobs.where("title ILIKE ?", "%#{params[:search]}%")
+    
+    if params[:search].present? || params[:filter_skills].present?
+      @jobs = @jobs.where("jobs.title ILIKE ?", "%#{params[:search]}%").distinct if params[:search].present?
+      
+      if params[:filter_skills].present?
+        filter_skill_ids = params[:filter_skills].split(',')
+        @jobs = @jobs.joins(:skills).where(skills: {id: params[:filter_skills]}).distinct if params[:filter_skills].present?
+      end
     end
 
     @jobs = Kaminari.paginate_array(@jobs).page(params[:page]).per(3)

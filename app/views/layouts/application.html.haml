@@ -9,6 +9,9 @@
     //%script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"}
     = javascript_importmap_tags
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    %script{ src: "https://unpkg.com/slim-select@latest/dist/slimselect.min.js" }
+    = stylesheet_link_tag "https://unpkg.com/slim-select@latest/dist/slimselect.css", rel: "stylesheet"
+
   %body
     - unless devise_controller?
       %div#flash-messages

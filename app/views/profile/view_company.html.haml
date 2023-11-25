@@ -8,11 +8,26 @@
       
 
     = form_tag(view_company_profile_path, method: :get, remote: true, class: 'job-search-form') do
-      = text_field_tag :search, params[:search], placeholder: 'Search jobs'
-      = hidden_field_tag :user_id, @company.id
-      = submit_tag 'Search', class: "search-button", style: "margin-bottom: 0.7em;"
+      %p.form-group
+        = text_field_tag :search, params[:search], placeholder: 'Search jobs'
+        = hidden_field_tag :user_id, @company.id
+      %div.pickskills
+        = label_tag :title, "Skills", class: "form-filter"
+        = select_tag 'filter_skills[]', options_from_collection_for_select(@company.jobs.map(&:skills).flatten.uniq, :id, :title), { multiple: true, id: 'multiple',style: 'z-index: 0 !important;' }
+      
+      = submit_tag 'Filter', class: 'edit-button button-padding', style: "margin-bottom: 0.7em;"
+
 
     %div.job-information
       = render 'company_jobs'
       
     = paginate @jobs, remote: true
+
+:javascript
+  document.addEventListener('DOMContentLoaded', function () {
+    var select = new SlimSelect({
+      select: '#multiple',
+      placeholder: 'Select Skills',
+      allowDeselect: true,
+    });
+  });

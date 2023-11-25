@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     @jobs = Job.where(user: {blocked: false}).includes(:skills, user: { company_information: :company_picture_blob }).order(created_at: :desc)
 
     @jobs = @jobs.joins(user: :company_information).where("lower(title) LIKE :search OR lower(company_informations.name) LIKE :search", search: "%#{params[:title].downcase}%") if params[:title].present?
-
+    @jobs = @jobs.where(skills: {id: params[:filter_skills]}) if params[:filter_skills].present?
     @jobs = @jobs.joins(:locations).where(locations: { city: params[:filter_city] }) if params[:filter_city].present?
     
     @jobs = @jobs.sort_by { |job| - (matching_percentage(job)).to_f } if user_signed_in?
