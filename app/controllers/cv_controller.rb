@@ -92,9 +92,9 @@ class CvController < ApplicationController
 
   def add_skills
     @cv = Cv.find(params[:id])
-    #@cv.skills.destroy_all
+    @cv.skills.destroy_all
 
-    selected_skill_ids = params[:skill_ids] - @cv.skills.pluck(:id)
+    selected_skill_ids = params[:skill_ids]
   
     if selected_skill_ids.present?
       selected_skills = Skill.where(id: selected_skill_ids)
