@@ -46,6 +46,7 @@
     %p.job-info Application viewed
 
   - elsif applied == false
+    
     %button.apply-button{ style: "width: fit-content; padding: 0 15px;", onclick: "toggleChooseCV(this);" } Apply
     %div.choose-cv{style: 'display: none;'}
       - if current_user.cvs.any? && current_user.user_information.present?

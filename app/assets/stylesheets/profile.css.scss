@@ -18,6 +18,80 @@
     margin: 40px 15%;
   }
 
+  .user-applications {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .application-button {
+    color: #9754cb;
+    border: 0;
+    background-color: #fff;
+    font-size: 1.25rem;
+    font-family: "GothamPro";
+    padding-bottom: 10px;
+    text-align: left;
+  }
+
+  .application-content {
+    padding: 10px;
+  }
+
+  .application-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .application-row p {
+    margin: 0;
+    font-size: 1.25rem;
+    font-family: "GothamPro";
+  }
+
+  .cancel-application-button {
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 30px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'GothamPro-Medium',Arial;
+    font-size: .875rem;
+    line-height: 16px;
+    text-align: center;
+    margin: 10px 0px;
+    text-decoration: none;
+    transition: background-position .3s ease-in;
+    background-image: linear-gradient(to right,#9754cb ,#6327A0 ,#6327A0 ,#6327A0 );
+    background-size: 300%;
+    background-position: left;
+  }
+  
+  .cancel-application-button:hover {
+    background-position: right;
+  }
+
+  .appliation-button-wraper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   .Availablecv {
     margin-bottom: 20px;
     display: flex;
@@ -368,6 +442,8 @@
     
   }
 
+
+
 @media screen and (max-width: 842px){
 
     #undernav{
@@ -410,6 +486,10 @@
 
     .Availablecv{
         width: 95%;
+    }
+
+    .user-applications {
+      width: 95%;
     }
 
     .configureCV {

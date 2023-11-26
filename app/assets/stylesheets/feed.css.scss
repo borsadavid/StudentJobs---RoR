@@ -19,7 +19,6 @@
   .company-info-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
     padding: 0px 0;
     padding-bottom: 40px;
@@ -178,6 +177,17 @@
     font-family: 'GothamPro-Medium' !important; 
     color: #9754cb !important; 
     margin-right:10px !important;
+  }
+
+  #filter-form {
+    padding: 10px;
+  }
+
+  .filter-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
   }
 
   @media screen and (max-width: 842px){
