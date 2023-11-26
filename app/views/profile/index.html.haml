@@ -3,7 +3,7 @@
   - if current_user.cvs.map { |cv| cv.applications }.count > 0
     //applications class e folosit la js
     %div.left#undernav
-      %div.user-applications
+      %div.user-applications.applications
         = render 'user_applications'
 
 //user cvs and cv creator
