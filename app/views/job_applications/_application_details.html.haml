@@ -5,6 +5,9 @@
   %p.text-class
     = user_info.first_name + " " + user_info.last_name
 
+  %p.text-class
+    = button_to @app.liked ? "★" : "☆", like_cv_job_path(@app), method: :patch, remote: true, onclick: "likeToggle(this)", id: "like-button-#{@app.id}"
+
   %p.job-info
     Matching by: 
     = matching_by(@app.job, @app.cv)+"%"
@@ -86,3 +89,13 @@
     = "#{user_info.sex}, #{time_ago_in_words(user_info.birthdate)}"
   %p.text-class
     = "phone: #{user_info.phone_number}"
+
+
+:javascript
+  function likeToggle(button) {
+    if (button.innerText === "☆") {
+      button.innerText = "★";
+    } else {
+      button.innerText = "☆";
+    }
+  }
