@@ -4,9 +4,7 @@
 
   %p.text-class
     = user_info.first_name + " " + user_info.last_name
-
-  %p.text-class
-    = button_to @app.liked ? "★" : "☆", like_cv_job_path(@app), method: :patch, remote: true, onclick: "likeToggle(this)", id: "like-button-#{@app.id}"
+    = link_to @app.liked ? "★" : "☆", like_cv_job_path(@app), method: :patch, remote: true, onclick: "likeToggle(this)", id: "like-button-#{@app.id}", class: "job-button-company"
 
   %p.job-info
     Matching by: 

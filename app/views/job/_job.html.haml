@@ -2,8 +2,8 @@
   %p.job-info{style: "padding-top: 15px !important;"} 
     = link_to "❌", job_path(job), method: :delete, remote: true, data: {confirm: 'Are you sure you want to delete this job?'}, class: "job-button-company"
     = link_to "✏️", edit_job_path(id: job.id), remote: true, class: "job-button-company"
-    = link_to "View applicants  #{job.applications.where(viewed: false).any? ? "❗️" : ''}", view_applications_job_path(job.id), remote: true, class: "job-button-company"
     = link_to "★", view_applications_job_path(job.id, liked: true), remote: true, class: "job-button-company"
+    = link_to "View applicants  #{job.applications.where(viewed: false).any? ? "❗️" : ''}", view_applications_job_path(job.id), remote: true, class: "job-button-company"
   %h1.title= job.title #title class used for js
   %p.job-info
     Description: 
