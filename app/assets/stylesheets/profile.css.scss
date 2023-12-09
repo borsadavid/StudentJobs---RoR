@@ -300,7 +300,7 @@
   .pickskills{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     width: auto;
     z-index: 0;
@@ -395,6 +395,9 @@
     background-position: right;
   }
 
+  .ss-main {
+    width: 90%!important;
+  }
   .ss-list {
     font-family: 'GothamPro';
     font-size: 1rem!important;
@@ -495,5 +498,9 @@
     .configureCV {
         width: 95%;
       }
+
+    .ss-main {
+      width: 80%!important;
+    }
     
 }

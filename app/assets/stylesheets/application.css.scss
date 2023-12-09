@@ -23,6 +23,11 @@
     align-content: center;
  }
 
+ :root{
+  --ss-primary-color: #9754cb!important;
+  --ss-focus-color: #9754cb!important;
+ }
+
  @font-face {
    font-family: 'GothamPro-Medium';
    src: font-url("GothamPro-Medium.woff");

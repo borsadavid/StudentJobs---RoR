@@ -1,7 +1,7 @@
 %div.container{style: "display:block;"}
   = form_tag feed_path, method: 'get', remote: true, id: 'filter-form' do
     %div.pickskills
-      = label_tag 'filter_city', 'City:', class: "form-filter"
+      = label_tag 'filter_city', 'City', class: "form-filter"
       = select_tag 'filter_city[]', options_from_collection_for_select(@locations.uniq, :id, :city), { multiple: true, id: 'multiple-cities' }
     %div.pickskills
       = label_tag :title, "Skills", class: "form-filter"
