@@ -50,9 +50,9 @@
     %button.apply-button{ style: "width: fit-content; padding: 0 15px;", onclick: "toggleChooseCV(this);" } Apply
     %div.choose-cv{style: 'display: none;'}
       - if current_user.cvs.any? && current_user.user_information.present?
-        Choose CV
+        %p Choose CV
         - current_user.cvs.each do |cv|
-          = button_to cv.title, apply_to_job_profile_path(job_id: job.id, cv_id: cv.id), class: 'cv-select', remote: true
+          = button_to cv.title, apply_to_job_profile_path(job_id: job.id, cv_id: cv.id), class: 'apply-button', remote: true
       - else
         = link_to "Add Cv & Contact Info", profile_index_path
 
