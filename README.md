@@ -1,5 +1,11 @@
 Website for job applications created with Ruby on Rails.
 
+Main features:
+
+
+
+**Screenshots**
+
 Landing page:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/9bac97a9-f520-48f8-b3a3-30223a7da0c4)
 
