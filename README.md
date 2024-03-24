@@ -1,7 +1,13 @@
 Website for job applications created with Ruby on Rails.
 
 Main features:
+Most of the app is made using AJAX & Js for a smooth experience.
+Database - PostgreSQL
+Sidekiq - send job mails with recommendations based on CV skills.
+Devise - authentication with multiple roles (basic user, company, admin)
 
+Diagram:
+![project-week4](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/6a9b9dbb-b124-414b-af22-f5be9f936acc)
 
 
 **Screenshots**
