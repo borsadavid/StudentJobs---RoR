@@ -15,7 +15,7 @@ Most of the app is made using **AJAX & Js** for a smooth experience.
 
 **Frontend** - Js, HTML, Scss
 _Guests_ can:
-• View all available jobs
+• View all available jobs \n
 • Search and filter jobs by name/location/skills, view companies profiles
 • Login/Register an account
 _A student_ interacts with the web interface and can perform several actions such as:
