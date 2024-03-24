@@ -1,7 +1,8 @@
 Website for job applications created with Ruby on Rails.
 
 Landing page:
-![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/7d51c50e-e6fb-4ad3-8d35-d739b59e4b88)
+![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/9bac97a9-f520-48f8-b3a3-30223a7da0c4)
+
 
 
 Login Page:
