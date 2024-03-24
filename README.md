@@ -12,6 +12,7 @@ Basic user feed matching:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/d8be27fc-596a-438e-bed4-3c4328103768)
 
 Company profile (mobile view):
+
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/c3566e0b-fc67-4311-9f3a-687c1f2231d0)
 
 
