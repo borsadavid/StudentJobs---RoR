@@ -23,7 +23,8 @@ User profile:
 CV creation:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/3a3f7c87-feba-4d82-b04b-dd59694df592)
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/91e91d7c-ab5e-462e-a6df-2a83a13d83e3)
-![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/39d98698-18d2-4c24-b4ec-c3f5b217e511)
+![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/7a40cc6c-3ab6-4b8b-8c8e-5186a4bf251a)
+
 
 
 
