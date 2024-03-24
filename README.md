@@ -41,6 +41,7 @@ Admin companies approve:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/b56b9717-b10c-4a71-a978-6183547025ad)
 
 Admin users manage (mobile view):
+
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/f19be32d-cae0-4016-8956-186ff54b6f11)
 
 
