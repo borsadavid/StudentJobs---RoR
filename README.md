@@ -20,8 +20,8 @@ _Guests_ can:
 • View all available jobs    
 • Search and filter jobs by name/location/skills, view companies profiles    
 • Login/Register an account    
-_A student_ interacts with the web interface and can perform several actions such as:     
-   
+    
+_A student_ interacts with the web interface and can perform several actions such as:        
 • View jobs in a matching order with their skills and experience     
 • Create/edit their profile and contact:     
 • Create/edit a CV:     
@@ -29,14 +29,14 @@ _A student_ interacts with the web interface and can perform several actions suc
 • Add contact info     
 • Apply for jobs and check application statuses     
 • Receive emails with new jobs that match their skills and capacities and also get _notified_ when their CV was seen by a Company     
-_An employer_ interacts with the interface and can perform actions such as:    
    
+_An employer_ interacts with the interface and can perform actions such as:    
 • Create/edit/delete his job postings     
 • Set skills that the perfect employee should have    
 • View applications to their job listings     
 • Add a CV to a list of favorites     
-_Admins_ can perform these actions:    
-   
+    
+_Admins_ can perform these actions:   
 • Approve new companies before they can post job listings     
 • Ban users     
 • Grant admin permissions to users     
