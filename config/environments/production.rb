@@ -33,6 +33,8 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
+  Rails.application.routes.default_url_options[:host] = 'your_host_here'
+
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
@@ -64,6 +66,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "testing1_production"
 
+  Rails.application.routes.default_url_options[:host] = 'https://student-jobs.onrender.com'
+
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: 'https://student-jobs.onrender.com' }
@@ -78,6 +82,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
