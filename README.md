@@ -69,8 +69,9 @@ User Cv application:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/b7336313-5a8b-4cf3-94de-0d6dfbccebaa)
 
 
-User profile:
-![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/0754d6db-f393-4e3b-9629-859ad1821e18)
+User profile (When one of your applications is seen by the employer, you also get notified by email):
+![image](https://github.com/user-attachments/assets/d44c8d10-5592-45f7-8239-d47c0b5c3aa9)      
+
 
 CV creation:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/3a3f7c87-feba-4d82-b04b-dd59694df592)
