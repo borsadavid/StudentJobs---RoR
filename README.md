@@ -69,7 +69,7 @@ User Cv application:
 ![image](https://github.com/borsadavid/WebApp---Sem3/assets/117517496/b7336313-5a8b-4cf3-94de-0d6dfbccebaa)
 
 
-User profile (When one of your applications is seen by the employer, you also get notified by email):
+User profile:
 ![image](https://github.com/user-attachments/assets/d44c8d10-5592-45f7-8239-d47c0b5c3aa9)      
 
 
